@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.EcoreUtil.Copier;
 import org.eventb.core.IEventBRoot;
+import org.eventb.emf.core.AbstractExtension;
 import org.eventb.emf.core.CorePackage;
 import org.eventb.emf.core.EventBElement;
 import org.eventb.emf.core.EventBObject;
@@ -213,8 +214,11 @@ public abstract class AbstractExtensionRefiner implements IRefinementParticipant
 	private void refineExtension(IEventBRoot concreteEventBRoot, IEventBRoot abstractEventBRoot, ISerialisedExtension abstractExtensionRoot, IProgressMonitor monitor) throws RodinDBException, CoreException 	{		
 		//obtain the EMF version of the abstract serialised extension by loading it into a Rodin Resource
 		EventBObject extension = emfRodinDB.loadElement(abstractExtensionRoot);
+		//refine extension and give it a new id (using uuid)
+		EventBElement refinedExtension = refineEventBElement(extension);
+		((AbstractExtension)refinedExtension).setExtensionId(EXTENSION_ID+"."+EcoreUtil.generateUUID());
 		//serialise refined extension back into the RodinDB concreteEventBRoot (not into EMF resource as this does not exist yet)
-		synchroniser.save(refineEventBElement(extension), concreteEventBRoot, monitor);
+		synchroniser.save(refinedExtension, concreteEventBRoot, monitor);
 	}
 
 	
