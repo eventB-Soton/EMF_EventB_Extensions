@@ -216,11 +216,27 @@ public abstract class AbstractExtensionRefiner implements IRefinementParticipant
 		EventBObject extension = emfRodinDB.loadElement(abstractExtensionRoot);
 		//refine extension and give it a new id (using uuid)
 		EventBElement refinedExtension = refineEventBElement(extension);
-		((AbstractExtension)refinedExtension).setExtensionId(EXTENSION_ID+"."+EcoreUtil.generateUUID());
+		setNewIDs(refinedExtension);
+		//((AbstractExtension)refinedExtension).setExtensionId(EXTENSION_ID+"."+EcoreUtil.generateUUID());
 		//serialise refined extension back into the RodinDB concreteEventBRoot (not into EMF resource as this does not exist yet)
 		synchroniser.save(refinedExtension, concreteEventBRoot, monitor);
 	}
 
+	/**
+	 * gives a new UUID to every abstract extension within the given event B element (including itself)
+	 * @param EventB element to be given new UUIDs
+	 */
+	private void setNewIDs(EventBElement eventBElement) {
+		EList<EObject> aes = eventBElement.getAllContained(CorePackage.Literals.ABSTRACT_EXTENSION, true);
+		aes.add(eventBElement);  //include itself
+		for (EObject cae : aes){
+			if (cae instanceof AbstractExtension) {
+				String cextID = ((AbstractExtension)cae).getExtensionId();
+				cextID = cextID.substring(0, cextID.lastIndexOf('.'));
+				((AbstractExtension)cae).setExtensionId(cextID+"."+EcoreUtil.generateUUID());
+			}
+		}
+	}
 	
 	/**
 	 * Returns refined component from root component.
