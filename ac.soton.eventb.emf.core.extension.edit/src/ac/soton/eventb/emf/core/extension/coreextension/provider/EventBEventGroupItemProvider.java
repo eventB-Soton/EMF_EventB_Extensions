@@ -212,26 +212,26 @@ public class EventBEventGroupItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CoreextensionPackage.Literals.EVENT_BEVENT_GROUP__PARAMETERS,
-				 CoreextensionFactory.eINSTANCE.createTypedParameter()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CoreextensionPackage.Literals.EVENT_BEVENT_GROUP__GUARDS,
-				 MachineFactory.eINSTANCE.createGuard()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CoreextensionPackage.Literals.EVENT_BEVENT_GROUP__ACTIONS,
-				 MachineFactory.eINSTANCE.createAction()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CoreextensionPackage.Literals.EVENT_BEVENT_GROUP__WITNESSES,
-				 MachineFactory.eINSTANCE.createWitness()));
+		
+			newChildDescriptors.add
+				(createChildParameter
+					(CoreextensionPackage.Literals.EVENT_BEVENT_GROUP__PARAMETERS,
+				 	CoreextensionFactory.eINSTANCE.createTypedParameter()));
+		
+			newChildDescriptors.add
+				(createChildParameter
+					(CoreextensionPackage.Literals.EVENT_BEVENT_GROUP__GUARDS,
+				 	MachineFactory.eINSTANCE.createGuard()));
+		
+			newChildDescriptors.add
+				(createChildParameter
+					(CoreextensionPackage.Literals.EVENT_BEVENT_GROUP__ACTIONS,
+				 	MachineFactory.eINSTANCE.createAction()));
+		
+			newChildDescriptors.add
+				(createChildParameter
+					(CoreextensionPackage.Literals.EVENT_BEVENT_GROUP__WITNESSES,
+				 	MachineFactory.eINSTANCE.createWitness()));
 	}
 
 	/**
