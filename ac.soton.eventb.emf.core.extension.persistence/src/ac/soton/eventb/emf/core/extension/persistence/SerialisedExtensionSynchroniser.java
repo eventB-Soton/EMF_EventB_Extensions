@@ -167,7 +167,9 @@ public class SerialisedExtensionSynchroniser extends AbstractSynchroniser {
 			
 			try {
 				String saveString = XMIHelperImpl.saveString(Collections.emptyMap(), Collections.singletonList(emfExtension), "UTF-8", null);
-				rodinExtension.setExtensionId(emfExtension.getExtensionId(), monitor);
+				if (emfExtension.getExtensionId()!=null) {
+					rodinExtension.setExtensionId(emfExtension.getExtensionId(), monitor);
+				}
 				rodinExtension.setSerialised(saveString, monitor);
 				rodinExtension.setEPackageURI(emfExtension.eClass().getEPackage().getNsURI(), monitor);
 				rodinExtension.setEClassifier(emfExtension.eClass().getName(), monitor);
