@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.eventb.emf.core.CorePackage;
 import org.eventb.emf.core.machine.MachinePackage;
@@ -168,6 +169,7 @@ public class CoreextensionPackageImpl extends EPackageImpl implements Coreextens
 		isInited = true;
 
 		// Initialize simple dependencies
+		EcorePackage.eINSTANCE.eClass();
 		CorePackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
@@ -375,6 +377,15 @@ public class CoreextensionPackageImpl extends EPackageImpl implements Coreextens
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getEventBEventGroup_Refines() {
+		return (EReference)eventBEventGroupEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getEventBCommentedLabeledEventGroupElement() {
 		return eventBCommentedLabeledEventGroupElementEClass;
 	}
@@ -468,6 +479,7 @@ public class CoreextensionPackageImpl extends EPackageImpl implements Coreextens
 		createEReference(eventBEventGroupEClass, EVENT_BEVENT_GROUP__GUARDS);
 		createEReference(eventBEventGroupEClass, EVENT_BEVENT_GROUP__ACTIONS);
 		createEReference(eventBEventGroupEClass, EVENT_BEVENT_GROUP__WITNESSES);
+		createEReference(eventBEventGroupEClass, EVENT_BEVENT_GROUP__REFINES);
 
 		eventBCommentedLabeledEventGroupElementEClass = createEClass(EVENT_BCOMMENTED_LABELED_EVENT_GROUP_ELEMENT);
 
@@ -550,6 +562,7 @@ public class CoreextensionPackageImpl extends EPackageImpl implements Coreextens
 		initEReference(getEventBEventGroup_Guards(), theMachinePackage.getGuard(), null, "guards", null, 0, -1, EventBEventGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEventBEventGroup_Actions(), theMachinePackage.getAction(), null, "actions", null, 0, -1, EventBEventGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEventBEventGroup_Witnesses(), theMachinePackage.getWitness(), null, "witnesses", null, 0, -1, EventBEventGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEventBEventGroup_Refines(), this.getEventBEventGroup(), null, "refines", null, 0, 1, EventBEventGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(eventBCommentedLabeledEventGroupElementEClass, EventBCommentedLabeledEventGroupElement.class, "EventBCommentedLabeledEventGroupElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

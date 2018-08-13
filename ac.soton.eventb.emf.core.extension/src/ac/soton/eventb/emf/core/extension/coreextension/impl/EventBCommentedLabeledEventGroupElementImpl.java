@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2012/13 - University of Southampton.
+ * Copyright (c) 2012-2018 - University of Southampton.
  * All rights reserved. This program and the accompanying materials  are made
  * available under the terms of the Eclipse Public License v1.0 which accompanies this 
  * distribution, and is available at http://www.eclipse.org/legal/epl-v10.html
@@ -41,6 +41,7 @@ import ac.soton.eventb.emf.core.extension.coreextension.TypedParameter;
  *   <li>{@link ac.soton.eventb.emf.core.extension.coreextension.impl.EventBCommentedLabeledEventGroupElementImpl#getGuards <em>Guards</em>}</li>
  *   <li>{@link ac.soton.eventb.emf.core.extension.coreextension.impl.EventBCommentedLabeledEventGroupElementImpl#getActions <em>Actions</em>}</li>
  *   <li>{@link ac.soton.eventb.emf.core.extension.coreextension.impl.EventBCommentedLabeledEventGroupElementImpl#getWitnesses <em>Witnesses</em>}</li>
+ *   <li>{@link ac.soton.eventb.emf.core.extension.coreextension.impl.EventBCommentedLabeledEventGroupElementImpl#getRefines <em>Refines</em>}</li>
  * </ul>
  * </p>
  *
@@ -129,6 +130,16 @@ public abstract class EventBCommentedLabeledEventGroupElementImpl extends EventB
 	 * @ordered
 	 */
 	protected EList<Witness> witnesses;
+
+	/**
+	 * The cached value of the '{@link #getRefines() <em>Refines</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRefines()
+	 * @generated
+	 * @ordered
+	 */
+	protected EventBEventGroup refines;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -241,6 +252,44 @@ public abstract class EventBCommentedLabeledEventGroupElementImpl extends EventB
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EventBEventGroup getRefines() {
+		if (refines != null && refines.eIsProxy()) {
+			InternalEObject oldRefines = (InternalEObject)refines;
+			refines = (EventBEventGroup)eResolveProxy(oldRefines);
+			if (refines != oldRefines) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CoreextensionPackage.EVENT_BCOMMENTED_LABELED_EVENT_GROUP_ELEMENT__REFINES, oldRefines, refines));
+			}
+		}
+		return refines;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EventBEventGroup basicGetRefines() {
+		return refines;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRefines(EventBEventGroup newRefines) {
+		EventBEventGroup oldRefines = refines;
+		refines = newRefines;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CoreextensionPackage.EVENT_BCOMMENTED_LABELED_EVENT_GROUP_ELEMENT__REFINES, oldRefines, refines));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -276,6 +325,9 @@ public abstract class EventBCommentedLabeledEventGroupElementImpl extends EventB
 				return getActions();
 			case CoreextensionPackage.EVENT_BCOMMENTED_LABELED_EVENT_GROUP_ELEMENT__WITNESSES:
 				return getWitnesses();
+			case CoreextensionPackage.EVENT_BCOMMENTED_LABELED_EVENT_GROUP_ELEMENT__REFINES:
+				if (resolve) return getRefines();
+				return basicGetRefines();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -312,6 +364,9 @@ public abstract class EventBCommentedLabeledEventGroupElementImpl extends EventB
 				getWitnesses().clear();
 				getWitnesses().addAll((Collection<? extends Witness>)newValue);
 				return;
+			case CoreextensionPackage.EVENT_BCOMMENTED_LABELED_EVENT_GROUP_ELEMENT__REFINES:
+				setRefines((EventBEventGroup)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -342,6 +397,9 @@ public abstract class EventBCommentedLabeledEventGroupElementImpl extends EventB
 			case CoreextensionPackage.EVENT_BCOMMENTED_LABELED_EVENT_GROUP_ELEMENT__WITNESSES:
 				getWitnesses().clear();
 				return;
+			case CoreextensionPackage.EVENT_BCOMMENTED_LABELED_EVENT_GROUP_ELEMENT__REFINES:
+				setRefines((EventBEventGroup)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -366,6 +424,8 @@ public abstract class EventBCommentedLabeledEventGroupElementImpl extends EventB
 				return actions != null && !actions.isEmpty();
 			case CoreextensionPackage.EVENT_BCOMMENTED_LABELED_EVENT_GROUP_ELEMENT__WITNESSES:
 				return witnesses != null && !witnesses.isEmpty();
+			case CoreextensionPackage.EVENT_BCOMMENTED_LABELED_EVENT_GROUP_ELEMENT__REFINES:
+				return refines != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -385,6 +445,7 @@ public abstract class EventBCommentedLabeledEventGroupElementImpl extends EventB
 				case CoreextensionPackage.EVENT_BCOMMENTED_LABELED_EVENT_GROUP_ELEMENT__GUARDS: return CoreextensionPackage.EVENT_BEVENT_GROUP__GUARDS;
 				case CoreextensionPackage.EVENT_BCOMMENTED_LABELED_EVENT_GROUP_ELEMENT__ACTIONS: return CoreextensionPackage.EVENT_BEVENT_GROUP__ACTIONS;
 				case CoreextensionPackage.EVENT_BCOMMENTED_LABELED_EVENT_GROUP_ELEMENT__WITNESSES: return CoreextensionPackage.EVENT_BEVENT_GROUP__WITNESSES;
+				case CoreextensionPackage.EVENT_BCOMMENTED_LABELED_EVENT_GROUP_ELEMENT__REFINES: return CoreextensionPackage.EVENT_BEVENT_GROUP__REFINES;
 				default: return -1;
 			}
 		}
@@ -406,6 +467,7 @@ public abstract class EventBCommentedLabeledEventGroupElementImpl extends EventB
 				case CoreextensionPackage.EVENT_BEVENT_GROUP__GUARDS: return CoreextensionPackage.EVENT_BCOMMENTED_LABELED_EVENT_GROUP_ELEMENT__GUARDS;
 				case CoreextensionPackage.EVENT_BEVENT_GROUP__ACTIONS: return CoreextensionPackage.EVENT_BCOMMENTED_LABELED_EVENT_GROUP_ELEMENT__ACTIONS;
 				case CoreextensionPackage.EVENT_BEVENT_GROUP__WITNESSES: return CoreextensionPackage.EVENT_BCOMMENTED_LABELED_EVENT_GROUP_ELEMENT__WITNESSES;
+				case CoreextensionPackage.EVENT_BEVENT_GROUP__REFINES: return CoreextensionPackage.EVENT_BCOMMENTED_LABELED_EVENT_GROUP_ELEMENT__REFINES;
 				default: return -1;
 			}
 		}

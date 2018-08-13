@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2012/13 - University of Southampton.
+ * Copyright (c) 2012-2018 - University of Southampton.
  * All rights reserved. This program and the accompanying materials  are made
  * available under the terms of the Eclipse Public License v1.0 which accompanies this 
  * distribution, and is available at http://www.eclipse.org/legal/epl-v10.html
@@ -397,13 +397,22 @@ public interface CoreextensionPackage extends EPackage {
 	int EVENT_BEVENT_GROUP__WITNESSES = 5;
 
 	/**
+	 * The feature id for the '<em><b>Refines</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT_BEVENT_GROUP__REFINES = 6;
+
+	/**
 	 * The number of structural features of the '<em>Event BEvent Group</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT_BEVENT_GROUP_FEATURE_COUNT = 6;
+	int EVENT_BEVENT_GROUP_FEATURE_COUNT = 7;
 
 	/**
 	 * The meta object id for the '{@link ac.soton.eventb.emf.core.extension.coreextension.impl.EventBCommentedLabeledElementImpl <em>Event BCommented Labeled Element</em>}' class.
@@ -656,13 +665,22 @@ public interface CoreextensionPackage extends EPackage {
 	int EVENT_BCOMMENTED_LABELED_EVENT_GROUP_ELEMENT__WITNESSES = EVENT_BCOMMENTED_LABELED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
+	 * The feature id for the '<em><b>Refines</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT_BCOMMENTED_LABELED_EVENT_GROUP_ELEMENT__REFINES = EVENT_BCOMMENTED_LABELED_ELEMENT_FEATURE_COUNT + 6;
+
+	/**
 	 * The number of structural features of the '<em>Event BCommented Labeled Event Group Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT_BCOMMENTED_LABELED_EVENT_GROUP_ELEMENT_FEATURE_COUNT = EVENT_BCOMMENTED_LABELED_ELEMENT_FEATURE_COUNT + 6;
+	int EVENT_BCOMMENTED_LABELED_EVENT_GROUP_ELEMENT_FEATURE_COUNT = EVENT_BCOMMENTED_LABELED_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The meta object id for the '{@link ac.soton.eventb.emf.core.extension.coreextension.impl.EventBNamedCommentedDataElaborationElementImpl <em>Event BNamed Commented Data Elaboration Element</em>}' class.
@@ -1167,6 +1185,17 @@ public interface CoreextensionPackage extends EPackage {
 	EReference getEventBEventGroup_Witnesses();
 
 	/**
+	 * Returns the meta object for the reference '{@link ac.soton.eventb.emf.core.extension.coreextension.EventBEventGroup#getRefines <em>Refines</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Refines</em>'.
+	 * @see ac.soton.eventb.emf.core.extension.coreextension.EventBEventGroup#getRefines()
+	 * @see #getEventBEventGroup()
+	 * @generated
+	 */
+	EReference getEventBEventGroup_Refines();
+
+	/**
 	 * Returns the meta object for class '{@link ac.soton.eventb.emf.core.extension.coreextension.EventBCommentedLabeledEventGroupElement <em>Event BCommented Labeled Event Group Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1414,6 +1443,14 @@ public interface CoreextensionPackage extends EPackage {
 		 * @generated
 		 */
 		EReference EVENT_BEVENT_GROUP__WITNESSES = eINSTANCE.getEventBEventGroup_Witnesses();
+
+		/**
+		 * The meta object literal for the '<em><b>Refines</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EVENT_BEVENT_GROUP__REFINES = eINSTANCE.getEventBEventGroup_Refines();
 
 		/**
 		 * The meta object literal for the '{@link ac.soton.eventb.emf.core.extension.coreextension.impl.EventBCommentedLabeledEventGroupElementImpl <em>Event BCommented Labeled Event Group Element</em>}' class.

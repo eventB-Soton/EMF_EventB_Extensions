@@ -47,6 +47,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="witnesses" upperBound="-1"
         eType="ecore:EClass ../../org.eventb.emf.core/model/eventbcore.ecore#//machine/Witness"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refines" eType="#//EventBEventGroup"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EventBCommentedLabeledEventGroupElement"
       abstract="true" eSuperTypes="#//EventBCommentedLabeledElement #//EventBEventGroup"/>
