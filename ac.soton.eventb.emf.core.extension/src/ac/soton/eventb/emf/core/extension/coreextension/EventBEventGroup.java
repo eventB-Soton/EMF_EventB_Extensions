@@ -38,13 +38,6 @@ import org.eventb.emf.core.machine.Witness;
  */
 public interface EventBEventGroup extends EObject {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	String copyright = "Copyright (c) 2012/13 - University of Southampton.\rAll rights reserved. This program and the accompanying materials  are made\ravailable under the terms of the Eclipse Public License v1.0 which accompanies this \rdistribution, and is available at http://www.eclipse.org/legal/epl-v10.html\n";
-
-	/**
 	 * Returns the value of the '<em><b>Elaborates</b></em>' reference list.
 	 * The list contents are of type {@link org.eventb.emf.core.machine.Event}.
 	 * <!-- begin-user-doc -->

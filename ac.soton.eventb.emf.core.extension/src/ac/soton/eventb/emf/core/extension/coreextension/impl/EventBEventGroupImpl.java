@@ -49,13 +49,6 @@ import ac.soton.eventb.emf.core.extension.coreextension.TypedParameter;
  */
 public abstract class EventBEventGroupImpl extends EObjectImpl implements EventBEventGroup {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final String copyright = "Copyright (c) 2012/13 - University of Southampton.\rAll rights reserved. This program and the accompanying materials  are made\ravailable under the terms of the Eclipse Public License v1.0 which accompanies this \rdistribution, and is available at http://www.eclipse.org/legal/epl-v10.html\n";
-
-	/**
 	 * The cached value of the '{@link #getElaborates() <em>Elaborates</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
