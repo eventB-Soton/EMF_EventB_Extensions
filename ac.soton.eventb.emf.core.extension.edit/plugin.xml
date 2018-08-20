@@ -32,7 +32,7 @@
             class="ac.soton.eventb.emf.core.extension.coreextension.provider.CoreextensionItemProviderAdapterFactory$CoreChildCreationExtender"/>
       <extender
             uri="http://emf.eventb.org/models/core/machine/2014"
-            class="ac.soton.eventb.emf.core.extension.coreextension.provider.CoreextensionItemProviderAdapterFactory$MachineChildCreationExtender"/>
+            class="ac.soton.eventb.emf.core.extension.coreextension.provider.CoreextensionItemProviderAdapterFactory$CoreChildCreationExtender"/>
    </extension>
 
 </plugin>
