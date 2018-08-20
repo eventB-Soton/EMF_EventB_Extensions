@@ -49,6 +49,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eventb.emf.core.Annotation;
 import org.eventb.emf.core.CorePackage;
 
+import org.eventb.emf.core.EventBElement;
 import org.eventb.emf.core.machine.Event;
 import org.eventb.emf.core.machine.MachinePackage;
 
@@ -141,6 +142,52 @@ public class CoreextensionItemProviderAdapterFactory extends CoreextensionAdapte
 		}
 
 		return typedParameterItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link ac.soton.eventb.emf.core.extension.coreextension.EventCases} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EventCasesItemProvider eventCasesItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link ac.soton.eventb.emf.core.extension.coreextension.EventCases}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEventCasesAdapter() {
+		if (eventCasesItemProvider == null) {
+			eventCasesItemProvider = new EventCasesItemProvider(this);
+		}
+
+		return eventCasesItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link ac.soton.eventb.emf.core.extension.coreextension.FormalParameter} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected FormalParameterItemProvider formalParameterItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link ac.soton.eventb.emf.core.extension.coreextension.FormalParameter}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createFormalParameterAdapter() {
+		if (formalParameterItemProvider == null) {
+			formalParameterItemProvider = new FormalParameterItemProvider(this);
+		}
+
+		return formalParameterItemProvider;
 	}
 
 	/**
@@ -270,6 +317,8 @@ public class CoreextensionItemProviderAdapterFactory extends CoreextensionAdapte
 	 */
 	public void dispose() {
 		if (typedParameterItemProvider != null) typedParameterItemProvider.dispose();
+		if (eventCasesItemProvider != null) eventCasesItemProvider.dispose();
+		if (formalParameterItemProvider != null) formalParameterItemProvider.dispose();
 	}
 
 	/**
@@ -318,6 +367,25 @@ public class CoreextensionItemProviderAdapterFactory extends CoreextensionAdapte
 			 * @generated
 			 */
 			@Override
+			public Object caseEventBElement(EventBElement object) {
+			
+			EAnnotation annotation = null;
+				
+				annotation = CoreextensionPackage.Literals.EVENT_CASES.getEAnnotation("org.eventb.emf.core.extendedMetaClasses");
+				if (annotation == null  || annotation.getReferences().contains(object.eClass()))
+					newChildDescriptors.add
+						(createChildParameter
+							(CorePackage.Literals.EVENT_BELEMENT__EXTENSIONS,
+							 CoreextensionFactory.eINSTANCE.createEventCases()));
+
+				return null;
+			}
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			@Override
 			public Object caseAnnotation(Annotation object) {
 			
 			EAnnotation annotation = null;
@@ -328,6 +396,22 @@ public class CoreextensionItemProviderAdapterFactory extends CoreextensionAdapte
 						(createChildParameter
 							(CorePackage.Literals.ANNOTATION__CONTENTS,
 							 CoreextensionFactory.eINSTANCE.createTypedParameter()));
+
+				
+				annotation = CoreextensionPackage.Literals.EVENT_CASES.getEAnnotation("org.eventb.emf.core.extendedMetaClasses");
+				if (annotation == null  || annotation.getReferences().contains(object.eClass()))
+					newChildDescriptors.add
+						(createChildParameter
+							(CorePackage.Literals.ANNOTATION__CONTENTS,
+							 CoreextensionFactory.eINSTANCE.createEventCases()));
+
+				
+				annotation = CoreextensionPackage.Literals.FORMAL_PARAMETER.getEAnnotation("org.eventb.emf.core.extendedMetaClasses");
+				if (annotation == null  || annotation.getReferences().contains(object.eClass()))
+					newChildDescriptors.add
+						(createChildParameter
+							(CorePackage.Literals.ANNOTATION__CONTENTS,
+							 CoreextensionFactory.eINSTANCE.createFormalParameter()));
 
 				return null;
 			}
@@ -420,6 +504,14 @@ public class CoreextensionItemProviderAdapterFactory extends CoreextensionAdapte
 						(createChildParameter
 							(MachinePackage.Literals.EVENT__PARAMETERS,
 							 CoreextensionFactory.eINSTANCE.createTypedParameter()));
+
+				
+				annotation = CoreextensionPackage.Literals.FORMAL_PARAMETER.getEAnnotation("org.eventb.emf.core.extendedMetaClasses");
+				if (annotation == null  || annotation.getReferences().contains(object.eClass()))
+					newChildDescriptors.add
+						(createChildParameter
+							(MachinePackage.Literals.EVENT__PARAMETERS,
+							 CoreextensionFactory.eINSTANCE.createFormalParameter()));
 
 				return null;
 			}

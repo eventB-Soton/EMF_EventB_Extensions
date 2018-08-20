@@ -7,6 +7,7 @@
  */
 package ac.soton.eventb.emf.core.extension.coreextension.impl;
 
+import ac.soton.eventb.emf.core.extension.coreextension.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -31,7 +32,7 @@ public class CoreextensionFactoryImpl extends EFactoryImpl implements Coreextens
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright (c) 2012/13 - University of Southampton.\rAll rights reserved. This program and the accompanying materials  are made\ravailable under the terms of the Eclipse Public License v1.0 which accompanies this \rdistribution, and is available at http://www.eclipse.org/legal/epl-v10.html\n";
+	public static final String copyright = "Copyright (c) 2012-2014 - University of Southampton.\rAll rights reserved. This program and the accompanying materials  are made\ravailable under the terms of the Eclipse Public License v1.0 which accompanies this \rdistribution, and is available at http://www.eclipse.org/legal/epl-v10.html\n";
 
 	/**
 	 * Creates the default factory implementation.
@@ -71,6 +72,8 @@ public class CoreextensionFactoryImpl extends EFactoryImpl implements Coreextens
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case CoreextensionPackage.TYPED_PARAMETER: return createTypedParameter();
+			case CoreextensionPackage.EVENT_CASES: return createEventCases();
+			case CoreextensionPackage.FORMAL_PARAMETER: return createFormalParameter();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -86,6 +89,8 @@ public class CoreextensionFactoryImpl extends EFactoryImpl implements Coreextens
 		switch (eDataType.getClassifierID()) {
 			case CoreextensionPackage.DATA_KIND:
 				return createDataKindFromString(eDataType, initialValue);
+			case CoreextensionPackage.INOUT:
+				return createINOUTFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -101,6 +106,8 @@ public class CoreextensionFactoryImpl extends EFactoryImpl implements Coreextens
 		switch (eDataType.getClassifierID()) {
 			case CoreextensionPackage.DATA_KIND:
 				return convertDataKindToString(eDataType, instanceValue);
+			case CoreextensionPackage.INOUT:
+				return convertINOUTToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -121,6 +128,26 @@ public class CoreextensionFactoryImpl extends EFactoryImpl implements Coreextens
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EventCases createEventCases() {
+		EventCasesImpl eventCases = new EventCasesImpl();
+		return eventCases;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FormalParameter createFormalParameter() {
+		FormalParameterImpl formalParameter = new FormalParameterImpl();
+		return formalParameter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public DataKind createDataKindFromString(EDataType eDataType, String initialValue) {
 		DataKind result = DataKind.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
@@ -133,6 +160,26 @@ public class CoreextensionFactoryImpl extends EFactoryImpl implements Coreextens
 	 * @generated
 	 */
 	public String convertDataKindToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public INOUT createINOUTFromString(EDataType eDataType, String initialValue) {
+		INOUT result = INOUT.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertINOUTToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

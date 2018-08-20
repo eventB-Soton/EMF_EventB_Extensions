@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.eventb.emf.core.CorePackage;
 import org.eventb.emf.core.machine.MachinePackage;
@@ -27,8 +28,11 @@ import ac.soton.eventb.emf.core.extension.coreextension.EventBLabeled;
 import ac.soton.eventb.emf.core.extension.coreextension.EventBNamedCommentedDataElaborationElement;
 import ac.soton.eventb.emf.core.extension.coreextension.EventBNamedCommentedRelationDataElaborationElement;
 import ac.soton.eventb.emf.core.extension.coreextension.EventBRelationKind;
+import ac.soton.eventb.emf.core.extension.coreextension.EventCases;
+import ac.soton.eventb.emf.core.extension.coreextension.FormalParameter;
 import ac.soton.eventb.emf.core.extension.coreextension.Type;
 import ac.soton.eventb.emf.core.extension.coreextension.TypedParameter;
+import org.eclipse.emf.common.util.URI;
 
 /**
  * <!-- begin-user-doc -->
@@ -42,7 +46,7 @@ public class CoreextensionPackageImpl extends EPackageImpl implements Coreextens
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright (c) 2012/13 - University of Southampton.\rAll rights reserved. This program and the accompanying materials  are made\ravailable under the terms of the Eclipse Public License v1.0 which accompanies this \rdistribution, and is available at http://www.eclipse.org/legal/epl-v10.html\n";
+	public static final String copyright = "Copyright (c) 2012-2014 - University of Southampton.\rAll rights reserved. This program and the accompanying materials  are made\ravailable under the terms of the Eclipse Public License v1.0 which accompanies this \rdistribution, and is available at http://www.eclipse.org/legal/epl-v10.html\n";
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -119,7 +123,28 @@ public class CoreextensionPackageImpl extends EPackageImpl implements Coreextens
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass eventCasesEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass formalParameterEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum dataKindEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum inoutEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -168,6 +193,7 @@ public class CoreextensionPackageImpl extends EPackageImpl implements Coreextens
 		isInited = true;
 
 		// Initialize simple dependencies
+		EcorePackage.eINSTANCE.eClass();
 		CorePackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
@@ -411,8 +437,62 @@ public class CoreextensionPackageImpl extends EPackageImpl implements Coreextens
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getEventCases() {
+		return eventCasesEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEventCases_FormalParameters() {
+		return (EReference)eventCasesEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEventCases_Events() {
+		return (EReference)eventCasesEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getFormalParameter() {
+		return formalParameterEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getFormalParameter_Direction() {
+		return (EAttribute)formalParameterEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getDataKind() {
 		return dataKindEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getINOUT() {
+		return inoutEEnum;
 	}
 
 	/**
@@ -477,8 +557,16 @@ public class CoreextensionPackageImpl extends EPackageImpl implements Coreextens
 
 		eventBNamedCommentedRelationDataElaborationElementEClass = createEClass(EVENT_BNAMED_COMMENTED_RELATION_DATA_ELABORATION_ELEMENT);
 
+		eventCasesEClass = createEClass(EVENT_CASES);
+		createEReference(eventCasesEClass, EVENT_CASES__FORMAL_PARAMETERS);
+		createEReference(eventCasesEClass, EVENT_CASES__EVENTS);
+
+		formalParameterEClass = createEClass(FORMAL_PARAMETER);
+		createEAttribute(formalParameterEClass, FORMAL_PARAMETER__DIRECTION);
+
 		// Create enums
 		dataKindEEnum = createEEnum(DATA_KIND);
+		inoutEEnum = createEEnum(INOUT);
 	}
 
 	/**
@@ -523,6 +611,9 @@ public class CoreextensionPackageImpl extends EPackageImpl implements Coreextens
 		eventBNamedCommentedDataElaborationElementEClass.getESuperTypes().add(this.getEventBDataElaboration());
 		eventBNamedCommentedRelationDataElaborationElementEClass.getESuperTypes().add(this.getEventBNamedCommentedDataElaborationElement());
 		eventBNamedCommentedRelationDataElaborationElementEClass.getESuperTypes().add(this.getEventBRelationKind());
+		eventCasesEClass.getESuperTypes().add(theCorePackage.getEventBNamedCommentedElement());
+		eventCasesEClass.getESuperTypes().add(theCorePackage.getAbstractExtension());
+		formalParameterEClass.getESuperTypes().add(theMachinePackage.getParameter());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(typedParameterEClass, TypedParameter.class, "TypedParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -559,14 +650,47 @@ public class CoreextensionPackageImpl extends EPackageImpl implements Coreextens
 
 		initEClass(eventBNamedCommentedRelationDataElaborationElementEClass, EventBNamedCommentedRelationDataElaborationElement.class, "EventBNamedCommentedRelationDataElaborationElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		initEClass(eventCasesEClass, EventCases.class, "EventCases", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEventCases_FormalParameters(), this.getFormalParameter(), null, "formalParameters", null, 0, -1, EventCases.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEventCases_Events(), theMachinePackage.getEvent(), null, "events", null, 0, -1, EventCases.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(formalParameterEClass, FormalParameter.class, "FormalParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getFormalParameter_Direction(), this.getINOUT(), "direction", null, 1, 1, FormalParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		// Initialize enums and add enum literals
 		initEEnum(dataKindEEnum, DataKind.class, "DataKind");
 		addEEnumLiteral(dataKindEEnum, DataKind.SET);
 		addEEnumLiteral(dataKindEEnum, DataKind.CONSTANT);
 		addEEnumLiteral(dataKindEEnum, DataKind.VARIABLE);
 
+		initEEnum(inoutEEnum, ac.soton.eventb.emf.core.extension.coreextension.INOUT.class, "INOUT");
+		addEEnumLiteral(inoutEEnum, ac.soton.eventb.emf.core.extension.coreextension.INOUT.IN);
+		addEEnumLiteral(inoutEEnum, ac.soton.eventb.emf.core.extension.coreextension.INOUT.OUT);
+
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// org.eventb.emf.core.extendedMetaClasses
+		createOrgAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>org.eventb.emf.core.extendedMetaClasses</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createOrgAnnotations() {
+		String source = "org.eventb.emf.core.extendedMetaClasses";		
+		addAnnotation
+		  (eventCasesEClass, 
+		   source, 
+		   new String[] {
+		   },
+		   new URI[] {
+			 URI.createURI(CorePackage.eNS_URI).appendFragment("//machine/Machine")
+		   });
 	}
 
 } //CoreextensionPackageImpl

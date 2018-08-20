@@ -32,7 +32,20 @@
             class="ac.soton.eventb.emf.core.extension.coreextension.provider.CoreextensionItemProviderAdapterFactory$CoreChildCreationExtender"/>
       <extender
             uri="http://emf.eventb.org/models/core/machine/2014"
-            class="ac.soton.eventb.emf.core.extension.coreextension.provider.CoreextensionItemProviderAdapterFactory$MachineChildCreationExtender"/>
+            class="ac.soton.eventb.emf.core.extension.coreextension.provider.CoreextensionItemProviderAdapterFactory$CoreChildCreationExtender"/>
+   </extension>
+   <extension
+         point="org.eventb.emf.persistence.synchroniser">
+      <emfPackage
+            name="Event Cases Package"
+            nsURI="http://soton.ac.uk/models/eventb/coreextension/2014">
+         <synchroniser
+               emf_class="EventCases"
+               name="Event Cases Synchroniser"
+               rodin_id="ac.soton.eventb.emf.core.extension.persistence.serialisedExtension"
+               synchroniser_class="ac.soton.eventb.emf.core.extension.persistence.SerialisedExtensionSynchroniser">
+         </synchroniser>
+      </emfPackage>
    </extension>
 
 </plugin>

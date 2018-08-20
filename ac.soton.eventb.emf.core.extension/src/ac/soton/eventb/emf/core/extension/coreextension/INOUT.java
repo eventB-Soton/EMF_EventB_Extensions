@@ -1,9 +1,11 @@
 /**
- * Copyright (c) 2012/13 - University of Southampton.
+ * Copyright (c) 2012-2014 - University of Southampton.
  * All rights reserved. This program and the accompanying materials  are made
  * available under the terms of the Eclipse Public License v1.0 which accompanies this 
  * distribution, and is available at http://www.eclipse.org/legal/epl-v10.html
  * 
+ *
+ * $Id$
  */
 package ac.soton.eventb.emf.core.extension.coreextension;
 
@@ -15,43 +17,33 @@ import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the literals of the enumeration '<em><b>Data Kind</b></em>',
+ * A representation of the literals of the enumeration '<em><b>INOUT</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see ac.soton.eventb.emf.core.extension.coreextension.CoreextensionPackage#getDataKind()
+ * @see ac.soton.eventb.emf.core.extension.coreextension.CoreextensionPackage#getINOUT()
  * @model
  * @generated
  */
-public enum DataKind implements Enumerator {
+public enum INOUT implements Enumerator {
 	/**
-	 * The '<em><b>SET</b></em>' literal object.
+	 * The '<em><b>In</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #SET_VALUE
+	 * @see #IN_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	SET(0, "SET", "Carrier set"),
+	IN(0, "in", "in"),
 
 	/**
-	 * The '<em><b>CONSTANT</b></em>' literal object.
+	 * The '<em><b>Out</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #CONSTANT_VALUE
+	 * @see #OUT_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	CONSTANT(1, "CONSTANT", "Constant"),
-
-	/**
-	 * The '<em><b>VARIABLE</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #VARIABLE_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	VARIABLE(2, "VARIABLE", "Variable");
+	OUT(1, "out", "out");
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -61,80 +53,64 @@ public enum DataKind implements Enumerator {
 	public static final String copyright = "Copyright (c) 2012-2014 - University of Southampton.\rAll rights reserved. This program and the accompanying materials  are made\ravailable under the terms of the Eclipse Public License v1.0 which accompanies this \rdistribution, and is available at http://www.eclipse.org/legal/epl-v10.html\n";
 
 	/**
-	 * The '<em><b>SET</b></em>' literal value.
+	 * The '<em><b>In</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>SET</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>In</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #SET
-	 * @model literal="Carrier set"
+	 * @see #IN
+	 * @model name="in"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SET_VALUE = 0;
+	public static final int IN_VALUE = 0;
 
 	/**
-	 * The '<em><b>CONSTANT</b></em>' literal value.
+	 * The '<em><b>Out</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>CONSTANT</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Out</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #CONSTANT
-	 * @model literal="Constant"
+	 * @see #OUT
+	 * @model name="out"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int CONSTANT_VALUE = 1;
+	public static final int OUT_VALUE = 1;
 
 	/**
-	 * The '<em><b>VARIABLE</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>VARIABLE</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #VARIABLE
-	 * @model literal="Variable"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int VARIABLE_VALUE = 2;
-
-	/**
-	 * An array of all the '<em><b>Data Kind</b></em>' enumerators.
+	 * An array of all the '<em><b>INOUT</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final DataKind[] VALUES_ARRAY =
-		new DataKind[] {
-			SET,
-			CONSTANT,
-			VARIABLE,
+	private static final INOUT[] VALUES_ARRAY =
+		new INOUT[] {
+			IN,
+			OUT,
 		};
 
 	/**
-	 * A public read-only list of all the '<em><b>Data Kind</b></em>' enumerators.
+	 * A public read-only list of all the '<em><b>INOUT</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<DataKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<INOUT> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
-	 * Returns the '<em><b>Data Kind</b></em>' literal with the specified literal value.
+	 * Returns the '<em><b>INOUT</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static DataKind get(String literal) {
+	public static INOUT get(String literal) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			DataKind result = VALUES_ARRAY[i];
+			INOUT result = VALUES_ARRAY[i];
 			if (result.toString().equals(literal)) {
 				return result;
 			}
@@ -143,14 +119,14 @@ public enum DataKind implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>Data Kind</b></em>' literal with the specified name.
+	 * Returns the '<em><b>INOUT</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static DataKind getByName(String name) {
+	public static INOUT getByName(String name) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			DataKind result = VALUES_ARRAY[i];
+			INOUT result = VALUES_ARRAY[i];
 			if (result.getName().equals(name)) {
 				return result;
 			}
@@ -159,16 +135,15 @@ public enum DataKind implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>Data Kind</b></em>' literal with the specified integer value.
+	 * Returns the '<em><b>INOUT</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static DataKind get(int value) {
+	public static INOUT get(int value) {
 		switch (value) {
-			case SET_VALUE: return SET;
-			case CONSTANT_VALUE: return CONSTANT;
-			case VARIABLE_VALUE: return VARIABLE;
+			case IN_VALUE: return IN;
+			case OUT_VALUE: return OUT;
 		}
 		return null;
 	}
@@ -200,7 +175,7 @@ public enum DataKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private DataKind(int value, String name, String literal) {
+	private INOUT(int value, String name, String literal) {
 		this.value = value;
 		this.name = name;
 		this.literal = literal;
@@ -244,4 +219,4 @@ public enum DataKind implements Enumerator {
 		return literal;
 	}
 	
-} //DataKind
+} //INOUT

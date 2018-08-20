@@ -36,7 +36,7 @@ public interface CoreextensionPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String copyright = "Copyright (c) 2012/13 - University of Southampton.\rAll rights reserved. This program and the accompanying materials  are made\ravailable under the terms of the Eclipse Public License v1.0 which accompanies this \rdistribution, and is available at http://www.eclipse.org/legal/epl-v10.html\n";
+	String copyright = "Copyright (c) 2012-2014 - University of Southampton.\rAll rights reserved. This program and the accompanying materials  are made\ravailable under the terms of the Eclipse Public License v1.0 which accompanies this \rdistribution, and is available at http://www.eclipse.org/legal/epl-v10.html\n";
 
 	/**
 	 * The package name.
@@ -937,6 +937,242 @@ public interface CoreextensionPackage extends EPackage {
 	int EVENT_BNAMED_COMMENTED_RELATION_DATA_ELABORATION_ELEMENT_FEATURE_COUNT = EVENT_BNAMED_COMMENTED_DATA_ELABORATION_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
+	 * The meta object id for the '{@link ac.soton.eventb.emf.core.extension.coreextension.impl.EventCasesImpl <em>Event Cases</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ac.soton.eventb.emf.core.extension.coreextension.impl.EventCasesImpl
+	 * @see ac.soton.eventb.emf.core.extension.coreextension.impl.CoreextensionPackageImpl#getEventCases()
+	 * @generated
+	 */
+	int EVENT_CASES = 10;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT_CASES__ANNOTATIONS = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT__ANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT_CASES__EXTENSIONS = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT__EXTENSIONS;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' map.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT_CASES__ATTRIBUTES = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT__ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Reference</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT_CASES__REFERENCE = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT__REFERENCE;
+
+	/**
+	 * The feature id for the '<em><b>Generated</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT_CASES__GENERATED = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT__GENERATED;
+
+	/**
+	 * The feature id for the '<em><b>Local Generated</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT_CASES__LOCAL_GENERATED = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT__LOCAL_GENERATED;
+
+	/**
+	 * The feature id for the '<em><b>Internal Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT_CASES__INTERNAL_ID = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT__INTERNAL_ID;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT_CASES__COMMENT = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT_CASES__NAME = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Extension Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT_CASES__EXTENSION_ID = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Formal Parameters</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT_CASES__FORMAL_PARAMETERS = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Events</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT_CASES__EVENTS = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Event Cases</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT_CASES_FEATURE_COUNT = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The meta object id for the '{@link ac.soton.eventb.emf.core.extension.coreextension.impl.FormalParameterImpl <em>Formal Parameter</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ac.soton.eventb.emf.core.extension.coreextension.impl.FormalParameterImpl
+	 * @see ac.soton.eventb.emf.core.extension.coreextension.impl.CoreextensionPackageImpl#getFormalParameter()
+	 * @generated
+	 */
+	int FORMAL_PARAMETER = 11;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORMAL_PARAMETER__ANNOTATIONS = MachinePackage.PARAMETER__ANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORMAL_PARAMETER__EXTENSIONS = MachinePackage.PARAMETER__EXTENSIONS;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' map.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORMAL_PARAMETER__ATTRIBUTES = MachinePackage.PARAMETER__ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Reference</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORMAL_PARAMETER__REFERENCE = MachinePackage.PARAMETER__REFERENCE;
+
+	/**
+	 * The feature id for the '<em><b>Generated</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORMAL_PARAMETER__GENERATED = MachinePackage.PARAMETER__GENERATED;
+
+	/**
+	 * The feature id for the '<em><b>Local Generated</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORMAL_PARAMETER__LOCAL_GENERATED = MachinePackage.PARAMETER__LOCAL_GENERATED;
+
+	/**
+	 * The feature id for the '<em><b>Internal Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORMAL_PARAMETER__INTERNAL_ID = MachinePackage.PARAMETER__INTERNAL_ID;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORMAL_PARAMETER__COMMENT = MachinePackage.PARAMETER__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORMAL_PARAMETER__NAME = MachinePackage.PARAMETER__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Direction</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORMAL_PARAMETER__DIRECTION = MachinePackage.PARAMETER_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Formal Parameter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORMAL_PARAMETER_FEATURE_COUNT = MachinePackage.PARAMETER_FEATURE_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link ac.soton.eventb.emf.core.extension.coreextension.DataKind <em>Data Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -944,7 +1180,18 @@ public interface CoreextensionPackage extends EPackage {
 	 * @see ac.soton.eventb.emf.core.extension.coreextension.impl.CoreextensionPackageImpl#getDataKind()
 	 * @generated
 	 */
-	int DATA_KIND = 10;
+	int DATA_KIND = 12;
+
+
+	/**
+	 * The meta object id for the '{@link ac.soton.eventb.emf.core.extension.coreextension.INOUT <em>INOUT</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ac.soton.eventb.emf.core.extension.coreextension.INOUT
+	 * @see ac.soton.eventb.emf.core.extension.coreextension.impl.CoreextensionPackageImpl#getINOUT()
+	 * @generated
+	 */
+	int INOUT = 13;
 
 
 	/**
@@ -1207,6 +1454,59 @@ public interface CoreextensionPackage extends EPackage {
 	EClass getEventBNamedCommentedRelationDataElaborationElement();
 
 	/**
+	 * Returns the meta object for class '{@link ac.soton.eventb.emf.core.extension.coreextension.EventCases <em>Event Cases</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Event Cases</em>'.
+	 * @see ac.soton.eventb.emf.core.extension.coreextension.EventCases
+	 * @generated
+	 */
+	EClass getEventCases();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link ac.soton.eventb.emf.core.extension.coreextension.EventCases#getFormalParameters <em>Formal Parameters</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Formal Parameters</em>'.
+	 * @see ac.soton.eventb.emf.core.extension.coreextension.EventCases#getFormalParameters()
+	 * @see #getEventCases()
+	 * @generated
+	 */
+	EReference getEventCases_FormalParameters();
+
+	/**
+	 * Returns the meta object for the reference list '{@link ac.soton.eventb.emf.core.extension.coreextension.EventCases#getEvents <em>Events</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Events</em>'.
+	 * @see ac.soton.eventb.emf.core.extension.coreextension.EventCases#getEvents()
+	 * @see #getEventCases()
+	 * @generated
+	 */
+	EReference getEventCases_Events();
+
+	/**
+	 * Returns the meta object for class '{@link ac.soton.eventb.emf.core.extension.coreextension.FormalParameter <em>Formal Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Formal Parameter</em>'.
+	 * @see ac.soton.eventb.emf.core.extension.coreextension.FormalParameter
+	 * @generated
+	 */
+	EClass getFormalParameter();
+
+	/**
+	 * Returns the meta object for the attribute '{@link ac.soton.eventb.emf.core.extension.coreextension.FormalParameter#getDirection <em>Direction</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Direction</em>'.
+	 * @see ac.soton.eventb.emf.core.extension.coreextension.FormalParameter#getDirection()
+	 * @see #getFormalParameter()
+	 * @generated
+	 */
+	EAttribute getFormalParameter_Direction();
+
+	/**
 	 * Returns the meta object for enum '{@link ac.soton.eventb.emf.core.extension.coreextension.DataKind <em>Data Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1215,6 +1515,16 @@ public interface CoreextensionPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getDataKind();
+
+	/**
+	 * Returns the meta object for enum '{@link ac.soton.eventb.emf.core.extension.coreextension.INOUT <em>INOUT</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>INOUT</em>'.
+	 * @see ac.soton.eventb.emf.core.extension.coreextension.INOUT
+	 * @generated
+	 */
+	EEnum getINOUT();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1456,6 +1766,50 @@ public interface CoreextensionPackage extends EPackage {
 		EClass EVENT_BNAMED_COMMENTED_RELATION_DATA_ELABORATION_ELEMENT = eINSTANCE.getEventBNamedCommentedRelationDataElaborationElement();
 
 		/**
+		 * The meta object literal for the '{@link ac.soton.eventb.emf.core.extension.coreextension.impl.EventCasesImpl <em>Event Cases</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see ac.soton.eventb.emf.core.extension.coreextension.impl.EventCasesImpl
+		 * @see ac.soton.eventb.emf.core.extension.coreextension.impl.CoreextensionPackageImpl#getEventCases()
+		 * @generated
+		 */
+		EClass EVENT_CASES = eINSTANCE.getEventCases();
+
+		/**
+		 * The meta object literal for the '<em><b>Formal Parameters</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EVENT_CASES__FORMAL_PARAMETERS = eINSTANCE.getEventCases_FormalParameters();
+
+		/**
+		 * The meta object literal for the '<em><b>Events</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EVENT_CASES__EVENTS = eINSTANCE.getEventCases_Events();
+
+		/**
+		 * The meta object literal for the '{@link ac.soton.eventb.emf.core.extension.coreextension.impl.FormalParameterImpl <em>Formal Parameter</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see ac.soton.eventb.emf.core.extension.coreextension.impl.FormalParameterImpl
+		 * @see ac.soton.eventb.emf.core.extension.coreextension.impl.CoreextensionPackageImpl#getFormalParameter()
+		 * @generated
+		 */
+		EClass FORMAL_PARAMETER = eINSTANCE.getFormalParameter();
+
+		/**
+		 * The meta object literal for the '<em><b>Direction</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FORMAL_PARAMETER__DIRECTION = eINSTANCE.getFormalParameter_Direction();
+
+		/**
 		 * The meta object literal for the '{@link ac.soton.eventb.emf.core.extension.coreextension.DataKind <em>Data Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1464,6 +1818,16 @@ public interface CoreextensionPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum DATA_KIND = eINSTANCE.getDataKind();
+
+		/**
+		 * The meta object literal for the '{@link ac.soton.eventb.emf.core.extension.coreextension.INOUT <em>INOUT</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see ac.soton.eventb.emf.core.extension.coreextension.INOUT
+		 * @see ac.soton.eventb.emf.core.extension.coreextension.impl.CoreextensionPackageImpl#getINOUT()
+		 * @generated
+		 */
+		EEnum INOUT = eINSTANCE.getINOUT();
 
 	}
 

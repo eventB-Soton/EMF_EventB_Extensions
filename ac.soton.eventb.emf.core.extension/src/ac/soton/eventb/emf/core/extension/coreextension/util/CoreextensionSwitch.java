@@ -7,10 +7,12 @@
  */
 package ac.soton.eventb.emf.core.extension.coreextension.util;
 
+import ac.soton.eventb.emf.core.extension.coreextension.*;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+import org.eventb.emf.core.AbstractExtension;
 import org.eventb.emf.core.EventBCommented;
 import org.eventb.emf.core.EventBCommentedElement;
 import org.eventb.emf.core.EventBElement;
@@ -50,7 +52,7 @@ public class CoreextensionSwitch<T> {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright (c) 2012/13 - University of Southampton.\rAll rights reserved. This program and the accompanying materials  are made\ravailable under the terms of the Eclipse Public License v1.0 which accompanies this \rdistribution, and is available at http://www.eclipse.org/legal/epl-v10.html\n";
+	public static final String copyright = "Copyright (c) 2012-2014 - University of Southampton.\rAll rights reserved. This program and the accompanying materials  are made\ravailable under the terms of the Eclipse Public License v1.0 which accompanies this \rdistribution, and is available at http://www.eclipse.org/legal/epl-v10.html\n";
 
 	/**
 	 * The cached model package
@@ -209,6 +211,32 @@ public class CoreextensionSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case CoreextensionPackage.EVENT_CASES: {
+				EventCases eventCases = (EventCases)theEObject;
+				T result = caseEventCases(eventCases);
+				if (result == null) result = caseEventBNamedCommentedElement(eventCases);
+				if (result == null) result = caseAbstractExtension(eventCases);
+				if (result == null) result = caseEventBCommentedElement(eventCases);
+				if (result == null) result = caseEventBNamed(eventCases);
+				if (result == null) result = caseEventBElement(eventCases);
+				if (result == null) result = caseEventBCommented(eventCases);
+				if (result == null) result = caseEventBObject(eventCases);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CoreextensionPackage.FORMAL_PARAMETER: {
+				FormalParameter formalParameter = (FormalParameter)theEObject;
+				T result = caseFormalParameter(formalParameter);
+				if (result == null) result = caseParameter(formalParameter);
+				if (result == null) result = caseEventBNamedCommentedElement(formalParameter);
+				if (result == null) result = caseEventBCommentedElement(formalParameter);
+				if (result == null) result = caseEventBNamed(formalParameter);
+				if (result == null) result = caseEventBElement(formalParameter);
+				if (result == null) result = caseEventBCommented(formalParameter);
+				if (result == null) result = caseEventBObject(formalParameter);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -364,6 +392,36 @@ public class CoreextensionSwitch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Event Cases</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Event Cases</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEventCases(EventCases object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Formal Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Formal Parameter</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFormalParameter(FormalParameter object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Event BObject</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -465,6 +523,21 @@ public class CoreextensionSwitch<T> {
 	 * @generated
 	 */
 	public T caseParameter(Parameter object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Abstract Extension</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Abstract Extension</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAbstractExtension(AbstractExtension object) {
 		return null;
 	}
 

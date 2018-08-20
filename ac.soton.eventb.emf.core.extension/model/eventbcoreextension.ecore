@@ -56,4 +56,19 @@
       abstract="true" eSuperTypes="../../org.eventb.emf.core/model/eventbcore.ecore#//EventBNamedCommentedElement #//EventBDataElaboration"/>
   <eClassifiers xsi:type="ecore:EClass" name="EventBNamedCommentedRelationDataElaborationElement"
       abstract="true" eSuperTypes="#//EventBNamedCommentedDataElaborationElement #//EventBRelationKind"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EventCases" eSuperTypes="../../org.eventb.emf.core/model/eventbcore.ecore#//EventBNamedCommentedElement ../../org.eventb.emf.core/model/eventbcore.ecore#//AbstractExtension">
+    <eAnnotations source="org.eventb.emf.core.extendedMetaClasses" references="../../org.eventb.emf.core/model/eventbcore.ecore#//machine/Machine"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="formalParameters" upperBound="-1"
+        eType="#//FormalParameter" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="events" upperBound="-1"
+        eType="ecore:EClass ../../org.eventb.emf.core/model/eventbcore.ecore#//machine/Event"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FormalParameter" eSuperTypes="../../org.eventb.emf.core/model/eventbcore.ecore#//machine/Parameter">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="direction" lowerBound="1"
+        eType="#//INOUT"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="INOUT">
+    <eLiterals name="in"/>
+    <eLiterals name="out" value="1"/>
+  </eClassifiers>
 </ecore:EPackage>

@@ -12,7 +12,7 @@ package ac.soton.eventb.emf.core.extension.coreextension.provider;
 
 import ac.soton.eventb.emf.core.extension.coreextension.CoreextensionFactory;
 import ac.soton.eventb.emf.core.extension.coreextension.CoreextensionPackage;
-import ac.soton.eventb.emf.core.extension.coreextension.TypedParameter;
+import ac.soton.eventb.emf.core.extension.coreextension.FormalParameter;
 
 import java.util.Collection;
 import java.util.List;
@@ -21,6 +21,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EObject;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemColorProvider;
@@ -33,15 +34,16 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import org.eventb.emf.core.CorePackage;
+
 import org.eventb.emf.core.machine.provider.ParameterItemProvider;
 
 /**
- * This is the item provider adapter for a {@link ac.soton.eventb.emf.core.extension.coreextension.TypedParameter} object.
+ * This is the item provider adapter for a {@link ac.soton.eventb.emf.core.extension.coreextension.FormalParameter} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class TypedParameterItemProvider
+public class FormalParameterItemProvider
 	extends ParameterItemProvider
 	implements
 		IEditingDomainItemProvider,
@@ -63,7 +65,7 @@ public class TypedParameterItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TypedParameterItemProvider(AdapterFactory adapterFactory) {
+	public FormalParameterItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -78,25 +80,25 @@ public class TypedParameterItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addTypePropertyDescriptor(object);
+			addDirectionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Type feature.
+	 * This adds a property descriptor for the Direction feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addTypePropertyDescriptor(Object object) {
+	protected void addDirectionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Type_type_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Type_type_feature", "_UI_Type_type"),
-				 CoreextensionPackage.Literals.TYPE__TYPE,
+				 getString("_UI_FormalParameter_direction_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_FormalParameter_direction_feature", "_UI_FormalParameter_type"),
+				 CoreextensionPackage.Literals.FORMAL_PARAMETER__DIRECTION,
 				 true,
 				 false,
 				 false,
@@ -106,14 +108,14 @@ public class TypedParameterItemProvider
 	}
 
 	/**
-	 * This returns TypedParameter.gif.
+	 * This returns FormalParameter.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/TypedParameter"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/FormalParameter"));
 	}
 
 	/**
@@ -124,10 +126,10 @@ public class TypedParameterItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((TypedParameter)object).getName();
+		String label = ((FormalParameter)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_TypedParameter_type") :
-			getString("_UI_TypedParameter_type") + " " + label;
+			getString("_UI_FormalParameter_type") :
+			getString("_UI_FormalParameter_type") + " " + label;
 	}
 
 	/**
@@ -141,8 +143,8 @@ public class TypedParameterItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(TypedParameter.class)) {
-			case CoreextensionPackage.TYPED_PARAMETER__TYPE:
+		switch (notification.getFeatureID(FormalParameter.class)) {
+			case CoreextensionPackage.FORMAL_PARAMETER__DIRECTION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
