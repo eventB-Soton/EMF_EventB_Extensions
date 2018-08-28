@@ -92,11 +92,12 @@ public abstract class EventBLabeledImpl extends EObjectImpl implements EventBLab
 		if (labelFeature != null && labelFeature.getEType() == EcorePackage.eINSTANCE.getEString()) 
 			return  (String)thisElement.eGet(labelFeature);
 		//otherwise look for a reference to something that may have a suitable label
-		labelFeature = thisElement.eClass().getEStructuralFeature("refines");
 		if (labelFeature == null) 
-			labelFeature = thisElement.eClass().getEStructuralFeature("inherits");
+			labelFeature = thisElement.eClass().getEStructuralFeature("elaborates");
 		if (labelFeature == null) 
-			labelFeature = thisElement.eClass().getEStructuralFeature("elaborates");		
+			labelFeature = thisElement.eClass().getEStructuralFeature("refines");
+		if (labelFeature == null) 
+			labelFeature = thisElement.eClass().getEStructuralFeature("inherits");		
 		if (labelFeature != null)
 			label = thisElement.eGet(labelFeature);
 		if (labelFeature.isMany() && label instanceof EList){
