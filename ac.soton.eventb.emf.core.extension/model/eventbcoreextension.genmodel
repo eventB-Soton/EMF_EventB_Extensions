@@ -41,6 +41,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eventbcoreextension.ecore#//EventBEventGroup/actions"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eventbcoreextension.ecore#//EventBEventGroup/witnesses"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eventbcoreextension.ecore#//EventBEventGroup/refines"/>
+      <genOperations ecoreOperation="eventbcoreextension.ecore#//EventBEventGroup/getExtendedParameters"/>
+      <genOperations ecoreOperation="eventbcoreextension.ecore#//EventBEventGroup/getExtendedGuards"/>
+      <genOperations ecoreOperation="eventbcoreextension.ecore#//EventBEventGroup/getExtendedActions"/>
     </genClasses>
     <genClasses image="false" ecoreClass="eventbcoreextension.ecore#//EventBCommentedLabeledEventGroupElement"/>
     <genClasses image="false" ecoreClass="eventbcoreextension.ecore#//EventBCommentedLabeledElement"/>
