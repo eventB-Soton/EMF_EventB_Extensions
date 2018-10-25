@@ -125,6 +125,7 @@ public class EventBCommentedLabeledEventGroupElementItemProvider
 	/**
 	 * This adds a property descriptor for the Refines feature.
 	 * <!-- begin-user-doc -->
+	 * @since 2.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
