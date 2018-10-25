@@ -157,6 +157,7 @@ public interface EventBEventGroup extends EObject {
 	 * If the meaning of the '<em>Refines</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
+	 * @since 5.0
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Refines</em>' reference.
 	 * @see #setRefines(EventBEventGroup)
@@ -169,6 +170,7 @@ public interface EventBEventGroup extends EObject {
 	/**
 	 * Sets the value of the '{@link ac.soton.eventb.emf.core.extension.coreextension.EventBEventGroup#getRefines <em>Refines</em>}' reference.
 	 * <!-- begin-user-doc -->
+	 * @since 5.0
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Refines</em>' reference.
 	 * @see #getRefines()
@@ -178,6 +180,7 @@ public interface EventBEventGroup extends EObject {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 5.0
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * IF the event group isExtended and refines a valid refined eventGroup,
@@ -193,6 +196,7 @@ public interface EventBEventGroup extends EObject {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 5.0
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * IF the event group isExtended and refines a valid refined eventGroup,
@@ -208,6 +212,7 @@ public interface EventBEventGroup extends EObject {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 5.0
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * IF the event group isExtended and refines a valid refined eventGroup,

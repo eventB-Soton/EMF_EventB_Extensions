@@ -392,6 +392,7 @@ public interface CoreextensionPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Refines</b></em>' reference.
 	 * <!-- begin-user-doc -->
+	 * @since 5.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
@@ -660,6 +661,7 @@ public interface CoreextensionPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Refines</b></em>' reference.
 	 * <!-- begin-user-doc -->
+	 * @since 5.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
@@ -1180,6 +1182,7 @@ public interface CoreextensionPackage extends EPackage {
 	/**
 	 * Returns the meta object for the reference '{@link ac.soton.eventb.emf.core.extension.coreextension.EventBEventGroup#getRefines <em>Refines</em>}'.
 	 * <!-- begin-user-doc -->
+	 * @since 5.0
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Refines</em>'.
 	 * @see ac.soton.eventb.emf.core.extension.coreextension.EventBEventGroup#getRefines()
@@ -1440,6 +1443,7 @@ public interface CoreextensionPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Refines</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
+		 * @since 5.0
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */

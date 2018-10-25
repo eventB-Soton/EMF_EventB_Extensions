@@ -131,6 +131,7 @@ public abstract class EventBEventGroupImpl extends EObjectImpl implements EventB
 	/**
 	 * The cached value of the '{@link #getRefines() <em>Refines</em>}' reference.
 	 * <!-- begin-user-doc -->
+	 * @since 5.0
 	 * <!-- end-user-doc -->
 	 * @see #getRefines()
 	 * @generated
@@ -310,6 +311,7 @@ public abstract class EventBEventGroupImpl extends EObjectImpl implements EventB
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 5.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */

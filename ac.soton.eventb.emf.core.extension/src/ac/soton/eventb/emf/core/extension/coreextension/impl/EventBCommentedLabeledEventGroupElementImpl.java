@@ -131,6 +131,7 @@ public abstract class EventBCommentedLabeledEventGroupElementImpl extends EventB
 	/**
 	 * The cached value of the '{@link #getRefines() <em>Refines</em>}' reference.
 	 * <!-- begin-user-doc -->
+	 * @since 5.0
 	 * <!-- end-user-doc -->
 	 * @see #getRefines()
 	 * @generated
@@ -309,6 +310,7 @@ public abstract class EventBCommentedLabeledEventGroupElementImpl extends EventB
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * @since 5.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
