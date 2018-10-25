@@ -13,7 +13,7 @@ package ac.soton.eventb.emf.core.extension.navigatore.sorter;
 import java.text.Collator;
 
 import org.eclipse.jface.viewers.Viewer;
-import org.eclipse.jface.viewers.ViewerSorter;
+import org.eclipse.jface.viewers.ViewerComparator;
 
 /**
  * A sorter that does not sort at all. The elements are sorted by the CNF
@@ -25,7 +25,7 @@ import org.eclipse.jface.viewers.ViewerSorter;
  * 
  * COPIED FROM fr.systerel.internal.explorer.navigator.sorters
  */
-public class AntiSorter extends ViewerSorter {
+public class AntiSorter extends ViewerComparator {
 
 	public AntiSorter() {
 		// do nothing
