@@ -71,6 +71,7 @@ public abstract class AbstractElementRefiner {
 	 * REFINE = a refinement is being made as normal - refines references will be chained to the cloned element
 	 * CLONE = an alternative refinement is being made - refines references will be copied from the cloned element
 	 * BREAK = a clone is being made separate from the refinement - refines references will be cleared
+	 * @since 5.0
 	 *
 	 */
 	public enum Mode {
@@ -377,6 +378,7 @@ public abstract class AbstractElementRefiner {
 	 * @param concreteResourceURI
 	 * @param concreteComponent
 	 * @param concreteComponentName
+	 * @since 5.0
 	 */
 	@SuppressWarnings("unchecked")
 	protected void copyReferences(EObject concreteElement, Copier copier, URI abstractUri, 
@@ -460,6 +462,7 @@ public abstract class AbstractElementRefiner {
 	 * @param abstractReferencedElement
 	 * @param handling
 	 * @return
+	 * @since 5.0
 	 */
 	protected EObject getNewReferenceValue(URI abstractElementUri, EventBObject abstractElement, EventBObject abstractReferencedElement, 
 			URI concreteResourceURI, EventBNamedCommentedComponentElement concreteComponent, String concreteComponentName,

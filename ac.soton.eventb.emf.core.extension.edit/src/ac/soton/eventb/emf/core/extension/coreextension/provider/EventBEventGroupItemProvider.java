@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2012-2014 - University of Southampton.
+ * Copyright (c) 2012-2018 - University of Southampton.
  * All rights reserved. This program and the accompanying materials  are made
  * available under the terms of the Eclipse Public License v1.0 which accompanies this 
  * distribution, and is available at http://www.eclipse.org/legal/epl-v10.html
@@ -55,13 +55,6 @@ public class EventBEventGroupItemProvider
 		IItemPropertySource,
 		IItemColorProvider {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final String copyright = "Copyright (c) 2012-2014 - University of Southampton.\rAll rights reserved. This program and the accompanying materials  are made\ravailable under the terms of the Eclipse Public License v1.0 which accompanies this \rdistribution, and is available at http://www.eclipse.org/legal/epl-v10.html\n";
-
-	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -84,6 +77,7 @@ public class EventBEventGroupItemProvider
 
 			addElaboratesPropertyDescriptor(object);
 			addExtendedPropertyDescriptor(object);
+			addRefinesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -128,6 +122,29 @@ public class EventBEventGroupItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Refines feature.
+	 * <!-- begin-user-doc -->
+	 * @since 2.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRefinesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EventBEventGroup_refines_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EventBEventGroup_refines_feature", "_UI_EventBEventGroup_type"),
+				 CoreextensionPackage.Literals.EVENT_BEVENT_GROUP__REFINES,
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}

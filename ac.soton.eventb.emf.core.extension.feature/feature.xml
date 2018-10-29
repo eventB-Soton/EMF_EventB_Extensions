@@ -2,7 +2,7 @@
 <feature
       id="ac.soton.eventb.emf.core.extension.feature"
       label="%featureName"
-      version="5.4.1.qualifier"
+      version="6.0.0.qualifier"
       provider-name="%featureVendor"
       license-feature="org.rodinp.license"
       license-feature-version="1.0.0.release">
@@ -32,14 +32,14 @@
       <import plugin="org.rodinp.core" version="1.7.0" match="compatible"/>
       <import plugin="org.eventb.core" version="3.0.0" match="compatible"/>
       <import plugin="fr.systerel.explorer" version="2.0.0" match="compatible"/>
-      <import plugin="org.eventb.emf.core.edit" version="1.0.0" match="compatible"/>
       <import plugin="org.eventb.emf.persistence" version="3.4.0" match="compatible"/>
-      <import plugin="ac.soton.eventb.emf.core.extension" version="4.0.0" match="compatible"/>
       <import plugin="ac.soton.eventb.emf.core.extension.persistence" version="2.0.0" match="compatible"/>
       <import plugin="org.eclipse.emf.ecore.xmi" version="2.7.0" match="compatible"/>
       <import plugin="org.eventb.emf.persistence" version="3.3.0" match="compatible"/>
       <import plugin="org.eclipse.emf.transaction" version="1.4.0" match="compatible"/>
       <import plugin="org.eclipse.emf.edit" version="2.7.0" match="compatible"/>
+      <import plugin="org.eventb.emf.core.edit" version="2.0.0" match="compatible"/>
+      <import plugin="ac.soton.eventb.emf.core.extension" version="5.0.0" match="compatible"/>
    </requires>
 
    <plugin

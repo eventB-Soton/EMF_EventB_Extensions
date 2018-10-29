@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2012/13 - University of Southampton.
+ * Copyright (c) 2012-2018 - University of Southampton.
  * All rights reserved. This program and the accompanying materials  are made
  * available under the terms of the Eclipse Public License v1.0 which accompanies this 
  * distribution, and is available at http://www.eclipse.org/legal/epl-v10.html
@@ -28,6 +28,7 @@ import org.eventb.emf.core.machine.Witness;
  *   <li>{@link ac.soton.eventb.emf.core.extension.coreextension.EventBEventGroup#getGuards <em>Guards</em>}</li>
  *   <li>{@link ac.soton.eventb.emf.core.extension.coreextension.EventBEventGroup#getActions <em>Actions</em>}</li>
  *   <li>{@link ac.soton.eventb.emf.core.extension.coreextension.EventBEventGroup#getWitnesses <em>Witnesses</em>}</li>
+ *   <li>{@link ac.soton.eventb.emf.core.extension.coreextension.EventBEventGroup#getRefines <em>Refines</em>}</li>
  * </ul>
  * </p>
  *
@@ -36,13 +37,6 @@ import org.eventb.emf.core.machine.Witness;
  * @generated
  */
 public interface EventBEventGroup extends EObject {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	String copyright = "Copyright (c) 2012/13 - University of Southampton.\rAll rights reserved. This program and the accompanying materials  are made\ravailable under the terms of the Eclipse Public License v1.0 which accompanies this \rdistribution, and is available at http://www.eclipse.org/legal/epl-v10.html\n";
-
 	/**
 	 * Returns the value of the '<em><b>Elaborates</b></em>' reference list.
 	 * The list contents are of type {@link org.eventb.emf.core.machine.Event}.
@@ -155,5 +149,81 @@ public interface EventBEventGroup extends EObject {
 	 * @generated
 	 */
 	EList<Witness> getWitnesses();
+
+	/**
+	 * Returns the value of the '<em><b>Refines</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Refines</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * @since 5.0
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Refines</em>' reference.
+	 * @see #setRefines(EventBEventGroup)
+	 * @see ac.soton.eventb.emf.core.extension.coreextension.CoreextensionPackage#getEventBEventGroup_Refines()
+	 * @model
+	 * @generated
+	 */
+	EventBEventGroup getRefines();
+
+	/**
+	 * Sets the value of the '{@link ac.soton.eventb.emf.core.extension.coreextension.EventBEventGroup#getRefines <em>Refines</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * @since 5.0
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Refines</em>' reference.
+	 * @see #getRefines()
+	 * @generated
+	 */
+	void setRefines(EventBEventGroup value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 5.0
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * IF the event group isExtended and refines a valid refined eventGroup,
+	 * returns a list of the extended parameters,
+	 * i.e. parameters and extended parameters of the refined eventGroup.
+	 * (n.b. does NOT include the local parameters owned by this eventGroup)
+	 * <!-- end-model-doc -->
+	 * @model kind="operation" many="false"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tList&lt;TypedParameter&gt; ret = new  ArrayList&lt;TypedParameter&gt;();\n\t\tif (this.isExtended() &amp;&amp; this.getRefines()!=null &amp;&amp; this.getRefines()!=this) {\n\t\t\tret.addAll(this.getRefines().getParameters());\n\t\t\tret.addAll(this.getRefines().getExtendedParameters());\n\t\t}\n\t\treturn new BasicEList.UnmodifiableEList&lt;TypedParameter&gt;(ret.size(),ret.toArray()) ;'"
+	 * @generated
+	 */
+	EList<TypedParameter> getExtendedParameters();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 5.0
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * IF the event group isExtended and refines a valid refined eventGroup,
+	 * returns a list of the extended guards,
+	 * i.e. guards and extended guards of the refined eventGroup.
+	 * (n.b. does NOT include the local guards owned by this eventGroup)
+	 * <!-- end-model-doc -->
+	 * @model kind="operation" many="false"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tList&lt;Guard&gt; ret = new  ArrayList&lt;Guard&gt;();\n\t\tif (this.isExtended() &amp;&amp; this.getRefines()!=null &amp;&amp; this.getRefines()!=this) {\n\t\t\tret.addAll(this.getRefines().getGuards());\n\t\t\tret.addAll(this.getRefines().getExtendedGuards());\n\t\t}\n\t\treturn new BasicEList.UnmodifiableEList&lt;Guard&gt;(ret.size(),ret.toArray()) ;'"
+	 * @generated
+	 */
+	EList<Guard> getExtendedGuards();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * @since 5.0
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * IF the event group isExtended and refines a valid refined eventGroup,
+	 * returns a list of the extended actions,
+	 * i.e. actions and extended actions of the refined eventGroup.
+	 * (n.b. does NOT include the local actions owned by this eventGroup)
+	 * <!-- end-model-doc -->
+	 * @model kind="operation" many="false"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tList&lt;Action&gt; ret = new  ArrayList&lt;Action&gt;();\n\t\tif (this.isExtended() &amp;&amp; this.getRefines()!=null &amp;&amp; this.getRefines()!=this) {\n\t\t\tret.addAll(this.getRefines().getActions());\n\t\t\tret.addAll(this.getRefines().getExtendedActions());\n\t\t}\n\t\treturn new BasicEList.UnmodifiableEList&lt;Action&gt;(ret.size(),ret.toArray()) ;'"
+	 * @generated
+	 */
+	EList<Action> getExtendedActions();
 
 } // EventBEventGroup

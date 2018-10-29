@@ -31,7 +31,7 @@ public class ExtensionNavigatorItem extends PlatformObject {
 		Platform.getAdapterManager().registerAdapters(
 				new IAdapterFactory() {
 
-					@SuppressWarnings("rawtypes")
+					@SuppressWarnings({ "rawtypes", "unchecked" })
 					public Object getAdapter(Object adaptableObject,
 							Class adapterType) {
 						if (adaptableObject instanceof ExtensionNavigatorItem) {
@@ -50,7 +50,7 @@ public class ExtensionNavigatorItem extends PlatformObject {
 						return null;
 					}
 
-					@SuppressWarnings("rawtypes")
+					@SuppressWarnings({ "rawtypes", "unchecked" })
 					public Class[] getAdapterList() {
 						return supportedTypes;
 					}

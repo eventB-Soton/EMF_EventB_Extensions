@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2012/13 - University of Southampton.
+ * Copyright (c) 2012-2018 - University of Southampton.
  * All rights reserved. This program and the accompanying materials  are made
  * available under the terms of the Eclipse Public License v1.0 which accompanies this 
  * distribution, and is available at http://www.eclipse.org/legal/epl-v10.html
@@ -10,8 +10,11 @@ package ac.soton.eventb.emf.core.extension.coreextension.impl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EGenericType;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.eventb.emf.core.CorePackage;
 import org.eventb.emf.core.machine.MachinePackage;
@@ -37,13 +40,6 @@ import ac.soton.eventb.emf.core.extension.coreextension.TypedParameter;
  * @generated
  */
 public class CoreextensionPackageImpl extends EPackageImpl implements CoreextensionPackage {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final String copyright = "Copyright (c) 2012/13 - University of Southampton.\rAll rights reserved. This program and the accompanying materials  are made\ravailable under the terms of the Eclipse Public License v1.0 which accompanies this \rdistribution, and is available at http://www.eclipse.org/legal/epl-v10.html\n";
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -168,6 +164,7 @@ public class CoreextensionPackageImpl extends EPackageImpl implements Coreextens
 		isInited = true;
 
 		// Initialize simple dependencies
+		EcorePackage.eINSTANCE.eClass();
 		CorePackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
@@ -375,6 +372,15 @@ public class CoreextensionPackageImpl extends EPackageImpl implements Coreextens
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getEventBEventGroup_Refines() {
+		return (EReference)eventBEventGroupEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getEventBCommentedLabeledEventGroupElement() {
 		return eventBCommentedLabeledEventGroupElementEClass;
 	}
@@ -468,6 +474,7 @@ public class CoreextensionPackageImpl extends EPackageImpl implements Coreextens
 		createEReference(eventBEventGroupEClass, EVENT_BEVENT_GROUP__GUARDS);
 		createEReference(eventBEventGroupEClass, EVENT_BEVENT_GROUP__ACTIONS);
 		createEReference(eventBEventGroupEClass, EVENT_BEVENT_GROUP__WITNESSES);
+		createEReference(eventBEventGroupEClass, EVENT_BEVENT_GROUP__REFINES);
 
 		eventBCommentedLabeledEventGroupElementEClass = createEClass(EVENT_BCOMMENTED_LABELED_EVENT_GROUP_ELEMENT);
 
@@ -507,6 +514,7 @@ public class CoreextensionPackageImpl extends EPackageImpl implements Coreextens
 		// Obtain other dependent packages
 		MachinePackage theMachinePackage = (MachinePackage)EPackage.Registry.INSTANCE.getEPackage(MachinePackage.eNS_URI);
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
+		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -550,6 +558,25 @@ public class CoreextensionPackageImpl extends EPackageImpl implements Coreextens
 		initEReference(getEventBEventGroup_Guards(), theMachinePackage.getGuard(), null, "guards", null, 0, -1, EventBEventGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEventBEventGroup_Actions(), theMachinePackage.getAction(), null, "actions", null, 0, -1, EventBEventGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEventBEventGroup_Witnesses(), theMachinePackage.getWitness(), null, "witnesses", null, 0, -1, EventBEventGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEventBEventGroup_Refines(), this.getEventBEventGroup(), null, "refines", null, 0, 1, EventBEventGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		EOperation op = addEOperation(eventBEventGroupEClass, null, "getExtendedParameters", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EGenericType g1 = createEGenericType(theEcorePackage.getEEList());
+		EGenericType g2 = createEGenericType(this.getTypedParameter());
+		g1.getETypeArguments().add(g2);
+		initEOperation(op, g1);
+
+		op = addEOperation(eventBEventGroupEClass, null, "getExtendedGuards", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(theEcorePackage.getEEList());
+		g2 = createEGenericType(theMachinePackage.getGuard());
+		g1.getETypeArguments().add(g2);
+		initEOperation(op, g1);
+
+		op = addEOperation(eventBEventGroupEClass, null, "getExtendedActions", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(theEcorePackage.getEEList());
+		g2 = createEGenericType(theMachinePackage.getAction());
+		g1.getETypeArguments().add(g2);
+		initEOperation(op, g1);
 
 		initEClass(eventBCommentedLabeledEventGroupElementEClass, EventBCommentedLabeledEventGroupElement.class, "EventBCommentedLabeledEventGroupElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
