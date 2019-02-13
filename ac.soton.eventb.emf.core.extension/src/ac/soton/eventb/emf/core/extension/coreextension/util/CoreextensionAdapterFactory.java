@@ -471,6 +471,7 @@ public class CoreextensionAdapterFactory extends AdapterFactoryImpl {
 	 * @return the new adapter.
 	 * @see org.eventb.emf.core.AbstractExtension
 	 * @generated
+	 * @since 5.0
 	 */
 	public Adapter createAbstractExtensionAdapter() {
 		return null;

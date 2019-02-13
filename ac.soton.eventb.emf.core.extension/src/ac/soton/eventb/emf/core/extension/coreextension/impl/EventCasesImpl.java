@@ -50,6 +50,7 @@ import org.eventb.emf.core.machine.Event;
  * </p>
  *
  * @generated
+ * @since 5.0
  */
 public class EventCasesImpl extends EventBNamedCommentedElementImpl implements EventCases {
 	/**

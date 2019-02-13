@@ -33,6 +33,7 @@ import org.eventb.emf.core.machine.impl.ParameterImpl;
  * </p>
  *
  * @generated
+ * @since 5.0
  */
 public class FormalParameterImpl extends ParameterImpl implements FormalParameter {
 	/**

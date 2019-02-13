@@ -42,6 +42,7 @@ import org.eventb.emf.core.machine.provider.ParameterItemProvider;
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
+ * @since 2.0
  */
 public class FormalParameterItemProvider
 	extends ParameterItemProvider

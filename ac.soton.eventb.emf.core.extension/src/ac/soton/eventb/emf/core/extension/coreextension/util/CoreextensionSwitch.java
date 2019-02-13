@@ -401,6 +401,7 @@ public class CoreextensionSwitch<T> {
 	 * @return the result of interpreting the object as an instance of '<em>Event Cases</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
+	 * @since 5.0
 	 */
 	public T caseEventCases(EventCases object) {
 		return null;
@@ -416,6 +417,7 @@ public class CoreextensionSwitch<T> {
 	 * @return the result of interpreting the object as an instance of '<em>Formal Parameter</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
+	 * @since 5.0
 	 */
 	public T caseFormalParameter(FormalParameter object) {
 		return null;
@@ -536,6 +538,7 @@ public class CoreextensionSwitch<T> {
 	 * @return the result of interpreting the object as an instance of '<em>Abstract Extension</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
+	 * @since 5.0
 	 */
 	public T caseAbstractExtension(AbstractExtension object) {
 		return null;

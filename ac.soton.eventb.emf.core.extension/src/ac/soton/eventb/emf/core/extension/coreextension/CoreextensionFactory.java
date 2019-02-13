@@ -48,6 +48,7 @@ public interface CoreextensionFactory extends EFactory {
 	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Event Cases</em>'.
 	 * @generated
+	 * @since 5.0
 	 */
 	EventCases createEventCases();
 
@@ -57,6 +58,7 @@ public interface CoreextensionFactory extends EFactory {
 	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Formal Parameter</em>'.
 	 * @generated
+	 * @since 5.0
 	 */
 	FormalParameter createFormalParameter();
 

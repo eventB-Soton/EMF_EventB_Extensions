@@ -26,6 +26,7 @@ import org.eventb.emf.core.machine.Parameter;
  * @see ac.soton.eventb.emf.core.extension.coreextension.CoreextensionPackage#getFormalParameter()
  * @model
  * @generated
+ * @since 5.0
  */
 public interface FormalParameter extends Parameter {
 	/**

@@ -32,6 +32,7 @@ import org.eventb.emf.core.machine.Event;
  * @see ac.soton.eventb.emf.core.extension.coreextension.CoreextensionPackage#getEventCases()
  * @model
  * @generated
+ * @since 5.0
  */
 public interface EventCases extends EventBNamedCommentedElement, AbstractExtension {
 	/**

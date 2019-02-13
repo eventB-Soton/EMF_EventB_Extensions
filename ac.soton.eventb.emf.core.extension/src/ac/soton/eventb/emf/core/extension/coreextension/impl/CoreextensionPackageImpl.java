@@ -680,6 +680,7 @@ public class CoreextensionPackageImpl extends EPackageImpl implements Coreextens
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
+	 * @since 5.0
 	 */
 	protected void createOrgAnnotations() {
 		String source = "org.eventb.emf.core.extendedMetaClasses";		

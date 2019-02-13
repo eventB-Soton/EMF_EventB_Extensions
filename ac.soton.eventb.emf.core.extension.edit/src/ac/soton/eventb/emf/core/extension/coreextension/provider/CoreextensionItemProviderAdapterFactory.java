@@ -149,6 +149,7 @@ public class CoreextensionItemProviderAdapterFactory extends CoreextensionAdapte
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
+	 * @since 2.0
 	 */
 	protected EventCasesItemProvider eventCasesItemProvider;
 
@@ -172,6 +173,7 @@ public class CoreextensionItemProviderAdapterFactory extends CoreextensionAdapte
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
+	 * @since 2.0
 	 */
 	protected FormalParameterItemProvider formalParameterItemProvider;
 

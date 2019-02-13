@@ -23,6 +23,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * @see ac.soton.eventb.emf.core.extension.coreextension.CoreextensionPackage#getINOUT()
  * @model
  * @generated
+ * @since 5.0
  */
 public enum INOUT implements Enumerator {
 	/**

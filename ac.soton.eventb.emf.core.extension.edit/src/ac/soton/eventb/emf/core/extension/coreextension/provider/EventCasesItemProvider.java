@@ -43,6 +43,7 @@ import org.eventb.emf.core.provider.EventBNamedCommentedElementItemProvider;
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
+ * @since 2.0
  */
 public class EventCasesItemProvider
 	extends EventBNamedCommentedElementItemProvider
