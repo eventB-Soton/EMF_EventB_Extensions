@@ -12,7 +12,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
 
 /**
@@ -38,7 +37,7 @@ public class EventBExtensionResource extends XMIResourceImpl {
 	@Override
 	public void save(Map<?, ?> options) throws IOException {
 		Map options_encoded_attributes = new HashMap( options);
-		options_encoded_attributes.put(XMLResource.OPTION_USE_ENCODED_ATTRIBUTE_STYLE, Boolean.TRUE);
+		options_encoded_attributes.put(XMIResourceImpl.OPTION_USE_ENCODED_ATTRIBUTE_STYLE, Boolean.TRUE);
 		super.save(options_encoded_attributes);
 	}
 

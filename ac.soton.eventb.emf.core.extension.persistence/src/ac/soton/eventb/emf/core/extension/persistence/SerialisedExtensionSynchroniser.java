@@ -31,9 +31,9 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.URIConverter.ReadableInputStream;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.ecore.xmi.impl.XMIHelperImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
 import org.eventb.emf.core.AbstractExtension;
 import org.eventb.emf.core.CorePackage;
 import org.eventb.emf.core.EventBElement;
@@ -171,7 +171,7 @@ public class SerialisedExtensionSynchroniser extends AbstractSynchroniser {
 			
 			try {
 				Map<Object, Object> options_encoded_attributes = new HashMap<Object, Object>();
-				options_encoded_attributes.put(XMLResource.OPTION_USE_ENCODED_ATTRIBUTE_STYLE, Boolean.TRUE);
+				options_encoded_attributes.put(XMIResourceImpl.OPTION_USE_ENCODED_ATTRIBUTE_STYLE, Boolean.TRUE);
 				String saveString = XMIHelperImpl.saveString(options_encoded_attributes, Collections.singletonList(emfExtension), "UTF-8", null);
 				if (emfExtension.getExtensionId()!=null) {
 					rodinExtension.setExtensionId(emfExtension.getExtensionId(), monitor);
