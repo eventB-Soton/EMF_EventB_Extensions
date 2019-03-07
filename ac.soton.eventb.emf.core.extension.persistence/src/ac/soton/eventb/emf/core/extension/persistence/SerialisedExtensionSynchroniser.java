@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2011 University of Southampton.
+ * Copyright (c) 2011-2019 University of Southampton.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,7 +10,9 @@ package ac.soton.eventb.emf.core.extension.persistence;
 import java.io.IOException;
 import java.io.StringReader;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 import org.eclipse.core.runtime.CoreException;
@@ -29,6 +31,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.URIConverter.ReadableInputStream;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.ecore.xmi.impl.XMIHelperImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eventb.emf.core.AbstractExtension;
@@ -49,6 +52,7 @@ import org.rodinp.core.RodinDBException;
  * 
  * cfs (04/01/12) : when adding unique id's disable notification of changes (eventBElement.eSetDeliver(false)) to
  * 					prevent exceptions due to the change being made without a Transactional Command
+ * cfs (07/03/19) : use encoded attribute style for references
  * 
  * @author vitaly
  *
@@ -166,7 +170,9 @@ public class SerialisedExtensionSynchroniser extends AbstractSynchroniser {
 			AbstractExtension emfExtension = (AbstractExtension) emfElement;
 			
 			try {
-				String saveString = XMIHelperImpl.saveString(Collections.emptyMap(), Collections.singletonList(emfExtension), "UTF-8", null);
+				Map<Object, Object> options_encoded_attributes = new HashMap<Object, Object>();
+				options_encoded_attributes.put(XMLResource.OPTION_USE_ENCODED_ATTRIBUTE_STYLE, Boolean.TRUE);
+				String saveString = XMIHelperImpl.saveString(options_encoded_attributes, Collections.singletonList(emfExtension), "UTF-8", null);
 				if (emfExtension.getExtensionId()!=null) {
 					rodinExtension.setExtensionId(emfExtension.getExtensionId(), monitor);
 				}
