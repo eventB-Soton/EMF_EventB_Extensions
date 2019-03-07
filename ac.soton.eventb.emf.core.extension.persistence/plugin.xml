@@ -57,7 +57,7 @@
    </extension>
 
 
-	<!-- for persisting extensions as separate xmi files (force xmi to be used, xml does not work) -->
+	<!-- for persisting extensions as separate xmi files (use encoded attribute style for references) -->
    <extension
          point="org.eclipse.core.contenttype.contentTypes">
       <content-type
