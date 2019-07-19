@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2012 University of Southampton.
+ * Copyright (c) 2012-2019 University of Southampton.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eventb.emf.core.EventBObject;
+import org.eventb.emf.core.machine.MachinePackage;
 
 import ac.soton.eventb.emf.core.extension.coreextension.CoreextensionPackage;
 
@@ -32,6 +33,7 @@ public class CoreextensionElementRefiner extends CoreElementRefiner {
 	@Override
 	protected void populateFilterByTypeList(final List<EClass> filterList){
 		super.populateFilterByTypeList(filterList);
+		filterList.add(MachinePackage.Literals.WITNESS);
 	}
 	
 	/**
