@@ -255,6 +255,22 @@ public abstract class AbstractElementRefiner {
 	}
 	
 	/**
+	 * Creates a refined element from the given abstract one and a separate abstract URI.
+	 * In this case the abstract element need not be contained in a resource.
+	 * It will be used (copied) to make a refined element but any references to the abstract element 
+	 * (e.g. refines) will be based on the given abstract URI.
+	 * 
+	 * @param abstractUri - uri of an element in the abstract component resource (used to complete references)
+	 * @param abstractElement  - element to be copied (does not need to be contained)
+	 * @param concrete component name
+	 * @return a map from the abstract elements to the concrete elements
+	 * @since 5.1
+	 */
+	public Map<EObject,EObject> refineWithComponentName(URI abstractUri, EventBObject abstractElement, String concreteComponentName) {
+		return refine(abstractUri, abstractElement, concreteComponentName, null, null, Mode.REFINE);
+	}
+	
+	/**
 	 * Creates a refined element from the given abstract one.
 	 * The abstract element must be contained in a resource.
 	 * 
@@ -293,7 +309,23 @@ public abstract class AbstractElementRefiner {
 	 * @param abstract element
 	 * @return
 	 */
-	private Map<EObject,EObject> refine(URI abstractUri, EventBObject abstractElement,  EventBNamedCommentedComponentElement concreteComponent, URI concreteResourceURI, Mode mode) {
+	
+	private Map<EObject,EObject> refine(URI abstractUri, EventBObject abstractElement,  
+			EventBNamedCommentedComponentElement concreteComponent, 
+			URI concreteResourceURI, 
+			Mode mode) {
+		String concreteComponentName = concreteComponent==null? 
+										(concreteResourceURI==null? null : concreteResourceURI.trimFileExtension().lastSegment())
+										: concreteComponent.getName();
+		return refine(abstractUri,abstractElement, concreteComponentName ,concreteComponent, concreteResourceURI, mode);
+	}
+	
+	private Map<EObject,EObject> refine(URI abstractUri, EventBObject abstractElement,  
+			String concreteComponentName, 
+			EventBNamedCommentedComponentElement concreteComponent, 
+			URI concreteResourceURI, 
+			Mode mode) {
+		
 		if (abstractUri==null){
 			abstractUri = EcoreUtil.getURI(abstractElement);
 		}
@@ -343,7 +375,10 @@ public abstract class AbstractElementRefiner {
 			// Set up references in the new concrete model  (note that copier.copyReferences() does not work for this)
 			// (this looks for references corresponding to those declared in the reference map
 			//   and copy them in the appropriate way according to multiplicity and the reference map).
-			refiner.copyReferences(concreteElement, copier, abstractUri, concreteResourceURI, concreteComponent, concreteComponent==null? null: concreteComponent.getName(), mode );
+			refiner.copyReferences(concreteElement, copier, abstractUri, concreteResourceURI, concreteComponent, 
+					concreteComponentName,
+					//concreteComponent==null? null: concreteComponent.getName(), 
+					mode );
 			
 			//having copied everything we may need to remove some kinds of elements that are not supposed to be copied into a refinement
 			refiner.filterElements(concreteElement);
