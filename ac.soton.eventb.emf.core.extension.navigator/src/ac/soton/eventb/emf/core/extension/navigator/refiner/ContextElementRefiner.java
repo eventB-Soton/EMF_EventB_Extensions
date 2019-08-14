@@ -38,6 +38,7 @@ public class ContextElementRefiner extends CoreElementRefiner {
 	 */
 	@Override
 	protected void populateFilterByTypeList(final List<EClass> filterList){
+		super.populateFilterByTypeList(filterList);
 		filterList.add(ContextPackage.Literals.AXIOM);
 		filterList.add(ContextPackage.Literals.CARRIER_SET);
 		filterList.add(ContextPackage.Literals.CONSTANT);
