@@ -33,12 +33,11 @@ public class MachineElementRefiner extends CoreElementRefiner {
 	 * populate the given list with the meta-classes that the refiner needs to filter out
 	 *  from the copy for refinement.
 	 *  
-	 * Extenders may call super.populateFilterByTypeList(filterList) to filter
-	 *   MachinePackage.Literals.WITNESS and 
-	 *   MachinePackage.Literals.INVARIANT
+	 * filter MachinePackage.Literals.WITNESS and  MachinePackage.Literals.INVARIANT because they are only relevant
+	 * for one refinement level
 	 *   
-	 *   also MachinePackage.Literals.PARAMETER, MachinePackage.Literals.GUARD and MachinePackage.Literals.ACTION
-	 *   because we default refined events to extended
+	 * filter MachinePackage.Literals.PARAMETER, MachinePackage.Literals.GUARD and MachinePackage.Literals.ACTION
+	 * because we default refined events to extended
 	 *   
 	 */
 	@Override
@@ -64,7 +63,7 @@ public class MachineElementRefiner extends CoreElementRefiner {
 		referencemap.put(MachinePackage.Literals.MACHINE__REFINES, RefHandling.CHAIN);
 		referencemap.put(MachinePackage.Literals.MACHINE__SEES, RefHandling.EQUIV);
 	}
-	
+
 	/**
 	 * Change this to specialise the meaning of 'equivalent' 
 	 * (used when finding reference targets in the refined model)
@@ -98,5 +97,6 @@ public class MachineElementRefiner extends CoreElementRefiner {
 		}
 		
 	}
+
 	
 }
