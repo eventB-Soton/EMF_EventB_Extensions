@@ -548,40 +548,38 @@ public abstract class AbstractElementRefiner {
 				if (commonParentComponent(abstractElement, abstractReferencedElement) ||
 						samePaths(abstractElement, abstractReferencedElement) 
 					){						
-						EventBObject abstractComponent = ((EventBObject) abstractReferencedElement).getContaining(CorePackage.Literals.EVENT_BNAMED_COMMENTED_COMPONENT_ELEMENT);
+					EventBObject abstractComponent = ((EventBObject) abstractReferencedElement).getContaining(CorePackage.Literals.EVENT_BNAMED_COMMENTED_COMPONENT_ELEMENT);
 						
-						String abstractComponentName = "null";
-						if (abstractComponent instanceof EventBNamed){
-							abstractComponentName = ((EventBNamed)abstractComponent).getName();
-						}else{
-							//FIXME: not sure if this is necessary.. or works.. better to make sure abstractReferencedElement is contained?
-							abstractComponentName = abstractElementUri.fragment();
-							abstractComponentName = abstractComponentName.substring(abstractComponentName.lastIndexOf("::")+2);
-							abstractComponentName = abstractComponentName.substring(0,abstractComponentName.indexOf("."));
-						}
-						
-						//Find the equivalent concrete referenced element (preferably from the copier)
-						EObject concreteReferencedElement = copier.get(abstractReferencedElement);
-						if (concreteReferencedElement ==null && concreteComponent!=null){
-							concreteReferencedElement = getEquivalentObject(concreteComponent, abstractReferencedElement);
-						}
-						if (concreteReferencedElement !=null){
-							//get its id and cClass and set up the uri
-							String id = EcoreUtil.getID(concreteReferencedElement);
-							eclass = concreteReferencedElement.eClass();
-							//if it is not yet in an EventB component we need to add the concreteComponent name into the reference
-							if (((EventBElement)concreteReferencedElement).getContaining(CorePackage.Literals.EVENT_BNAMED_COMMENTED_COMPONENT_ELEMENT)==null
-									&& concreteComponentName != null){
-								id =	id.replace("::"+eclass.getName()+"::", "::"+eclass.getName()+"::"+concreteComponentName+".");								
-							}		
-							id = id.replace("::"+abstractComponentName+".", "::"+concreteComponentName+".");
-							uri = concreteResourceURI.appendFragment(id);
-						}
-//						break;
-//					}
+					String abstractComponentName = "null";
+					if (abstractComponent instanceof EventBNamed){
+						abstractComponentName = ((EventBNamed)abstractComponent).getName();
+					}else{
+						//FIXME: not sure if this is necessary.. or works.. better to make sure abstractReferencedElement is contained?
+						abstractComponentName = abstractElementUri.fragment();
+						abstractComponentName = abstractComponentName.substring(abstractComponentName.lastIndexOf("::")+2);
+						abstractComponentName = abstractComponentName.substring(0,abstractComponentName.indexOf("."));
+					}
+					
+					//Find the equivalent concrete referenced element (preferably from the copier)
+					EObject concreteReferencedElement = copier.get(abstractReferencedElement);
+					if (concreteReferencedElement ==null && concreteComponent!=null){
+						concreteReferencedElement = getEquivalentObject(concreteComponent, abstractReferencedElement);
+					}
+					if (concreteReferencedElement !=null){
+						//get its id and cClass and set up the uri
+						String id = EcoreUtil.getID(concreteReferencedElement);
+						eclass = concreteReferencedElement.eClass();
+						//if it is not yet in an EventB component we need to add the concreteComponent name into the reference
+						if (((EventBElement)concreteReferencedElement).getContaining(CorePackage.Literals.EVENT_BNAMED_COMMENTED_COMPONENT_ELEMENT)==null
+								&& concreteComponentName != null){
+							id =	id.replace("::"+eclass.getName()+"::", "::"+eclass.getName()+"::"+concreteComponentName+".");								
+						}		
+						id = id.replace("::"+abstractComponentName+".", "::"+concreteComponentName+".");
+						uri = concreteResourceURI.appendFragment(id);
+						break;
+					}
 				}
-				break;
-			}
+			}		//no break - when equiv is not possible default to copy. (e.g. this is used for associations elaborating a constant)
 		case COPY:
 			if (abstractReferencedElement instanceof EObject){
 				uri = EcoreUtil.getURI((EObject)abstractReferencedElement);
