@@ -61,7 +61,7 @@ public class MachineElementRefiner extends CoreElementRefiner {
 		super.populateReferenceMap(referencemap);
 		referencemap.put(MachinePackage.Literals.EVENT__REFINES, RefHandling.CHAIN);
 		referencemap.put(MachinePackage.Literals.MACHINE__REFINES, RefHandling.CHAIN);
-		referencemap.put(MachinePackage.Literals.MACHINE__SEES, RefHandling.EQUIV);
+		referencemap.put(MachinePackage.Literals.MACHINE__SEES, RefHandling.DROP); 	//EQUIV does not work and defaults to COPY which is often not what we want.. better to do manually
 	}
 
 	/**
