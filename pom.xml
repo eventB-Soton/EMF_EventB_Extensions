@@ -1,0 +1,33 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <!-- REQUIRED: Group ID is the feature ID -->
+  <groupId>ac.soton.eventb.emf.core.extension</groupId>
+  <!-- Name of this artifact -->
+  <artifactId>root</artifactId>
+  <!-- REQUIRED: Name and description of this this root build -->
+  <name>EMF Event-B Extensions Root POM</name>
+  <description>Root artifact for EMF Event-B Extensions</description>
+  <!-- REQUIRED: Version number (using semantic versioning) -->
+  <version>6.1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <parent>
+    <!-- REQUIRED: Group ID is the feature ID -->
+    <groupId>ac.soton.eventb.emf.core.extension</groupId>
+    <!-- Name of the release engineering artifact -->
+    <artifactId>releng</artifactId>
+    <!-- REQUIRED: Version number of the release engineering artifact -->
+    <version>6.1.0-SNAPSHOT</version>
+    <!-- REQUIRED: Relative path to the release engineering artifact -->
+    <relativePath>./ac.soton.eventb.emf.core.extension.releng</relativePath>
+  </parent>
+
+  <modules>
+    <!-- LATER: List of modules in this build -->
+    <module>ac.soton.eventb.emf.core.extension</module>
+    <module>ac.soton.eventb.emf.core.extension.edit</module>
+    <module>ac.soton.eventb.emf.core.extension.navigator</module>
+    <module>ac.soton.eventb.emf.core.extension.persistence</module>
+    <module>ac.soton.eventb.emf.core.extension.feature</module>
+    <module>ac.soton.eventb.emf.core.extension.sdk</module>
+  </modules>
+</project>
