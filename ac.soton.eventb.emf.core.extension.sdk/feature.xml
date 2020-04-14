@@ -23,8 +23,32 @@
          id="ac.soton.eventb.emf.core.extension.feature"
          version="0.0.0"/>
 
-   <includes
-         id="ac.soton.eventb.emf.core.extension.source.feature"
-         version="0.0.0"/>
+   <plugin
+         id="ac.soton.eventb.emf.core.extension.source"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="ac.soton.eventb.emf.core.extension.edit.source"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="ac.soton.eventb.emf.core.extension.navigator.source"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="ac.soton.eventb.emf.core.extension.persistence.source"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
 </feature>
