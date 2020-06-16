@@ -6,7 +6,7 @@
          <meta.schema plugin="ac.soton.eventb.emf.core.extension.navigator" id="ac.soton.eventb.emf.core.extension.navigator.emfFileExtensions" name="emfFileExtensions"/>
       </appinfo>
       <documentation>
-         [Enter description of this extension point.]
+         Defines a file extension for a kind of file that contains EMF models to be viewed in the Event-B navigator
       </documentation>
    </annotation>
 
@@ -78,7 +78,13 @@
          <meta.section type="examples"/>
       </appinfo>
       <documentation>
-         [Enter extension point usage example here.]
+         &lt;pre&gt;
+&lt;extension point=&quot;ac.soton.eventb.emf.core.extension.navigator.emfFileExtensions&quot;&gt;
+   &lt;model
+      extension=&quot;xmb&quot;&gt;
+   &lt;/model&gt;
+&lt;/extension&gt;
+&lt;/pre&gt;
       </documentation>
    </annotation>
 
@@ -100,5 +106,13 @@
       </documentation>
    </annotation>
 
+   <annotation>
+      <appinfo>
+         <meta.section type="copyright"/>
+      </appinfo>
+      <documentation>
+         Copyright (c) 2018 University of Southampton
+      </documentation>
+   </annotation>
 
 </schema>
