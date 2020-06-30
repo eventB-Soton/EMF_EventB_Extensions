@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2012 University of Southampton.
+ * Copyright (c) 2012-2019 University of Southampton.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,12 +10,17 @@ package ac.soton.eventb.emf.core.extension.navigator.refiner;
 import java.util.List;
 import java.util.Map;
 
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.util.EcoreUtil.Copier;
+import org.eventb.emf.core.EventBNamedCommentedComponentElement;
 import org.eventb.emf.core.EventBObject;
+import org.eventb.emf.core.machine.MachinePackage;
 
 import ac.soton.eventb.emf.core.extension.coreextension.CoreextensionPackage;
+import ac.soton.eventb.emf.core.extension.coreextension.EventBEventGroup;
 
 /**
  * Coreextension Element Refiner 
@@ -32,15 +37,15 @@ public class CoreextensionElementRefiner extends CoreElementRefiner {
 	@Override
 	protected void populateFilterByTypeList(final List<EClass> filterList){
 		super.populateFilterByTypeList(filterList);
+		filterList.add(MachinePackage.Literals.WITNESS);	//used in EventBEventGroup
+		filterList.add(MachinePackage.Literals.GUARD);		//used in EventBEventGroup - filter because extended
+		filterList.add(MachinePackage.Literals.ACTION);		//used in EventBEventGroup - filter because extended
 	}
 	
 	/**
 	 * populate the given map with the reference features that the refiner needs to copy 
 	 * for refinement.
 	 * 
-	 * 	Extenders may call super.populateReferenceMap(referencemap) to set 
-	 * 	EVENT_BDATA_ELABORATION__ELABORATES, false and
-	 * 	EVENT_BEVENT_GROUP__ELABORATES, false
 	 * 
 	 */
 	@Override
@@ -48,6 +53,7 @@ public class CoreextensionElementRefiner extends CoreElementRefiner {
 		super.populateReferenceMap(referencemap);
 		referencemap.put(CoreextensionPackage.Literals.EVENT_BDATA_ELABORATION__ELABORATES, RefHandling.EQUIV);
 		referencemap.put(CoreextensionPackage.Literals.EVENT_BEVENT_GROUP__ELABORATES, RefHandling.EQUIV);
+		referencemap.put(CoreextensionPackage.Literals.EVENT_BEVENT_GROUP__REFINES, RefHandling.CHAIN);
 	}
 	
 	/**
@@ -59,4 +65,19 @@ public class CoreextensionElementRefiner extends CoreElementRefiner {
 		return super.getEquivalentObject(concreteParent, abstractObject);
 	}
 	
+	/**
+	 * Overridden to extend all event groups
+	 */
+	@Override
+	protected void copyReferences(EObject concreteElement, Copier copier, URI abstractUri, 
+			URI concreteResourceURI, EventBNamedCommentedComponentElement concreteComponent, String concreteComponentName, Mode mode ) {
+		
+
+		super.copyReferences(concreteElement, copier, abstractUri, concreteResourceURI, concreteComponent, concreteComponentName, mode);
+
+		if (concreteElement instanceof EventBEventGroup) {
+			((EventBEventGroup)concreteElement).setExtended(true);
+		}
+	}
+
 }

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2011 University of Southampton.
+ * Copyright (c) 2011-2019 University of Southampton.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -255,6 +255,22 @@ public abstract class AbstractElementRefiner {
 	}
 	
 	/**
+	 * Creates a refined element from the given abstract one and a separate abstract URI.
+	 * In this case the abstract element need not be contained in a resource.
+	 * It will be used (copied) to make a refined element but any references to the abstract element 
+	 * (e.g. refines) will be based on the given abstract URI.
+	 * 
+	 * @param abstractUri - uri of an element in the abstract component resource (used to complete references)
+	 * @param abstractElement  - element to be copied (does not need to be contained)
+	 * @param concrete component name
+	 * @return a map from the abstract elements to the concrete elements
+	 * @since 5.1
+	 */
+	public Map<EObject,EObject> refineWithComponentName(URI abstractUri, EventBObject abstractElement, String concreteComponentName) {
+		return refine(abstractUri, abstractElement, concreteComponentName, null, null, Mode.REFINE);
+	}
+	
+	/**
 	 * Creates a refined element from the given abstract one.
 	 * The abstract element must be contained in a resource.
 	 * 
@@ -265,6 +281,19 @@ public abstract class AbstractElementRefiner {
 	public Map<EObject,EObject> refine(EventBObject abstractElement,  EventBNamedCommentedComponentElement concreteComponent){
 		return refine(null, abstractElement, concreteComponent, null, Mode.REFINE);
 	}
+	
+	/**
+	 * Creates a refined element from the given abstract one.
+	 * The abstract element must be contained in a resource.
+	 * 
+	 * @param abstract element
+	 * @param URI of concrete Resource 
+	 * @return a map from the abstract elements to the concrete elements
+	 * @since 5.1
+	 */
+	public Map<EObject,EObject> refine(EventBObject abstractElement,  URI concreteResourceURI){
+		return refine(null, abstractElement, null, concreteResourceURI, Mode.REFINE);
+	}
 
 		
 	/**
@@ -273,14 +302,30 @@ public abstract class AbstractElementRefiner {
 	 * Either the abstract element must be contained in a resource or if not,
 	 * A separate URI must be given which can be used to derive a full platform uri for the refined element.
 	 * 
-	 * Optionally, a containing concrete Component may be given in order to find equivalent reference targets
+	 * A containing concrete Component may be given in order to find equivalent reference targets
 	 * when there may be references that target elements outside of the newly created concrete elements. 
 	 * If all EQUIV references are contained within the copied element (e.g. for refining a complete component) this may be null.
 	 * 
 	 * @param abstract element
 	 * @return
 	 */
-	private Map<EObject,EObject> refine(URI abstractUri, EventBObject abstractElement,  EventBNamedCommentedComponentElement concreteComponent, URI concreteResourceURI, Mode mode) {
+	
+	private Map<EObject,EObject> refine(URI abstractUri, EventBObject abstractElement,  
+			EventBNamedCommentedComponentElement concreteComponent, 
+			URI concreteResourceURI, 
+			Mode mode) {
+		String concreteComponentName = concreteComponent==null? 
+										(concreteResourceURI==null? null : concreteResourceURI.trimFileExtension().lastSegment())
+										: concreteComponent.getName();
+		return refine(abstractUri,abstractElement, concreteComponentName ,concreteComponent, concreteResourceURI, mode);
+	}
+	
+	private Map<EObject,EObject> refine(URI abstractUri, EventBObject abstractElement,  
+			String concreteComponentName, 
+			EventBNamedCommentedComponentElement concreteComponent, 
+			URI concreteResourceURI, 
+			Mode mode) {
+		
 		if (abstractUri==null){
 			abstractUri = EcoreUtil.getURI(abstractElement);
 		}
@@ -290,10 +335,32 @@ public abstract class AbstractElementRefiner {
 		}
 		
 		Copier copier = new Copier(true,false);
+		
 		// create refined Component using copier.
 		// this does a deep copy of all the children and properties of the copied element
 		// but it does not copy any references
 		EventBElement concreteEventBElement = (EventBElement) copier.copy(abstractElement); 
+		
+		//
+		if (concreteResourceURI==null && concreteComponent!=null) {
+			//get the URI from the component
+			if (concreteComponent.eResource()==null){
+				concreteResourceURI= URI.createPlatformResourceURI(abstractUri.toPlatformString(true), true);
+				concreteResourceURI = concreteResourceURI.trimFragment();
+				String fileExtension = concreteResourceURI.fileExtension();
+				concreteResourceURI = concreteResourceURI.trimSegments(1);	
+				concreteResourceURI = concreteResourceURI.appendSegment(concreteComponent.getName());
+				concreteResourceURI = concreteResourceURI.appendFileExtension(fileExtension);
+				concreteResourceURI = concreteResourceURI.appendFragment(EcoreUtil.getURI(concreteComponent).fragment());
+			}else{
+				concreteResourceURI = EcoreUtil.getURI(concreteComponent);
+			}
+		}else if (concreteComponent == null && concreteResourceURI!=null) {
+			if (abstractElement instanceof EventBNamedCommentedComponentElement) {
+				concreteComponent = (EventBNamedCommentedComponentElement) copier.get(abstractElement);
+				concreteComponent.setName(concreteResourceURI.trimFileExtension().lastSegment());
+			}
+		}
 		
 		//get all the content of the root Element including itself
 		EList<EObject> contents = concreteEventBElement.getAllContained(CorePackage.Literals.EVENT_BELEMENT, true);
@@ -308,25 +375,10 @@ public abstract class AbstractElementRefiner {
 			// Set up references in the new concrete model  (note that copier.copyReferences() does not work for this)
 			// (this looks for references corresponding to those declared in the reference map
 			//   and copy them in the appropriate way according to multiplicity and the reference map).
-			if (abstractElement instanceof EventBNamedCommentedComponentElement) {
-				if (concreteComponent == null){
-					concreteComponent = (EventBNamedCommentedComponentElement) copier.get(abstractElement);
-				}
-			}
-			if (concreteResourceURI==null && concreteComponent!=null ){
-				if (concreteComponent.eResource()==null){
-					concreteResourceURI= URI.createPlatformResourceURI(abstractUri.toPlatformString(true), true);
-					concreteResourceURI = concreteResourceURI.trimFragment();
-					String fileExtension = concreteResourceURI.fileExtension();
-					concreteResourceURI = concreteResourceURI.trimSegments(1);	
-					concreteResourceURI = concreteResourceURI.appendSegment(concreteComponent.getName());
-					concreteResourceURI = concreteResourceURI.appendFileExtension(fileExtension);
-					concreteResourceURI = concreteResourceURI.appendFragment(EcoreUtil.getURI(concreteComponent).fragment());
-				}else{
-					concreteResourceURI = EcoreUtil.getURI(concreteComponent);
-				}
-			}
-			refiner.copyReferences(concreteElement, copier, abstractUri, concreteResourceURI, concreteComponent, concreteComponent==null? null: concreteComponent.getName(), mode );
+			refiner.copyReferences(concreteElement, copier, abstractUri, concreteResourceURI, concreteComponent, 
+					concreteComponentName,
+					//concreteComponent==null? null: concreteComponent.getName(), 
+					mode );
 			
 			//having copied everything we may need to remove some kinds of elements that are not supposed to be copied into a refinement
 			refiner.filterElements(concreteElement);
@@ -350,7 +402,7 @@ public abstract class AbstractElementRefiner {
 			if (eObject != null){
 				EStructuralFeature feature = eObject.eContainingFeature();
 				EObject parent = eObject.eContainer();
-				if (parent != null && feature!= null && parent.eClass().getEStructuralFeatures().contains(feature)) {
+				if (parent != null && feature!= null && parent.eClass().getEAllStructuralFeatures().contains(feature)) {
 					if (feature.isMany()){
 						((EList<EObject>) parent.eGet(feature)).remove(eObject);
 					}else{
@@ -496,39 +548,38 @@ public abstract class AbstractElementRefiner {
 				if (commonParentComponent(abstractElement, abstractReferencedElement) ||
 						samePaths(abstractElement, abstractReferencedElement) 
 					){						
-						EventBObject abstractComponent = ((EventBObject) abstractReferencedElement).getContaining(CorePackage.Literals.EVENT_BNAMED_COMMENTED_COMPONENT_ELEMENT);
+					EventBObject abstractComponent = ((EventBObject) abstractReferencedElement).getContaining(CorePackage.Literals.EVENT_BNAMED_COMMENTED_COMPONENT_ELEMENT);
 						
-						String abstractComponentName = "null";
-						if (abstractComponent instanceof EventBNamed){
-							abstractComponentName = ((EventBNamed)abstractComponent).getName();
-						}else{
-							//FIXME: not sure if this is necessary.. or works.. better to make sure abstractReferencedElement is contained?
-							abstractComponentName = abstractElementUri.fragment();
-							abstractComponentName = abstractComponentName.substring(abstractComponentName.lastIndexOf("::")+2);
-							abstractComponentName = abstractComponentName.substring(0,abstractComponentName.indexOf("."));
-						}
-						
-						//Find the equivalent concrete referenced element (preferably from the copier)
-						EObject concreteReferencedElement = copier.get(abstractReferencedElement);
-						if (concreteReferencedElement ==null && concreteComponent!=null){
-							concreteReferencedElement = getEquivalentObject(concreteComponent, abstractReferencedElement);
-						}
-						if (concreteReferencedElement !=null){
-							//get its id and cClass and set up the uri
-							String id = EcoreUtil.getID(concreteReferencedElement);
-							eclass = concreteReferencedElement.eClass();
-							//if it is not yet in an EventB component we need to add the concreteComponent name into the reference
-							if (((EventBElement)concreteReferencedElement).getContaining(CorePackage.Literals.EVENT_BNAMED_COMMENTED_COMPONENT_ELEMENT)==null){
-								id =	id.replace("::"+eclass.getName()+"::", "::"+eclass.getName()+"::"+concreteComponentName+".");								
-							}							
-							uri = concreteResourceURI.appendFragment(id);
-						}
-						
-//						break;
-//					}
+					String abstractComponentName = "null";
+					if (abstractComponent instanceof EventBNamed){
+						abstractComponentName = ((EventBNamed)abstractComponent).getName();
+					}else{
+						//FIXME: not sure if this is necessary.. or works.. better to make sure abstractReferencedElement is contained?
+						abstractComponentName = abstractElementUri.fragment();
+						abstractComponentName = abstractComponentName.substring(abstractComponentName.lastIndexOf("::")+2);
+						abstractComponentName = abstractComponentName.substring(0,abstractComponentName.indexOf("."));
+					}
+					
+					//Find the equivalent concrete referenced element (preferably from the copier)
+					EObject concreteReferencedElement = copier.get(abstractReferencedElement);
+					if (concreteReferencedElement ==null && concreteComponent!=null){
+						concreteReferencedElement = getEquivalentObject(concreteComponent, abstractReferencedElement);
+					}
+					if (concreteReferencedElement !=null){
+						//get its id and cClass and set up the uri
+						String id = EcoreUtil.getID(concreteReferencedElement);
+						eclass = concreteReferencedElement.eClass();
+						//if it is not yet in an EventB component we need to add the concreteComponent name into the reference
+						if (((EventBElement)concreteReferencedElement).getContaining(CorePackage.Literals.EVENT_BNAMED_COMMENTED_COMPONENT_ELEMENT)==null
+								&& concreteComponentName != null){
+							id =	id.replace("::"+eclass.getName()+"::", "::"+eclass.getName()+"::"+concreteComponentName+".");								
+						}		
+						id = id.replace("::"+abstractComponentName+".", "::"+concreteComponentName+".");
+						uri = concreteResourceURI.appendFragment(id);
+						break;
+					}
 				}
-				break;
-			}
+			}		//no break - when equiv is not possible default to copy. (e.g. this is used for associations elaborating a constant)
 		case COPY:
 			if (abstractReferencedElement instanceof EObject){
 				uri = EcoreUtil.getURI((EObject)abstractReferencedElement);

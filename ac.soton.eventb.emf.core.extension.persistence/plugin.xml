@@ -74,5 +74,12 @@
             contentTypeIdentifier="ac.soton.eventb.emf.core.extension.persistence.contentType">
       </parser>
    </extension>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editorContentTypeBinding
+            contentTypeId="ac.soton.eventb.emf.core.extension.persistence.contentType"
+            editorId="ac.soton.eventb.roseEditor.editorID">
+      </editorContentTypeBinding>
+   </extension>
    
 </plugin>
