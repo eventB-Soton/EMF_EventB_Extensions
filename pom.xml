@@ -8,7 +8,7 @@
   <name>EMF Event-B Extensions Root POM</name>
   <description>Root artifact for EMF Event-B Extensions</description>
   <!-- REQUIRED: Version number (using semantic versioning) -->
-  <version>6.1.0-SNAPSHOT</version>
+  <version>6.1.0.release</version>
   <packaging>pom</packaging>
   <parent>
     <!-- REQUIRED: Group ID is the feature ID -->
@@ -16,7 +16,7 @@
     <!-- Name of the release engineering artifact -->
     <artifactId>releng</artifactId>
     <!-- REQUIRED: Version number of the release engineering artifact -->
-    <version>6.1.0-SNAPSHOT</version>
+    <version>6.1.0.release</version>
     <!-- REQUIRED: Relative path to the release engineering artifact -->
     <relativePath>./ac.soton.eventb.emf.core.extension.releng</relativePath>
   </parent>
