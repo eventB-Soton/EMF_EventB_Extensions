@@ -84,4 +84,6 @@
       abstract="true" eSuperTypes="../../org.eventb.emf.core/model/eventbcore.ecore#//EventBNamedCommentedElement #//EventBDataElaboration"/>
   <eClassifiers xsi:type="ecore:EClass" name="EventBNamedCommentedRelationDataElaborationElement"
       abstract="true" eSuperTypes="#//EventBNamedCommentedDataElaborationElement #//EventBRelationKind"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TypedVariable" eSuperTypes="../../org.eventb.emf.core/model/eventbcore.ecore#//machine/Variable #//Type"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TypedConstant" eSuperTypes="../../org.eventb.emf.core/model/eventbcore.ecore#//context/Constant #//Type"/>
 </ecore:EPackage>
