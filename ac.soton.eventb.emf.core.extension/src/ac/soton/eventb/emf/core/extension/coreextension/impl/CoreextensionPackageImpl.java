@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.eventb.emf.core.CorePackage;
+import org.eventb.emf.core.context.ContextPackage;
 import org.eventb.emf.core.machine.MachinePackage;
 
 import ac.soton.eventb.emf.core.extension.coreextension.CoreextensionFactory;
@@ -31,7 +32,9 @@ import ac.soton.eventb.emf.core.extension.coreextension.EventBNamedCommentedData
 import ac.soton.eventb.emf.core.extension.coreextension.EventBNamedCommentedRelationDataElaborationElement;
 import ac.soton.eventb.emf.core.extension.coreextension.EventBRelationKind;
 import ac.soton.eventb.emf.core.extension.coreextension.Type;
+import ac.soton.eventb.emf.core.extension.coreextension.TypedConstant;
 import ac.soton.eventb.emf.core.extension.coreextension.TypedParameter;
+import ac.soton.eventb.emf.core.extension.coreextension.TypedVariable;
 
 /**
  * <!-- begin-user-doc -->
@@ -109,6 +112,20 @@ public class CoreextensionPackageImpl extends EPackageImpl implements Coreextens
 	 * @generated
 	 */
 	private EClass eventBNamedCommentedRelationDataElaborationElementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass typedVariableEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass typedConstantEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -417,6 +434,24 @@ public class CoreextensionPackageImpl extends EPackageImpl implements Coreextens
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getTypedVariable() {
+		return typedVariableEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getTypedConstant() {
+		return typedConstantEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getDataKind() {
 		return dataKindEEnum;
 	}
@@ -484,6 +519,10 @@ public class CoreextensionPackageImpl extends EPackageImpl implements Coreextens
 
 		eventBNamedCommentedRelationDataElaborationElementEClass = createEClass(EVENT_BNAMED_COMMENTED_RELATION_DATA_ELABORATION_ELEMENT);
 
+		typedVariableEClass = createEClass(TYPED_VARIABLE);
+
+		typedConstantEClass = createEClass(TYPED_CONSTANT);
+
 		// Create enums
 		dataKindEEnum = createEEnum(DATA_KIND);
 	}
@@ -515,6 +554,7 @@ public class CoreextensionPackageImpl extends EPackageImpl implements Coreextens
 		MachinePackage theMachinePackage = (MachinePackage)EPackage.Registry.INSTANCE.getEPackage(MachinePackage.eNS_URI);
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
+		ContextPackage theContextPackage = (ContextPackage)EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -531,6 +571,10 @@ public class CoreextensionPackageImpl extends EPackageImpl implements Coreextens
 		eventBNamedCommentedDataElaborationElementEClass.getESuperTypes().add(this.getEventBDataElaboration());
 		eventBNamedCommentedRelationDataElaborationElementEClass.getESuperTypes().add(this.getEventBNamedCommentedDataElaborationElement());
 		eventBNamedCommentedRelationDataElaborationElementEClass.getESuperTypes().add(this.getEventBRelationKind());
+		typedVariableEClass.getESuperTypes().add(theMachinePackage.getVariable());
+		typedVariableEClass.getESuperTypes().add(this.getType());
+		typedConstantEClass.getESuperTypes().add(theContextPackage.getConstant());
+		typedConstantEClass.getESuperTypes().add(this.getType());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(typedParameterEClass, TypedParameter.class, "TypedParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -585,6 +629,10 @@ public class CoreextensionPackageImpl extends EPackageImpl implements Coreextens
 		initEClass(eventBNamedCommentedDataElaborationElementEClass, EventBNamedCommentedDataElaborationElement.class, "EventBNamedCommentedDataElaborationElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(eventBNamedCommentedRelationDataElaborationElementEClass, EventBNamedCommentedRelationDataElaborationElement.class, "EventBNamedCommentedRelationDataElaborationElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(typedVariableEClass, TypedVariable.class, "TypedVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(typedConstantEClass, TypedConstant.class, "TypedConstant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(dataKindEEnum, DataKind.class, "DataKind");

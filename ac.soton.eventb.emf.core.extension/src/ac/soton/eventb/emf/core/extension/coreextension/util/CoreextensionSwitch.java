@@ -17,8 +17,10 @@ import org.eventb.emf.core.EventBElement;
 import org.eventb.emf.core.EventBNamed;
 import org.eventb.emf.core.EventBNamedCommentedElement;
 import org.eventb.emf.core.EventBObject;
+import org.eventb.emf.core.context.Constant;
 import org.eventb.emf.core.machine.Parameter;
 
+import org.eventb.emf.core.machine.Variable;
 import ac.soton.eventb.emf.core.extension.coreextension.CoreextensionPackage;
 import ac.soton.eventb.emf.core.extension.coreextension.EventBCommentedLabeledElement;
 import ac.soton.eventb.emf.core.extension.coreextension.EventBCommentedLabeledEventGroupElement;
@@ -30,6 +32,8 @@ import ac.soton.eventb.emf.core.extension.coreextension.EventBNamedCommentedRela
 import ac.soton.eventb.emf.core.extension.coreextension.EventBRelationKind;
 import ac.soton.eventb.emf.core.extension.coreextension.Type;
 import ac.soton.eventb.emf.core.extension.coreextension.TypedParameter;
+import ac.soton.eventb.emf.core.extension.coreextension.TypedConstant;
+import ac.soton.eventb.emf.core.extension.coreextension.TypedVariable;
 
 /**
  * <!-- begin-user-doc -->
@@ -202,6 +206,34 @@ public class CoreextensionSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case CoreextensionPackage.TYPED_VARIABLE: {
+				TypedVariable typedVariable = (TypedVariable)theEObject;
+				T result = caseTypedVariable(typedVariable);
+				if (result == null) result = caseVariable(typedVariable);
+				if (result == null) result = caseType(typedVariable);
+				if (result == null) result = caseEventBNamedCommentedElement(typedVariable);
+				if (result == null) result = caseEventBCommentedElement(typedVariable);
+				if (result == null) result = caseEventBNamed(typedVariable);
+				if (result == null) result = caseEventBElement(typedVariable);
+				if (result == null) result = caseEventBCommented(typedVariable);
+				if (result == null) result = caseEventBObject(typedVariable);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CoreextensionPackage.TYPED_CONSTANT: {
+				TypedConstant typedConstant = (TypedConstant)theEObject;
+				T result = caseTypedConstant(typedConstant);
+				if (result == null) result = caseConstant(typedConstant);
+				if (result == null) result = caseType(typedConstant);
+				if (result == null) result = caseEventBNamedCommentedElement(typedConstant);
+				if (result == null) result = caseEventBCommentedElement(typedConstant);
+				if (result == null) result = caseEventBNamed(typedConstant);
+				if (result == null) result = caseEventBElement(typedConstant);
+				if (result == null) result = caseEventBCommented(typedConstant);
+				if (result == null) result = caseEventBObject(typedConstant);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -357,6 +389,36 @@ public class CoreextensionSwitch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Typed Variable</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Typed Variable</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTypedVariable(TypedVariable object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Typed Constant</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Typed Constant</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTypedConstant(TypedConstant object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Event BObject</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -458,6 +520,36 @@ public class CoreextensionSwitch<T> {
 	 * @generated
 	 */
 	public T caseParameter(Parameter object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Variable</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Variable</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseVariable(Variable object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Constant</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Constant</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseConstant(Constant object) {
 		return null;
 	}
 

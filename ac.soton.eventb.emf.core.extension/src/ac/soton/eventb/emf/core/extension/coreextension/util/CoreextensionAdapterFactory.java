@@ -17,8 +17,10 @@ import org.eventb.emf.core.EventBElement;
 import org.eventb.emf.core.EventBNamed;
 import org.eventb.emf.core.EventBNamedCommentedElement;
 import org.eventb.emf.core.EventBObject;
+import org.eventb.emf.core.context.Constant;
 import org.eventb.emf.core.machine.Parameter;
 
+import org.eventb.emf.core.machine.Variable;
 import ac.soton.eventb.emf.core.extension.coreextension.CoreextensionPackage;
 import ac.soton.eventb.emf.core.extension.coreextension.EventBCommentedLabeledElement;
 import ac.soton.eventb.emf.core.extension.coreextension.EventBCommentedLabeledEventGroupElement;
@@ -30,7 +32,8 @@ import ac.soton.eventb.emf.core.extension.coreextension.EventBNamedCommentedRela
 import ac.soton.eventb.emf.core.extension.coreextension.EventBRelationKind;
 import ac.soton.eventb.emf.core.extension.coreextension.Type;
 import ac.soton.eventb.emf.core.extension.coreextension.TypedParameter;
-
+import ac.soton.eventb.emf.core.extension.coreextension.TypedConstant;
+import ac.soton.eventb.emf.core.extension.coreextension.TypedVariable;
 /**
  * <!-- begin-user-doc -->
  * The <b>Adapter Factory</b> for the model.
@@ -128,6 +131,14 @@ public class CoreextensionAdapterFactory extends AdapterFactoryImpl {
 				return createEventBNamedCommentedRelationDataElaborationElementAdapter();
 			}
 			@Override
+			public Adapter caseTypedVariable(TypedVariable object) {
+				return createTypedVariableAdapter();
+			}
+			@Override
+			public Adapter caseTypedConstant(TypedConstant object) {
+				return createTypedConstantAdapter();
+			}
+			@Override
 			public Adapter caseEventBObject(EventBObject object) {
 				return createEventBObjectAdapter();
 			}
@@ -154,6 +165,14 @@ public class CoreextensionAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseParameter(Parameter object) {
 				return createParameterAdapter();
+			}
+			@Override
+			public Adapter caseVariable(Variable object) {
+				return createVariableAdapter();
+			}
+			@Override
+			public Adapter caseConstant(Constant object) {
+				return createConstantAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -316,6 +335,34 @@ public class CoreextensionAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link ac.soton.eventb.emf.core.extension.coreextension.TypedVariable <em>Typed Variable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ac.soton.eventb.emf.core.extension.coreextension.TypedVariable
+	 * @generated
+	 */
+	public Adapter createTypedVariableAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ac.soton.eventb.emf.core.extension.coreextension.TypedConstant <em>Typed Constant</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ac.soton.eventb.emf.core.extension.coreextension.TypedConstant
+	 * @generated
+	 */
+	public Adapter createTypedConstantAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.eventb.emf.core.EventBObject <em>Event BObject</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -410,6 +457,34 @@ public class CoreextensionAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createParameterAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eventb.emf.core.machine.Variable <em>Variable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eventb.emf.core.machine.Variable
+	 * @generated
+	 */
+	public Adapter createVariableAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eventb.emf.core.context.Constant <em>Constant</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eventb.emf.core.context.Constant
+	 * @generated
+	 */
+	public Adapter createConstantAdapter() {
 		return null;
 	}
 

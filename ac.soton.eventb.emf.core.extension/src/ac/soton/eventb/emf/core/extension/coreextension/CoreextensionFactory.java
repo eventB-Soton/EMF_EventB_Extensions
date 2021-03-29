@@ -36,6 +36,24 @@ public interface CoreextensionFactory extends EFactory {
 	TypedParameter createTypedParameter();
 
 	/**
+	 * Returns a new object of class '<em>Typed Variable</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Typed Variable</em>'.
+	 * @generated
+	 */
+	TypedVariable createTypedVariable();
+
+	/**
+	 * Returns a new object of class '<em>Typed Constant</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Typed Constant</em>'.
+	 * @generated
+	 */
+	TypedConstant createTypedConstant();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
