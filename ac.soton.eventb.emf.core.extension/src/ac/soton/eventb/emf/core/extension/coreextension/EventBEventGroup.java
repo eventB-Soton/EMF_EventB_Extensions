@@ -189,7 +189,6 @@ public interface EventBEventGroup extends EObject {
 	 * (n.b. does NOT include the local parameters owned by this eventGroup)
 	 * <!-- end-model-doc -->
 	 * @model kind="operation" many="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tList&lt;TypedParameter&gt; ret = new  ArrayList&lt;TypedParameter&gt;();\n\t\tif (this.isExtended() &amp;&amp; this.getRefines()!=null &amp;&amp; this.getRefines()!=this) {\n\t\t\tret.addAll(this.getRefines().getParameters());\n\t\t\tret.addAll(this.getRefines().getExtendedParameters());\n\t\t}\n\t\treturn new BasicEList.UnmodifiableEList&lt;TypedParameter&gt;(ret.size(),ret.toArray()) ;'"
 	 * @generated
 	 */
 	EList<TypedParameter> getExtendedParameters();
@@ -205,7 +204,6 @@ public interface EventBEventGroup extends EObject {
 	 * (n.b. does NOT include the local guards owned by this eventGroup)
 	 * <!-- end-model-doc -->
 	 * @model kind="operation" many="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tList&lt;Guard&gt; ret = new  ArrayList&lt;Guard&gt;();\n\t\tif (this.isExtended() &amp;&amp; this.getRefines()!=null &amp;&amp; this.getRefines()!=this) {\n\t\t\tret.addAll(this.getRefines().getGuards());\n\t\t\tret.addAll(this.getRefines().getExtendedGuards());\n\t\t}\n\t\treturn new BasicEList.UnmodifiableEList&lt;Guard&gt;(ret.size(),ret.toArray()) ;'"
 	 * @generated
 	 */
 	EList<Guard> getExtendedGuards();
@@ -221,7 +219,6 @@ public interface EventBEventGroup extends EObject {
 	 * (n.b. does NOT include the local actions owned by this eventGroup)
 	 * <!-- end-model-doc -->
 	 * @model kind="operation" many="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tList&lt;Action&gt; ret = new  ArrayList&lt;Action&gt;();\n\t\tif (this.isExtended() &amp;&amp; this.getRefines()!=null &amp;&amp; this.getRefines()!=this) {\n\t\t\tret.addAll(this.getRefines().getActions());\n\t\t\tret.addAll(this.getRefines().getExtendedActions());\n\t\t}\n\t\treturn new BasicEList.UnmodifiableEList&lt;Action&gt;(ret.size(),ret.toArray()) ;'"
 	 * @generated
 	 */
 	EList<Action> getExtendedActions();

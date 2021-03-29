@@ -41,9 +41,12 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eventbcoreextension.ecore#//EventBEventGroup/actions"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eventbcoreextension.ecore#//EventBEventGroup/witnesses"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eventbcoreextension.ecore#//EventBEventGroup/refines"/>
-      <genOperations ecoreOperation="eventbcoreextension.ecore#//EventBEventGroup/getExtendedParameters"/>
-      <genOperations ecoreOperation="eventbcoreextension.ecore#//EventBEventGroup/getExtendedGuards"/>
-      <genOperations ecoreOperation="eventbcoreextension.ecore#//EventBEventGroup/getExtendedActions"/>
+      <genOperations ecoreOperation="eventbcoreextension.ecore#//EventBEventGroup/getExtendedParameters"
+          body="&#x9;&#x9;List&lt;TypedParameter> ret = new  ArrayList&lt;TypedParameter>();&#xA;&#x9;&#x9;if (this.isExtended() &amp;&amp; this.getRefines()!=null &amp;&amp; this.getRefines()!=this) {&#xA;&#x9;&#x9;&#x9;ret.addAll(this.getRefines().getParameters());&#xA;&#x9;&#x9;&#x9;ret.addAll(this.getRefines().getExtendedParameters());&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;return new BasicEList.UnmodifiableEList&lt;TypedParameter>(ret.size(),ret.toArray()) ;"/>
+      <genOperations ecoreOperation="eventbcoreextension.ecore#//EventBEventGroup/getExtendedGuards"
+          body="&#x9;&#x9;List&lt;Guard> ret = new  ArrayList&lt;Guard>();&#xA;&#x9;&#x9;if (this.isExtended() &amp;&amp; this.getRefines()!=null &amp;&amp; this.getRefines()!=this) {&#xA;&#x9;&#x9;&#x9;ret.addAll(this.getRefines().getGuards());&#xA;&#x9;&#x9;&#x9;ret.addAll(this.getRefines().getExtendedGuards());&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;return new BasicEList.UnmodifiableEList&lt;Guard>(ret.size(),ret.toArray()) ;"/>
+      <genOperations ecoreOperation="eventbcoreextension.ecore#//EventBEventGroup/getExtendedActions"
+          body="&#x9;&#x9;List&lt;Action> ret = new  ArrayList&lt;Action>();&#xA;&#x9;&#x9;if (this.isExtended() &amp;&amp; this.getRefines()!=null &amp;&amp; this.getRefines()!=this) {&#xA;&#x9;&#x9;&#x9;ret.addAll(this.getRefines().getActions());&#xA;&#x9;&#x9;&#x9;ret.addAll(this.getRefines().getExtendedActions());&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;return new BasicEList.UnmodifiableEList&lt;Action>(ret.size(),ret.toArray()) ;"/>
     </genClasses>
     <genClasses image="false" ecoreClass="eventbcoreextension.ecore#//EventBCommentedLabeledEventGroupElement"/>
     <genClasses image="false" ecoreClass="eventbcoreextension.ecore#//EventBCommentedLabeledElement"/>
