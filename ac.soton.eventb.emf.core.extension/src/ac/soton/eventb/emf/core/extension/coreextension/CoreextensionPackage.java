@@ -184,13 +184,22 @@ public interface CoreextensionPackage extends EPackage {
 	int TYPED_PARAMETER__TYPE = MachinePackage.PARAMETER_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPED_PARAMETER__VALUE = MachinePackage.PARAMETER_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Typed Parameter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TYPED_PARAMETER_FEATURE_COUNT = MachinePackage.PARAMETER_FEATURE_COUNT + 1;
+	int TYPED_PARAMETER_FEATURE_COUNT = MachinePackage.PARAMETER_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -1105,13 +1114,22 @@ public interface CoreextensionPackage extends EPackage {
 	int TYPED_VARIABLE__TYPE = MachinePackage.VARIABLE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPED_VARIABLE__VALUE = MachinePackage.VARIABLE_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Typed Variable</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TYPED_VARIABLE_FEATURE_COUNT = MachinePackage.VARIABLE_FEATURE_COUNT + 1;
+	int TYPED_VARIABLE_FEATURE_COUNT = MachinePackage.VARIABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link ac.soton.eventb.emf.core.extension.coreextension.impl.TypedConstantImpl <em>Typed Constant</em>}' class.
@@ -1223,13 +1241,50 @@ public interface CoreextensionPackage extends EPackage {
 	int TYPED_CONSTANT__TYPE = ContextPackage.CONSTANT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPED_CONSTANT__VALUE = ContextPackage.CONSTANT_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Typed Constant</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TYPED_CONSTANT_FEATURE_COUNT = ContextPackage.CONSTANT_FEATURE_COUNT + 1;
+	int TYPED_CONSTANT_FEATURE_COUNT = ContextPackage.CONSTANT_FEATURE_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link ac.soton.eventb.emf.core.extension.coreextension.impl.ValueImpl <em>Value</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ac.soton.eventb.emf.core.extension.coreextension.impl.ValueImpl
+	 * @see ac.soton.eventb.emf.core.extension.coreextension.impl.CoreextensionPackageImpl#getValue()
+	 * @generated
+	 */
+	int VALUE = 12;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE__VALUE = 0;
+
+	/**
+	 * The number of structural features of the '<em>Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_FEATURE_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link ac.soton.eventb.emf.core.extension.coreextension.DataKind <em>Data Kind</em>}' enum.
@@ -1239,7 +1294,7 @@ public interface CoreextensionPackage extends EPackage {
 	 * @see ac.soton.eventb.emf.core.extension.coreextension.impl.CoreextensionPackageImpl#getDataKind()
 	 * @generated
 	 */
-	int DATA_KIND = 12;
+	int DATA_KIND = 13;
 
 
 	/**
@@ -1534,6 +1589,27 @@ public interface CoreextensionPackage extends EPackage {
 	EClass getTypedConstant();
 
 	/**
+	 * Returns the meta object for class '{@link ac.soton.eventb.emf.core.extension.coreextension.Value <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Value</em>'.
+	 * @see ac.soton.eventb.emf.core.extension.coreextension.Value
+	 * @generated
+	 */
+	EClass getValue();
+
+	/**
+	 * Returns the meta object for the attribute '{@link ac.soton.eventb.emf.core.extension.coreextension.Value#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see ac.soton.eventb.emf.core.extension.coreextension.Value#getValue()
+	 * @see #getValue()
+	 * @generated
+	 */
+	EAttribute getValue_Value();
+
+	/**
 	 * Returns the meta object for enum '{@link ac.soton.eventb.emf.core.extension.coreextension.DataKind <em>Data Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1810,6 +1886,24 @@ public interface CoreextensionPackage extends EPackage {
 		 * @generated
 		 */
 		EClass TYPED_CONSTANT = eINSTANCE.getTypedConstant();
+
+		/**
+		 * The meta object literal for the '{@link ac.soton.eventb.emf.core.extension.coreextension.impl.ValueImpl <em>Value</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see ac.soton.eventb.emf.core.extension.coreextension.impl.ValueImpl
+		 * @see ac.soton.eventb.emf.core.extension.coreextension.impl.CoreextensionPackageImpl#getValue()
+		 * @generated
+		 */
+		EClass VALUE = eINSTANCE.getValue();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VALUE__VALUE = eINSTANCE.getValue_Value();
 
 		/**
 		 * The meta object literal for the '{@link ac.soton.eventb.emf.core.extension.coreextension.DataKind <em>Data Kind</em>}' enum.

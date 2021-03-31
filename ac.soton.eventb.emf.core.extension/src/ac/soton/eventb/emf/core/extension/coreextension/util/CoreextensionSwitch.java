@@ -115,6 +115,7 @@ public class CoreextensionSwitch<T> {
 				T result = caseTypedParameter(typedParameter);
 				if (result == null) result = caseParameter(typedParameter);
 				if (result == null) result = caseType(typedParameter);
+				if (result == null) result = caseValue(typedParameter);
 				if (result == null) result = caseEventBNamedCommentedElement(typedParameter);
 				if (result == null) result = caseEventBCommentedElement(typedParameter);
 				if (result == null) result = caseEventBNamed(typedParameter);
@@ -211,6 +212,7 @@ public class CoreextensionSwitch<T> {
 				T result = caseTypedVariable(typedVariable);
 				if (result == null) result = caseVariable(typedVariable);
 				if (result == null) result = caseType(typedVariable);
+				if (result == null) result = caseValue(typedVariable);
 				if (result == null) result = caseEventBNamedCommentedElement(typedVariable);
 				if (result == null) result = caseEventBCommentedElement(typedVariable);
 				if (result == null) result = caseEventBNamed(typedVariable);
@@ -225,12 +227,19 @@ public class CoreextensionSwitch<T> {
 				T result = caseTypedConstant(typedConstant);
 				if (result == null) result = caseConstant(typedConstant);
 				if (result == null) result = caseType(typedConstant);
+				if (result == null) result = caseValue(typedConstant);
 				if (result == null) result = caseEventBNamedCommentedElement(typedConstant);
 				if (result == null) result = caseEventBCommentedElement(typedConstant);
 				if (result == null) result = caseEventBNamed(typedConstant);
 				if (result == null) result = caseEventBElement(typedConstant);
 				if (result == null) result = caseEventBCommented(typedConstant);
 				if (result == null) result = caseEventBObject(typedConstant);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CoreextensionPackage.VALUE: {
+				Value value = (Value)theEObject;
+				T result = caseValue(value);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -415,6 +424,21 @@ public class CoreextensionSwitch<T> {
 	 * @generated
 	 */
 	public T caseTypedConstant(TypedConstant object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Value</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseValue(Value object) {
 		return null;
 	}
 

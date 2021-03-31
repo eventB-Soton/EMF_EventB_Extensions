@@ -14,6 +14,7 @@ import ac.soton.eventb.emf.core.extension.coreextension.CoreextensionPackage;
 import ac.soton.eventb.emf.core.extension.coreextension.Type;
 import ac.soton.eventb.emf.core.extension.coreextension.TypedVariable;
 
+import ac.soton.eventb.emf.core.extension.coreextension.Value;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -30,6 +31,7 @@ import org.eventb.emf.core.machine.impl.VariableImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link ac.soton.eventb.emf.core.extension.coreextension.impl.TypedVariableImpl#getType <em>Type</em>}</li>
+ *   <li>{@link ac.soton.eventb.emf.core.extension.coreextension.impl.TypedVariableImpl#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
@@ -55,6 +57,26 @@ public class TypedVariableImpl extends VariableImpl implements TypedVariable {
 	 * @ordered
 	 */
 	protected String type = TYPE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALUE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected String value = VALUE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -101,11 +123,34 @@ public class TypedVariableImpl extends VariableImpl implements TypedVariable {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getValue() {
+		return value;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setValue(String newValue) {
+		String oldValue = value;
+		value = newValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CoreextensionPackage.TYPED_VARIABLE__VALUE, oldValue, value));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CoreextensionPackage.TYPED_VARIABLE__TYPE:
 				return getType();
+			case CoreextensionPackage.TYPED_VARIABLE__VALUE:
+				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -120,6 +165,9 @@ public class TypedVariableImpl extends VariableImpl implements TypedVariable {
 		switch (featureID) {
 			case CoreextensionPackage.TYPED_VARIABLE__TYPE:
 				setType((String)newValue);
+				return;
+			case CoreextensionPackage.TYPED_VARIABLE__VALUE:
+				setValue((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -136,6 +184,9 @@ public class TypedVariableImpl extends VariableImpl implements TypedVariable {
 			case CoreextensionPackage.TYPED_VARIABLE__TYPE:
 				setType(TYPE_EDEFAULT);
 				return;
+			case CoreextensionPackage.TYPED_VARIABLE__VALUE:
+				setValue(VALUE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -150,6 +201,8 @@ public class TypedVariableImpl extends VariableImpl implements TypedVariable {
 		switch (featureID) {
 			case CoreextensionPackage.TYPED_VARIABLE__TYPE:
 				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
+			case CoreextensionPackage.TYPED_VARIABLE__VALUE:
+				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -164,6 +217,12 @@ public class TypedVariableImpl extends VariableImpl implements TypedVariable {
 		if (baseClass == Type.class) {
 			switch (derivedFeatureID) {
 				case CoreextensionPackage.TYPED_VARIABLE__TYPE: return CoreextensionPackage.TYPE__TYPE;
+				default: return -1;
+			}
+		}
+		if (baseClass == Value.class) {
+			switch (derivedFeatureID) {
+				case CoreextensionPackage.TYPED_VARIABLE__VALUE: return CoreextensionPackage.VALUE__VALUE;
 				default: return -1;
 			}
 		}
@@ -183,6 +242,12 @@ public class TypedVariableImpl extends VariableImpl implements TypedVariable {
 				default: return -1;
 			}
 		}
+		if (baseClass == Value.class) {
+			switch (baseFeatureID) {
+				case CoreextensionPackage.VALUE__VALUE: return CoreextensionPackage.TYPED_VARIABLE__VALUE;
+				default: return -1;
+			}
+		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
@@ -198,6 +263,8 @@ public class TypedVariableImpl extends VariableImpl implements TypedVariable {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (type: ");
 		result.append(type);
+		result.append(", value: ");
+		result.append(value);
 		result.append(')');
 		return result.toString();
 	}

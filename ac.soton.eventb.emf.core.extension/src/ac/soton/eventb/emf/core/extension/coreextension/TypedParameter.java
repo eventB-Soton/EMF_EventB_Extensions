@@ -19,6 +19,6 @@ import org.eventb.emf.core.machine.Parameter;
  * @model
  * @generated
  */
-public interface TypedParameter extends Parameter, Type {
+public interface TypedParameter extends Parameter, Type, Value {
 
 } // TypedParameter

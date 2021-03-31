@@ -22,5 +22,5 @@ import org.eventb.emf.core.machine.Variable;
  * @model
  * @generated
  */
-public interface TypedVariable extends Variable, Type {
+public interface TypedVariable extends Variable, Type, Value {
 } // TypedVariable

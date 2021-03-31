@@ -12,7 +12,7 @@ package ac.soton.eventb.emf.core.extension.coreextension.provider;
 
 
 import ac.soton.eventb.emf.core.extension.coreextension.CoreextensionPackage;
-import ac.soton.eventb.emf.core.extension.coreextension.TypedVariable;
+import ac.soton.eventb.emf.core.extension.coreextension.Value;
 
 import java.util.Collection;
 import java.util.List;
@@ -20,7 +20,10 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemColorProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -29,18 +32,17 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import org.eventb.emf.core.machine.provider.VariableItemProvider;
-
 /**
- * This is the item provider adapter for a {@link ac.soton.eventb.emf.core.extension.coreextension.TypedVariable} object.
+ * This is the item provider adapter for a {@link ac.soton.eventb.emf.core.extension.coreextension.Value} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class TypedVariableItemProvider
-	extends VariableItemProvider
+public class ValueItemProvider
+	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -54,7 +56,7 @@ public class TypedVariableItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TypedVariableItemProvider(AdapterFactory adapterFactory) {
+	public ValueItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -69,32 +71,9 @@ public class TypedVariableItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addTypePropertyDescriptor(object);
 			addValuePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Type feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Type_type_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Type_type_feature", "_UI_Type_type"),
-				 CoreextensionPackage.Literals.TYPE__TYPE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -120,17 +99,6 @@ public class TypedVariableItemProvider
 	}
 
 	/**
-	 * This returns TypedVariable.gif.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/TypedVariable"));
-	}
-
-	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -138,10 +106,10 @@ public class TypedVariableItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((TypedVariable)object).getName();
+		String label = ((Value)object).getValue();
 		return label == null || label.length() == 0 ?
-			getString("_UI_TypedVariable_type") :
-			getString("_UI_TypedVariable_type") + " " + label;
+			getString("_UI_Value_type") :
+			getString("_UI_Value_type") + " " + label;
 	}
 
 	/**
@@ -155,9 +123,8 @@ public class TypedVariableItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(TypedVariable.class)) {
-			case CoreextensionPackage.TYPED_VARIABLE__TYPE:
-			case CoreextensionPackage.TYPED_VARIABLE__VALUE:
+		switch (notification.getFeatureID(Value.class)) {
+			case CoreextensionPackage.VALUE__VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
@@ -174,6 +141,17 @@ public class TypedVariableItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return ((IChildCreationExtender)adapterFactory).getResourceLocator();
 	}
 
 }

@@ -22,5 +22,5 @@ import org.eventb.emf.core.context.Constant;
  * @model
  * @generated
  */
-public interface TypedConstant extends Constant, Type {
+public interface TypedConstant extends Constant, Type, Value {
 } // TypedConstant

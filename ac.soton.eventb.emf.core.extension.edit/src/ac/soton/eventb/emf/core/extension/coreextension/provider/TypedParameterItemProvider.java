@@ -69,6 +69,7 @@ public class TypedParameterItemProvider
 			super.getPropertyDescriptors(object);
 
 			addTypePropertyDescriptor(object);
+			addValuePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -87,6 +88,28 @@ public class TypedParameterItemProvider
 				 getString("_UI_Type_type_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Type_type_feature", "_UI_Type_type"),
 				 CoreextensionPackage.Literals.TYPE__TYPE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Value feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addValuePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Value_value_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Value_value_feature", "_UI_Value_type"),
+				 CoreextensionPackage.Literals.VALUE__VALUE,
 				 true,
 				 false,
 				 false,
@@ -133,6 +156,7 @@ public class TypedParameterItemProvider
 
 		switch (notification.getFeatureID(TypedParameter.class)) {
 			case CoreextensionPackage.TYPED_PARAMETER__TYPE:
+			case CoreextensionPackage.TYPED_PARAMETER__VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
