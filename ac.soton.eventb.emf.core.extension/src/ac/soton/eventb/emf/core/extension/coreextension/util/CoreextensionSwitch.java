@@ -31,6 +31,7 @@ import ac.soton.eventb.emf.core.extension.coreextension.EventBNamedCommentedData
 import ac.soton.eventb.emf.core.extension.coreextension.EventBNamedCommentedRelationDataElaborationElement;
 import ac.soton.eventb.emf.core.extension.coreextension.EventBRelationKind;
 import ac.soton.eventb.emf.core.extension.coreextension.Type;
+import ac.soton.eventb.emf.core.extension.coreextension.Value;
 import ac.soton.eventb.emf.core.extension.coreextension.TypedParameter;
 import ac.soton.eventb.emf.core.extension.coreextension.TypedConstant;
 import ac.soton.eventb.emf.core.extension.coreextension.TypedVariable;
