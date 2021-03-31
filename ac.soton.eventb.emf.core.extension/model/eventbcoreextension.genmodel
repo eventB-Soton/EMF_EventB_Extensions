@@ -54,5 +54,8 @@
     <genClasses image="false" ecoreClass="eventbcoreextension.ecore#//EventBNamedCommentedRelationDataElaborationElement"/>
     <genClasses ecoreClass="eventbcoreextension.ecore#//TypedVariable"/>
     <genClasses ecoreClass="eventbcoreextension.ecore#//TypedConstant"/>
+    <genClasses image="false" ecoreClass="eventbcoreextension.ecore#//Value">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eventbcoreextension.ecore#//Value/value"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>
