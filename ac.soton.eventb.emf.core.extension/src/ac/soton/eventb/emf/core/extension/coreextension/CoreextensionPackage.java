@@ -30,6 +30,7 @@ import org.eventb.emf.core.machine.MachinePackage;
  * @see ac.soton.eventb.emf.core.extension.coreextension.CoreextensionFactory
  * @model kind="package"
  * @generated
+ * @since 6.0
  */
 public interface CoreextensionPackage extends EPackage {
 	/**
@@ -153,6 +154,7 @@ public interface CoreextensionPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
+	 * @since 6.0
 	 */
 	int TYPED_PARAMETER__ORDERED_CHILDREN = MachinePackage.PARAMETER__ORDERED_CHILDREN;
 
@@ -189,6 +191,7 @@ public interface CoreextensionPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
+	 * @since 6.0
 	 */
 	int TYPED_PARAMETER__VALUE = MachinePackage.PARAMETER_FEATURE_COUNT + 1;
 
@@ -506,6 +509,7 @@ public interface CoreextensionPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
+	 * @since 6.0
 	 */
 	int EVENT_BCOMMENTED_LABELED_ELEMENT__ORDERED_CHILDREN = CorePackage.EVENT_BCOMMENTED_ELEMENT__ORDERED_CHILDREN;
 
@@ -615,6 +619,7 @@ public interface CoreextensionPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
+	 * @since 6.0
 	 */
 	int EVENT_BCOMMENTED_LABELED_EVENT_GROUP_ELEMENT__ORDERED_CHILDREN = EVENT_BCOMMENTED_LABELED_ELEMENT__ORDERED_CHILDREN;
 
@@ -793,6 +798,7 @@ public interface CoreextensionPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
+	 * @since 6.0
 	 */
 	int EVENT_BNAMED_COMMENTED_DATA_ELABORATION_ELEMENT__ORDERED_CHILDREN = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT__ORDERED_CHILDREN;
 
@@ -920,6 +926,7 @@ public interface CoreextensionPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
+	 * @since 6.0
 	 */
 	int EVENT_BNAMED_COMMENTED_RELATION_DATA_ELABORATION_ELEMENT__ORDERED_CHILDREN = EVENT_BNAMED_COMMENTED_DATA_ELABORATION_ELEMENT__ORDERED_CHILDREN;
 
@@ -1011,6 +1018,7 @@ public interface CoreextensionPackage extends EPackage {
 	 * @see ac.soton.eventb.emf.core.extension.coreextension.impl.TypedVariableImpl
 	 * @see ac.soton.eventb.emf.core.extension.coreextension.impl.CoreextensionPackageImpl#getTypedVariable()
 	 * @generated
+	 * @since 6.0
 	 */
 	int TYPED_VARIABLE = 10;
 
@@ -1020,6 +1028,7 @@ public interface CoreextensionPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
+	 * @since 6.0
 	 */
 	int TYPED_VARIABLE__ANNOTATIONS = MachinePackage.VARIABLE__ANNOTATIONS;
 
@@ -1029,6 +1038,7 @@ public interface CoreextensionPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
+	 * @since 6.0
 	 */
 	int TYPED_VARIABLE__EXTENSIONS = MachinePackage.VARIABLE__EXTENSIONS;
 
@@ -1038,6 +1048,7 @@ public interface CoreextensionPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
+	 * @since 6.0
 	 */
 	int TYPED_VARIABLE__ATTRIBUTES = MachinePackage.VARIABLE__ATTRIBUTES;
 
@@ -1047,6 +1058,7 @@ public interface CoreextensionPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
+	 * @since 6.0
 	 */
 	int TYPED_VARIABLE__REFERENCE = MachinePackage.VARIABLE__REFERENCE;
 
@@ -1056,6 +1068,7 @@ public interface CoreextensionPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
+	 * @since 6.0
 	 */
 	int TYPED_VARIABLE__GENERATED = MachinePackage.VARIABLE__GENERATED;
 
@@ -1065,6 +1078,7 @@ public interface CoreextensionPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
+	 * @since 6.0
 	 */
 	int TYPED_VARIABLE__LOCAL_GENERATED = MachinePackage.VARIABLE__LOCAL_GENERATED;
 
@@ -1074,6 +1088,7 @@ public interface CoreextensionPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
+	 * @since 6.0
 	 */
 	int TYPED_VARIABLE__INTERNAL_ID = MachinePackage.VARIABLE__INTERNAL_ID;
 
@@ -1083,6 +1098,7 @@ public interface CoreextensionPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
+	 * @since 6.0
 	 */
 	int TYPED_VARIABLE__ORDERED_CHILDREN = MachinePackage.VARIABLE__ORDERED_CHILDREN;
 
@@ -1092,6 +1108,7 @@ public interface CoreextensionPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
+	 * @since 6.0
 	 */
 	int TYPED_VARIABLE__COMMENT = MachinePackage.VARIABLE__COMMENT;
 
@@ -1101,6 +1118,7 @@ public interface CoreextensionPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
+	 * @since 6.0
 	 */
 	int TYPED_VARIABLE__NAME = MachinePackage.VARIABLE__NAME;
 
@@ -1110,6 +1128,7 @@ public interface CoreextensionPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
+	 * @since 6.0
 	 */
 	int TYPED_VARIABLE__TYPE = MachinePackage.VARIABLE_FEATURE_COUNT + 0;
 
@@ -1119,6 +1138,7 @@ public interface CoreextensionPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
+	 * @since 6.0
 	 */
 	int TYPED_VARIABLE__VALUE = MachinePackage.VARIABLE_FEATURE_COUNT + 1;
 
@@ -1128,6 +1148,7 @@ public interface CoreextensionPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
+	 * @since 6.0
 	 */
 	int TYPED_VARIABLE_FEATURE_COUNT = MachinePackage.VARIABLE_FEATURE_COUNT + 2;
 
@@ -1138,6 +1159,7 @@ public interface CoreextensionPackage extends EPackage {
 	 * @see ac.soton.eventb.emf.core.extension.coreextension.impl.TypedConstantImpl
 	 * @see ac.soton.eventb.emf.core.extension.coreextension.impl.CoreextensionPackageImpl#getTypedConstant()
 	 * @generated
+	 * @since 6.0
 	 */
 	int TYPED_CONSTANT = 11;
 
@@ -1147,6 +1169,7 @@ public interface CoreextensionPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
+	 * @since 6.0
 	 */
 	int TYPED_CONSTANT__ANNOTATIONS = ContextPackage.CONSTANT__ANNOTATIONS;
 
@@ -1156,6 +1179,7 @@ public interface CoreextensionPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
+	 * @since 6.0
 	 */
 	int TYPED_CONSTANT__EXTENSIONS = ContextPackage.CONSTANT__EXTENSIONS;
 
@@ -1165,6 +1189,7 @@ public interface CoreextensionPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
+	 * @since 6.0
 	 */
 	int TYPED_CONSTANT__ATTRIBUTES = ContextPackage.CONSTANT__ATTRIBUTES;
 
@@ -1174,6 +1199,7 @@ public interface CoreextensionPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
+	 * @since 6.0
 	 */
 	int TYPED_CONSTANT__REFERENCE = ContextPackage.CONSTANT__REFERENCE;
 
@@ -1183,6 +1209,7 @@ public interface CoreextensionPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
+	 * @since 6.0
 	 */
 	int TYPED_CONSTANT__GENERATED = ContextPackage.CONSTANT__GENERATED;
 
@@ -1192,6 +1219,7 @@ public interface CoreextensionPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
+	 * @since 6.0
 	 */
 	int TYPED_CONSTANT__LOCAL_GENERATED = ContextPackage.CONSTANT__LOCAL_GENERATED;
 
@@ -1201,6 +1229,7 @@ public interface CoreextensionPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
+	 * @since 6.0
 	 */
 	int TYPED_CONSTANT__INTERNAL_ID = ContextPackage.CONSTANT__INTERNAL_ID;
 
@@ -1210,6 +1239,7 @@ public interface CoreextensionPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
+	 * @since 6.0
 	 */
 	int TYPED_CONSTANT__ORDERED_CHILDREN = ContextPackage.CONSTANT__ORDERED_CHILDREN;
 
@@ -1219,6 +1249,7 @@ public interface CoreextensionPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
+	 * @since 6.0
 	 */
 	int TYPED_CONSTANT__COMMENT = ContextPackage.CONSTANT__COMMENT;
 
@@ -1228,6 +1259,7 @@ public interface CoreextensionPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
+	 * @since 6.0
 	 */
 	int TYPED_CONSTANT__NAME = ContextPackage.CONSTANT__NAME;
 
@@ -1237,6 +1269,7 @@ public interface CoreextensionPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
+	 * @since 6.0
 	 */
 	int TYPED_CONSTANT__TYPE = ContextPackage.CONSTANT_FEATURE_COUNT + 0;
 
@@ -1246,6 +1279,7 @@ public interface CoreextensionPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
+	 * @since 6.0
 	 */
 	int TYPED_CONSTANT__VALUE = ContextPackage.CONSTANT_FEATURE_COUNT + 1;
 
@@ -1255,6 +1289,7 @@ public interface CoreextensionPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
+	 * @since 6.0
 	 */
 	int TYPED_CONSTANT_FEATURE_COUNT = ContextPackage.CONSTANT_FEATURE_COUNT + 2;
 
@@ -1265,6 +1300,7 @@ public interface CoreextensionPackage extends EPackage {
 	 * @see ac.soton.eventb.emf.core.extension.coreextension.impl.ValueImpl
 	 * @see ac.soton.eventb.emf.core.extension.coreextension.impl.CoreextensionPackageImpl#getValue()
 	 * @generated
+	 * @since 6.0
 	 */
 	int VALUE = 12;
 
@@ -1274,6 +1310,7 @@ public interface CoreextensionPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
+	 * @since 6.0
 	 */
 	int VALUE__VALUE = 0;
 
@@ -1283,6 +1320,7 @@ public interface CoreextensionPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
+	 * @since 6.0
 	 */
 	int VALUE_FEATURE_COUNT = 1;
 
@@ -1575,6 +1613,7 @@ public interface CoreextensionPackage extends EPackage {
 	 * @return the meta object for class '<em>Typed Variable</em>'.
 	 * @see ac.soton.eventb.emf.core.extension.coreextension.TypedVariable
 	 * @generated
+	 * @since 6.0
 	 */
 	EClass getTypedVariable();
 
@@ -1585,6 +1624,7 @@ public interface CoreextensionPackage extends EPackage {
 	 * @return the meta object for class '<em>Typed Constant</em>'.
 	 * @see ac.soton.eventb.emf.core.extension.coreextension.TypedConstant
 	 * @generated
+	 * @since 6.0
 	 */
 	EClass getTypedConstant();
 
@@ -1595,6 +1635,7 @@ public interface CoreextensionPackage extends EPackage {
 	 * @return the meta object for class '<em>Value</em>'.
 	 * @see ac.soton.eventb.emf.core.extension.coreextension.Value
 	 * @generated
+	 * @since 6.0
 	 */
 	EClass getValue();
 
@@ -1606,6 +1647,7 @@ public interface CoreextensionPackage extends EPackage {
 	 * @see ac.soton.eventb.emf.core.extension.coreextension.Value#getValue()
 	 * @see #getValue()
 	 * @generated
+	 * @since 6.0
 	 */
 	EAttribute getValue_Value();
 
@@ -1874,6 +1916,7 @@ public interface CoreextensionPackage extends EPackage {
 		 * @see ac.soton.eventb.emf.core.extension.coreextension.impl.TypedVariableImpl
 		 * @see ac.soton.eventb.emf.core.extension.coreextension.impl.CoreextensionPackageImpl#getTypedVariable()
 		 * @generated
+		 * @since 6.0
 		 */
 		EClass TYPED_VARIABLE = eINSTANCE.getTypedVariable();
 
@@ -1884,6 +1927,7 @@ public interface CoreextensionPackage extends EPackage {
 		 * @see ac.soton.eventb.emf.core.extension.coreextension.impl.TypedConstantImpl
 		 * @see ac.soton.eventb.emf.core.extension.coreextension.impl.CoreextensionPackageImpl#getTypedConstant()
 		 * @generated
+		 * @since 6.0
 		 */
 		EClass TYPED_CONSTANT = eINSTANCE.getTypedConstant();
 
@@ -1894,6 +1938,7 @@ public interface CoreextensionPackage extends EPackage {
 		 * @see ac.soton.eventb.emf.core.extension.coreextension.impl.ValueImpl
 		 * @see ac.soton.eventb.emf.core.extension.coreextension.impl.CoreextensionPackageImpl#getValue()
 		 * @generated
+		 * @since 6.0
 		 */
 		EClass VALUE = eINSTANCE.getValue();
 
@@ -1902,6 +1947,7 @@ public interface CoreextensionPackage extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
+		 * @since 6.0
 		 */
 		EAttribute VALUE__VALUE = eINSTANCE.getValue_Value();
 
