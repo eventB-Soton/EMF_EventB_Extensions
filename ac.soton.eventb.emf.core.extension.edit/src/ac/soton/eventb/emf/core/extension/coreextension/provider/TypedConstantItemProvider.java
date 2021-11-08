@@ -38,6 +38,7 @@ import org.eventb.emf.core.context.provider.ConstantItemProvider;
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
+ * @since 3.0
  */
 public class TypedConstantItemProvider
 	extends ConstantItemProvider

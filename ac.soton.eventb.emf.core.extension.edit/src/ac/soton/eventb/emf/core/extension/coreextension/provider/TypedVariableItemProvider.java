@@ -38,6 +38,7 @@ import org.eventb.emf.core.machine.provider.VariableItemProvider;
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
+ * @since 3.0
  */
 public class TypedVariableItemProvider
 	extends VariableItemProvider

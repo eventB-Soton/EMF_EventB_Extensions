@@ -40,6 +40,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
+ * @since 3.0
  */
 public class ValueItemProvider
 	extends ItemProviderAdapter

@@ -145,6 +145,7 @@ public class CoreextensionItemProviderAdapterFactory extends CoreextensionAdapte
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
+	 * @since 3.0
 	 */
 	protected TypedVariableItemProvider typedVariableItemProvider;
 
@@ -153,6 +154,7 @@ public class CoreextensionItemProviderAdapterFactory extends CoreextensionAdapte
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
+	 * @since 3.0
 	 */
 	@Override
 	public Adapter createTypedVariableAdapter() {
@@ -168,6 +170,7 @@ public class CoreextensionItemProviderAdapterFactory extends CoreextensionAdapte
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
+	 * @since 3.0
 	 */
 	protected TypedConstantItemProvider typedConstantItemProvider;
 
@@ -176,6 +179,7 @@ public class CoreextensionItemProviderAdapterFactory extends CoreextensionAdapte
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
+	 * @since 3.0
 	 */
 	@Override
 	public Adapter createTypedConstantAdapter() {
@@ -469,6 +473,7 @@ public class CoreextensionItemProviderAdapterFactory extends CoreextensionAdapte
 			 * <!-- begin-user-doc -->
 			 * <!-- end-user-doc -->
 			 * @generated
+			 * @since 3.0
 			 */
 			@Override
 			public Object caseMachine(Machine object) {
@@ -541,6 +546,7 @@ public class CoreextensionItemProviderAdapterFactory extends CoreextensionAdapte
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
+	 * @since 3.0
 	 */
 	public static class ContextChildCreationExtender implements IChildCreationExtender {
 		/**
