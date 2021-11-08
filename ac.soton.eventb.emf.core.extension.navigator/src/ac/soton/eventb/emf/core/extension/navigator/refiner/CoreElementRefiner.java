@@ -16,8 +16,6 @@ import org.eclipse.emf.ecore.EReference;
 import org.eventb.emf.core.CorePackage;
 import org.eventb.emf.core.EventBObject;
 
-import ac.soton.eventb.emf.core.extension.navigator.refiner.AbstractElementRefiner;
-
 /**
  * Event-B EMF Core Element Refiner 
  * 
