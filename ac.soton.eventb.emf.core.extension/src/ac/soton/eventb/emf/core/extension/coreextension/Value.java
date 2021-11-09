@@ -27,6 +27,7 @@ import org.eclipse.emf.ecore.EObject;
  * @see ac.soton.eventb.emf.core.extension.coreextension.CoreextensionPackage#getValue()
  * @model abstract="true"
  * @generated
+ * @since 6.0
  */
 public interface Value extends EObject {
 	/**

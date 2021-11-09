@@ -21,6 +21,7 @@ import org.eventb.emf.core.machine.Variable;
  * @see ac.soton.eventb.emf.core.extension.coreextension.CoreextensionPackage#getTypedVariable()
  * @model
  * @generated
+ * @since 6.0
  */
 public interface TypedVariable extends Variable, Type, Value {
 } // TypedVariable

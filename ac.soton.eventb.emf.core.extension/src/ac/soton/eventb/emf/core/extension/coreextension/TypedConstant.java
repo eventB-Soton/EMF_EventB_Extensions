@@ -21,6 +21,7 @@ import org.eventb.emf.core.context.Constant;
  * @see ac.soton.eventb.emf.core.extension.coreextension.CoreextensionPackage#getTypedConstant()
  * @model
  * @generated
+ * @since 6.0
  */
 public interface TypedConstant extends Constant, Type, Value {
 } // TypedConstant
