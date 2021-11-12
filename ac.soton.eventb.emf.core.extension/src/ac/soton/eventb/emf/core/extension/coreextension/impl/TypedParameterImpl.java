@@ -59,6 +59,7 @@ public class TypedParameterImpl extends ParameterImpl implements TypedParameter 
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
+	 * @since 6.0
 	 */
 	protected static final String VALUE_EDEFAULT = null;
 
@@ -69,6 +70,7 @@ public class TypedParameterImpl extends ParameterImpl implements TypedParameter 
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
+	 * @since 6.0
 	 */
 	protected String value = VALUE_EDEFAULT;
 

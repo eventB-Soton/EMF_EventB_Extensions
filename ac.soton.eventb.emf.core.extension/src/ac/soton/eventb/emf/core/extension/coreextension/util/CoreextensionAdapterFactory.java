@@ -348,6 +348,7 @@ public class CoreextensionAdapterFactory extends AdapterFactoryImpl {
 	 * @return the new adapter.
 	 * @see ac.soton.eventb.emf.core.extension.coreextension.TypedVariable
 	 * @generated
+	 * @since 6.0
 	 */
 	public Adapter createTypedVariableAdapter() {
 		return null;
@@ -362,6 +363,7 @@ public class CoreextensionAdapterFactory extends AdapterFactoryImpl {
 	 * @return the new adapter.
 	 * @see ac.soton.eventb.emf.core.extension.coreextension.TypedConstant
 	 * @generated
+	 * @since 6.0
 	 */
 	public Adapter createTypedConstantAdapter() {
 		return null;
@@ -376,6 +378,7 @@ public class CoreextensionAdapterFactory extends AdapterFactoryImpl {
 	 * @return the new adapter.
 	 * @see ac.soton.eventb.emf.core.extension.coreextension.Value
 	 * @generated
+	 * @since 6.0
 	 */
 	public Adapter createValueAdapter() {
 		return null;
@@ -488,6 +491,7 @@ public class CoreextensionAdapterFactory extends AdapterFactoryImpl {
 	 * @return the new adapter.
 	 * @see org.eventb.emf.core.machine.Variable
 	 * @generated
+	 * @since 6.0
 	 */
 	public Adapter createVariableAdapter() {
 		return null;
@@ -502,6 +506,7 @@ public class CoreextensionAdapterFactory extends AdapterFactoryImpl {
 	 * @return the new adapter.
 	 * @see org.eventb.emf.core.context.Constant
 	 * @generated
+	 * @since 6.0
 	 */
 	public Adapter createConstantAdapter() {
 		return null;

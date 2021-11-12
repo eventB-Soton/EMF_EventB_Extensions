@@ -32,6 +32,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * </p>
  *
  * @generated
+ * @since 6.0
  */
 public abstract class ValueImpl extends EObjectImpl implements Value {
 	/**

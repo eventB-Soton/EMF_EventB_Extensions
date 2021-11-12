@@ -36,6 +36,7 @@ import org.eventb.emf.core.machine.impl.VariableImpl;
  * </p>
  *
  * @generated
+ * @since 6.0
  */
 public class TypedVariableImpl extends VariableImpl implements TypedVariable {
 	/**

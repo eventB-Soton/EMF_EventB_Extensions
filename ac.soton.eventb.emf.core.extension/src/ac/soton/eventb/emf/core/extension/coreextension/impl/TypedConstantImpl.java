@@ -36,6 +36,7 @@ import org.eventb.emf.core.context.impl.ConstantImpl;
  * </p>
  *
  * @generated
+ * @since 6.0
  */
 public class TypedConstantImpl extends ConstantImpl implements TypedConstant {
 	/**
