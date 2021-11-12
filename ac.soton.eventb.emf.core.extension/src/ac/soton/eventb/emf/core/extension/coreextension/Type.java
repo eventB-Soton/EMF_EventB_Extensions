@@ -37,7 +37,7 @@ public interface Type extends EObject {
 	 * @return the value of the '<em>Type</em>' attribute.
 	 * @see #setType(String)
 	 * @see ac.soton.eventb.emf.core.extension.coreextension.CoreextensionPackage#getType_Type()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
 	String getType();

@@ -2,9 +2,9 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="coreextension" nsURI="http://soton.ac.uk/models/eventb/coreextension/2014"
     nsPrefix="coreextension">
-  <eClassifiers xsi:type="ecore:EClass" name="TypedParameter" eSuperTypes="../../org.eventb.emf.core/model/eventbcore.ecore#//machine/Parameter #//Type"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TypedParameter" eSuperTypes="../../org.eventb.emf.core/model/eventbcore.ecore#//machine/Parameter #//Type #//Value"/>
   <eClassifiers xsi:type="ecore:EClass" name="Type" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EventBLabeled" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -84,4 +84,9 @@
       abstract="true" eSuperTypes="../../org.eventb.emf.core/model/eventbcore.ecore#//EventBNamedCommentedElement #//EventBDataElaboration"/>
   <eClassifiers xsi:type="ecore:EClass" name="EventBNamedCommentedRelationDataElaborationElement"
       abstract="true" eSuperTypes="#//EventBNamedCommentedDataElaborationElement #//EventBRelationKind"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TypedVariable" eSuperTypes="../../org.eventb.emf.core/model/eventbcore.ecore#//machine/Variable #//Type #//Value"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TypedConstant" eSuperTypes="../../org.eventb.emf.core/model/eventbcore.ecore#//context/Constant #//Type #//Value"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Value" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
 </ecore:EPackage>

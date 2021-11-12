@@ -1,9 +1,10 @@
 /**
- * Copyright (c) 2012-2018 - University of Southampton.
- * All rights reserved. This program and the accompanying materials  are made
- * available under the terms of the Eclipse Public License v1.0 which accompanies this 
- * distribution, and is available at http://www.eclipse.org/legal/epl-v10.html
+ * Copyright (c) 2012-2021 - University of Southampton.
  * 
+ * This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License 2.0
+ * which accompanies this distribution, and is available at
+ * https://www.eclipse.org/legal/epl-2.0/
  *
  * $Id$
  */
@@ -11,7 +12,7 @@ package ac.soton.eventb.emf.core.extension.coreextension.provider;
 
 
 import ac.soton.eventb.emf.core.extension.coreextension.CoreextensionPackage;
-import ac.soton.eventb.emf.core.extension.coreextension.TypedParameter;
+import ac.soton.eventb.emf.core.extension.coreextension.TypedConstant;
 
 import java.util.Collection;
 import java.util.List;
@@ -30,16 +31,17 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import org.eventb.emf.core.machine.provider.ParameterItemProvider;
+import org.eventb.emf.core.context.provider.ConstantItemProvider;
 
 /**
- * This is the item provider adapter for a {@link ac.soton.eventb.emf.core.extension.coreextension.TypedParameter} object.
+ * This is the item provider adapter for a {@link ac.soton.eventb.emf.core.extension.coreextension.TypedConstant} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
+ * @since 3.0
  */
-public class TypedParameterItemProvider
-	extends ParameterItemProvider
+public class TypedConstantItemProvider
+	extends ConstantItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -53,7 +55,7 @@ public class TypedParameterItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TypedParameterItemProvider(AdapterFactory adapterFactory) {
+	public TypedConstantItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -101,7 +103,6 @@ public class TypedParameterItemProvider
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
-	 * @since 3.0
 	 */
 	protected void addValuePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
@@ -120,14 +121,14 @@ public class TypedParameterItemProvider
 	}
 
 	/**
-	 * This returns TypedParameter.gif.
+	 * This returns TypedConstant.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/TypedParameter"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/TypedConstant"));
 	}
 
 	/**
@@ -138,10 +139,10 @@ public class TypedParameterItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((TypedParameter)object).getName();
+		String label = ((TypedConstant)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_TypedParameter_type") :
-			getString("_UI_TypedParameter_type") + " " + label;
+			getString("_UI_TypedConstant_type") :
+			getString("_UI_TypedConstant_type") + " " + label;
 	}
 
 	/**
@@ -155,9 +156,9 @@ public class TypedParameterItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(TypedParameter.class)) {
-			case CoreextensionPackage.TYPED_PARAMETER__TYPE:
-			case CoreextensionPackage.TYPED_PARAMETER__VALUE:
+		switch (notification.getFeatureID(TypedConstant.class)) {
+			case CoreextensionPackage.TYPED_CONSTANT__TYPE:
+			case CoreextensionPackage.TYPED_CONSTANT__VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

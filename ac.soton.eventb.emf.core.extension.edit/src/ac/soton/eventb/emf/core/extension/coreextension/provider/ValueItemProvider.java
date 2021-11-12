@@ -1,9 +1,10 @@
 /**
- * Copyright (c) 2012-2018 - University of Southampton.
- * All rights reserved. This program and the accompanying materials  are made
- * available under the terms of the Eclipse Public License v1.0 which accompanies this 
- * distribution, and is available at http://www.eclipse.org/legal/epl-v10.html
+ * Copyright (c) 2012-2021 - University of Southampton.
  * 
+ * This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License 2.0
+ * which accompanies this distribution, and is available at
+ * https://www.eclipse.org/legal/epl-2.0/
  *
  * $Id$
  */
@@ -11,7 +12,7 @@ package ac.soton.eventb.emf.core.extension.coreextension.provider;
 
 
 import ac.soton.eventb.emf.core.extension.coreextension.CoreextensionPackage;
-import ac.soton.eventb.emf.core.extension.coreextension.TypedParameter;
+import ac.soton.eventb.emf.core.extension.coreextension.Value;
 
 import java.util.Collection;
 import java.util.List;
@@ -19,7 +20,10 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemColorProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -28,18 +32,18 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import org.eventb.emf.core.machine.provider.ParameterItemProvider;
-
 /**
- * This is the item provider adapter for a {@link ac.soton.eventb.emf.core.extension.coreextension.TypedParameter} object.
+ * This is the item provider adapter for a {@link ac.soton.eventb.emf.core.extension.coreextension.Value} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
+ * @since 3.0
  */
-public class TypedParameterItemProvider
-	extends ParameterItemProvider
+public class ValueItemProvider
+	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -53,7 +57,7 @@ public class TypedParameterItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TypedParameterItemProvider(AdapterFactory adapterFactory) {
+	public ValueItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -68,32 +72,9 @@ public class TypedParameterItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addTypePropertyDescriptor(object);
 			addValuePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Type feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Type_type_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Type_type_feature", "_UI_Type_type"),
-				 CoreextensionPackage.Literals.TYPE__TYPE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -101,7 +82,6 @@ public class TypedParameterItemProvider
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
-	 * @since 3.0
 	 */
 	protected void addValuePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
@@ -120,17 +100,6 @@ public class TypedParameterItemProvider
 	}
 
 	/**
-	 * This returns TypedParameter.gif.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/TypedParameter"));
-	}
-
-	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -138,10 +107,10 @@ public class TypedParameterItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((TypedParameter)object).getName();
+		String label = ((Value)object).getValue();
 		return label == null || label.length() == 0 ?
-			getString("_UI_TypedParameter_type") :
-			getString("_UI_TypedParameter_type") + " " + label;
+			getString("_UI_Value_type") :
+			getString("_UI_Value_type") + " " + label;
 	}
 
 	/**
@@ -155,9 +124,8 @@ public class TypedParameterItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(TypedParameter.class)) {
-			case CoreextensionPackage.TYPED_PARAMETER__TYPE:
-			case CoreextensionPackage.TYPED_PARAMETER__VALUE:
+		switch (notification.getFeatureID(Value.class)) {
+			case CoreextensionPackage.VALUE__VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
@@ -174,6 +142,17 @@ public class TypedParameterItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return ((IChildCreationExtender)adapterFactory).getResourceLocator();
 	}
 
 }

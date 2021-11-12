@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eventb.emf.core.CorePackage;
+import org.eventb.emf.core.context.ContextPackage;
 import org.eventb.emf.core.machine.MachinePackage;
 
 /**
@@ -29,6 +30,7 @@ import org.eventb.emf.core.machine.MachinePackage;
  * @see ac.soton.eventb.emf.core.extension.coreextension.CoreextensionFactory
  * @model kind="package"
  * @generated
+ * @since 6.0
  */
 public interface CoreextensionPackage extends EPackage {
 	/**
@@ -147,6 +149,16 @@ public interface CoreextensionPackage extends EPackage {
 	int TYPED_PARAMETER__INTERNAL_ID = MachinePackage.PARAMETER__INTERNAL_ID;
 
 	/**
+	 * The feature id for the '<em><b>Ordered Children</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 * @since 6.0
+	 */
+	int TYPED_PARAMETER__ORDERED_CHILDREN = MachinePackage.PARAMETER__ORDERED_CHILDREN;
+
+	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -174,13 +186,23 @@ public interface CoreextensionPackage extends EPackage {
 	int TYPED_PARAMETER__TYPE = MachinePackage.PARAMETER_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 * @since 6.0
+	 */
+	int TYPED_PARAMETER__VALUE = MachinePackage.PARAMETER_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Typed Parameter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TYPED_PARAMETER_FEATURE_COUNT = MachinePackage.PARAMETER_FEATURE_COUNT + 1;
+	int TYPED_PARAMETER_FEATURE_COUNT = MachinePackage.PARAMETER_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -482,6 +504,16 @@ public interface CoreextensionPackage extends EPackage {
 	int EVENT_BCOMMENTED_LABELED_ELEMENT__INTERNAL_ID = CorePackage.EVENT_BCOMMENTED_ELEMENT__INTERNAL_ID;
 
 	/**
+	 * The feature id for the '<em><b>Ordered Children</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 * @since 6.0
+	 */
+	int EVENT_BCOMMENTED_LABELED_ELEMENT__ORDERED_CHILDREN = CorePackage.EVENT_BCOMMENTED_ELEMENT__ORDERED_CHILDREN;
+
+	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -580,6 +612,16 @@ public interface CoreextensionPackage extends EPackage {
 	 * @ordered
 	 */
 	int EVENT_BCOMMENTED_LABELED_EVENT_GROUP_ELEMENT__INTERNAL_ID = EVENT_BCOMMENTED_LABELED_ELEMENT__INTERNAL_ID;
+
+	/**
+	 * The feature id for the '<em><b>Ordered Children</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 * @since 6.0
+	 */
+	int EVENT_BCOMMENTED_LABELED_EVENT_GROUP_ELEMENT__ORDERED_CHILDREN = EVENT_BCOMMENTED_LABELED_ELEMENT__ORDERED_CHILDREN;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -751,6 +793,16 @@ public interface CoreextensionPackage extends EPackage {
 	int EVENT_BNAMED_COMMENTED_DATA_ELABORATION_ELEMENT__INTERNAL_ID = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT__INTERNAL_ID;
 
 	/**
+	 * The feature id for the '<em><b>Ordered Children</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 * @since 6.0
+	 */
+	int EVENT_BNAMED_COMMENTED_DATA_ELABORATION_ELEMENT__ORDERED_CHILDREN = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT__ORDERED_CHILDREN;
+
+	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -869,6 +921,16 @@ public interface CoreextensionPackage extends EPackage {
 	int EVENT_BNAMED_COMMENTED_RELATION_DATA_ELABORATION_ELEMENT__INTERNAL_ID = EVENT_BNAMED_COMMENTED_DATA_ELABORATION_ELEMENT__INTERNAL_ID;
 
 	/**
+	 * The feature id for the '<em><b>Ordered Children</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 * @since 6.0
+	 */
+	int EVENT_BNAMED_COMMENTED_RELATION_DATA_ELABORATION_ELEMENT__ORDERED_CHILDREN = EVENT_BNAMED_COMMENTED_DATA_ELABORATION_ELEMENT__ORDERED_CHILDREN;
+
+	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -950,6 +1012,319 @@ public interface CoreextensionPackage extends EPackage {
 	int EVENT_BNAMED_COMMENTED_RELATION_DATA_ELABORATION_ELEMENT_FEATURE_COUNT = EVENT_BNAMED_COMMENTED_DATA_ELABORATION_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
+	 * The meta object id for the '{@link ac.soton.eventb.emf.core.extension.coreextension.impl.TypedVariableImpl <em>Typed Variable</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ac.soton.eventb.emf.core.extension.coreextension.impl.TypedVariableImpl
+	 * @see ac.soton.eventb.emf.core.extension.coreextension.impl.CoreextensionPackageImpl#getTypedVariable()
+	 * @generated
+	 * @since 6.0
+	 */
+	int TYPED_VARIABLE = 10;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 * @since 6.0
+	 */
+	int TYPED_VARIABLE__ANNOTATIONS = MachinePackage.VARIABLE__ANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 * @since 6.0
+	 */
+	int TYPED_VARIABLE__EXTENSIONS = MachinePackage.VARIABLE__EXTENSIONS;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' map.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 * @since 6.0
+	 */
+	int TYPED_VARIABLE__ATTRIBUTES = MachinePackage.VARIABLE__ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Reference</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 * @since 6.0
+	 */
+	int TYPED_VARIABLE__REFERENCE = MachinePackage.VARIABLE__REFERENCE;
+
+	/**
+	 * The feature id for the '<em><b>Generated</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 * @since 6.0
+	 */
+	int TYPED_VARIABLE__GENERATED = MachinePackage.VARIABLE__GENERATED;
+
+	/**
+	 * The feature id for the '<em><b>Local Generated</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 * @since 6.0
+	 */
+	int TYPED_VARIABLE__LOCAL_GENERATED = MachinePackage.VARIABLE__LOCAL_GENERATED;
+
+	/**
+	 * The feature id for the '<em><b>Internal Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 * @since 6.0
+	 */
+	int TYPED_VARIABLE__INTERNAL_ID = MachinePackage.VARIABLE__INTERNAL_ID;
+
+	/**
+	 * The feature id for the '<em><b>Ordered Children</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 * @since 6.0
+	 */
+	int TYPED_VARIABLE__ORDERED_CHILDREN = MachinePackage.VARIABLE__ORDERED_CHILDREN;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 * @since 6.0
+	 */
+	int TYPED_VARIABLE__COMMENT = MachinePackage.VARIABLE__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 * @since 6.0
+	 */
+	int TYPED_VARIABLE__NAME = MachinePackage.VARIABLE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 * @since 6.0
+	 */
+	int TYPED_VARIABLE__TYPE = MachinePackage.VARIABLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 * @since 6.0
+	 */
+	int TYPED_VARIABLE__VALUE = MachinePackage.VARIABLE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Typed Variable</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 * @since 6.0
+	 */
+	int TYPED_VARIABLE_FEATURE_COUNT = MachinePackage.VARIABLE_FEATURE_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link ac.soton.eventb.emf.core.extension.coreextension.impl.TypedConstantImpl <em>Typed Constant</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ac.soton.eventb.emf.core.extension.coreextension.impl.TypedConstantImpl
+	 * @see ac.soton.eventb.emf.core.extension.coreextension.impl.CoreextensionPackageImpl#getTypedConstant()
+	 * @generated
+	 * @since 6.0
+	 */
+	int TYPED_CONSTANT = 11;
+
+	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 * @since 6.0
+	 */
+	int TYPED_CONSTANT__ANNOTATIONS = ContextPackage.CONSTANT__ANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 * @since 6.0
+	 */
+	int TYPED_CONSTANT__EXTENSIONS = ContextPackage.CONSTANT__EXTENSIONS;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' map.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 * @since 6.0
+	 */
+	int TYPED_CONSTANT__ATTRIBUTES = ContextPackage.CONSTANT__ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Reference</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 * @since 6.0
+	 */
+	int TYPED_CONSTANT__REFERENCE = ContextPackage.CONSTANT__REFERENCE;
+
+	/**
+	 * The feature id for the '<em><b>Generated</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 * @since 6.0
+	 */
+	int TYPED_CONSTANT__GENERATED = ContextPackage.CONSTANT__GENERATED;
+
+	/**
+	 * The feature id for the '<em><b>Local Generated</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 * @since 6.0
+	 */
+	int TYPED_CONSTANT__LOCAL_GENERATED = ContextPackage.CONSTANT__LOCAL_GENERATED;
+
+	/**
+	 * The feature id for the '<em><b>Internal Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 * @since 6.0
+	 */
+	int TYPED_CONSTANT__INTERNAL_ID = ContextPackage.CONSTANT__INTERNAL_ID;
+
+	/**
+	 * The feature id for the '<em><b>Ordered Children</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 * @since 6.0
+	 */
+	int TYPED_CONSTANT__ORDERED_CHILDREN = ContextPackage.CONSTANT__ORDERED_CHILDREN;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 * @since 6.0
+	 */
+	int TYPED_CONSTANT__COMMENT = ContextPackage.CONSTANT__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 * @since 6.0
+	 */
+	int TYPED_CONSTANT__NAME = ContextPackage.CONSTANT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 * @since 6.0
+	 */
+	int TYPED_CONSTANT__TYPE = ContextPackage.CONSTANT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 * @since 6.0
+	 */
+	int TYPED_CONSTANT__VALUE = ContextPackage.CONSTANT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Typed Constant</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 * @since 6.0
+	 */
+	int TYPED_CONSTANT_FEATURE_COUNT = ContextPackage.CONSTANT_FEATURE_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link ac.soton.eventb.emf.core.extension.coreextension.impl.ValueImpl <em>Value</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ac.soton.eventb.emf.core.extension.coreextension.impl.ValueImpl
+	 * @see ac.soton.eventb.emf.core.extension.coreextension.impl.CoreextensionPackageImpl#getValue()
+	 * @generated
+	 * @since 6.0
+	 */
+	int VALUE = 12;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 * @since 6.0
+	 */
+	int VALUE__VALUE = 0;
+
+	/**
+	 * The number of structural features of the '<em>Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 * @since 6.0
+	 */
+	int VALUE_FEATURE_COUNT = 1;
+
+	/**
 	 * The meta object id for the '{@link ac.soton.eventb.emf.core.extension.coreextension.DataKind <em>Data Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -957,7 +1332,7 @@ public interface CoreextensionPackage extends EPackage {
 	 * @see ac.soton.eventb.emf.core.extension.coreextension.impl.CoreextensionPackageImpl#getDataKind()
 	 * @generated
 	 */
-	int DATA_KIND = 10;
+	int DATA_KIND = 13;
 
 
 	/**
@@ -1232,6 +1607,51 @@ public interface CoreextensionPackage extends EPackage {
 	EClass getEventBNamedCommentedRelationDataElaborationElement();
 
 	/**
+	 * Returns the meta object for class '{@link ac.soton.eventb.emf.core.extension.coreextension.TypedVariable <em>Typed Variable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Typed Variable</em>'.
+	 * @see ac.soton.eventb.emf.core.extension.coreextension.TypedVariable
+	 * @generated
+	 * @since 6.0
+	 */
+	EClass getTypedVariable();
+
+	/**
+	 * Returns the meta object for class '{@link ac.soton.eventb.emf.core.extension.coreextension.TypedConstant <em>Typed Constant</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Typed Constant</em>'.
+	 * @see ac.soton.eventb.emf.core.extension.coreextension.TypedConstant
+	 * @generated
+	 * @since 6.0
+	 */
+	EClass getTypedConstant();
+
+	/**
+	 * Returns the meta object for class '{@link ac.soton.eventb.emf.core.extension.coreextension.Value <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Value</em>'.
+	 * @see ac.soton.eventb.emf.core.extension.coreextension.Value
+	 * @generated
+	 * @since 6.0
+	 */
+	EClass getValue();
+
+	/**
+	 * Returns the meta object for the attribute '{@link ac.soton.eventb.emf.core.extension.coreextension.Value#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see ac.soton.eventb.emf.core.extension.coreextension.Value#getValue()
+	 * @see #getValue()
+	 * @generated
+	 * @since 6.0
+	 */
+	EAttribute getValue_Value();
+
+	/**
 	 * Returns the meta object for enum '{@link ac.soton.eventb.emf.core.extension.coreextension.DataKind <em>Data Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1488,6 +1908,48 @@ public interface CoreextensionPackage extends EPackage {
 		 * @generated
 		 */
 		EClass EVENT_BNAMED_COMMENTED_RELATION_DATA_ELABORATION_ELEMENT = eINSTANCE.getEventBNamedCommentedRelationDataElaborationElement();
+
+		/**
+		 * The meta object literal for the '{@link ac.soton.eventb.emf.core.extension.coreextension.impl.TypedVariableImpl <em>Typed Variable</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see ac.soton.eventb.emf.core.extension.coreextension.impl.TypedVariableImpl
+		 * @see ac.soton.eventb.emf.core.extension.coreextension.impl.CoreextensionPackageImpl#getTypedVariable()
+		 * @generated
+		 * @since 6.0
+		 */
+		EClass TYPED_VARIABLE = eINSTANCE.getTypedVariable();
+
+		/**
+		 * The meta object literal for the '{@link ac.soton.eventb.emf.core.extension.coreextension.impl.TypedConstantImpl <em>Typed Constant</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see ac.soton.eventb.emf.core.extension.coreextension.impl.TypedConstantImpl
+		 * @see ac.soton.eventb.emf.core.extension.coreextension.impl.CoreextensionPackageImpl#getTypedConstant()
+		 * @generated
+		 * @since 6.0
+		 */
+		EClass TYPED_CONSTANT = eINSTANCE.getTypedConstant();
+
+		/**
+		 * The meta object literal for the '{@link ac.soton.eventb.emf.core.extension.coreextension.impl.ValueImpl <em>Value</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see ac.soton.eventb.emf.core.extension.coreextension.impl.ValueImpl
+		 * @see ac.soton.eventb.emf.core.extension.coreextension.impl.CoreextensionPackageImpl#getValue()
+		 * @generated
+		 * @since 6.0
+		 */
+		EClass VALUE = eINSTANCE.getValue();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 * @since 6.0
+		 */
+		EAttribute VALUE__VALUE = eINSTANCE.getValue_Value();
 
 		/**
 		 * The meta object literal for the '{@link ac.soton.eventb.emf.core.extension.coreextension.DataKind <em>Data Kind</em>}' enum.

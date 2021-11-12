@@ -1,37 +1,43 @@
 /**
- * Copyright (c) 2012-2018 - University of Southampton.
- * All rights reserved. This program and the accompanying materials  are made
- * available under the terms of the Eclipse Public License v1.0 which accompanies this 
- * distribution, and is available at http://www.eclipse.org/legal/epl-v10.html
+ * Copyright (c) 2012-2021 - University of Southampton.
  * 
+ * This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License 2.0
+ * which accompanies this distribution, and is available at
+ * https://www.eclipse.org/legal/epl-2.0/
+ *
+ * $Id$
  */
 package ac.soton.eventb.emf.core.extension.coreextension.impl;
 
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eventb.emf.core.machine.impl.ParameterImpl;
-
 import ac.soton.eventb.emf.core.extension.coreextension.CoreextensionPackage;
 import ac.soton.eventb.emf.core.extension.coreextension.Type;
-import ac.soton.eventb.emf.core.extension.coreextension.TypedParameter;
+import ac.soton.eventb.emf.core.extension.coreextension.TypedConstant;
+
 import ac.soton.eventb.emf.core.extension.coreextension.Value;
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eventb.emf.core.context.impl.ConstantImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Typed Parameter</b></em>'.
+ * An implementation of the model object '<em><b>Typed Constant</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link ac.soton.eventb.emf.core.extension.coreextension.impl.TypedParameterImpl#getType <em>Type</em>}</li>
- *   <li>{@link ac.soton.eventb.emf.core.extension.coreextension.impl.TypedParameterImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link ac.soton.eventb.emf.core.extension.coreextension.impl.TypedConstantImpl#getType <em>Type</em>}</li>
+ *   <li>{@link ac.soton.eventb.emf.core.extension.coreextension.impl.TypedConstantImpl#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class TypedParameterImpl extends ParameterImpl implements TypedParameter {
+public class TypedConstantImpl extends ConstantImpl implements TypedConstant {
 	/**
 	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -77,7 +83,7 @@ public class TypedParameterImpl extends ParameterImpl implements TypedParameter 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected TypedParameterImpl() {
+	protected TypedConstantImpl() {
 		super();
 	}
 
@@ -88,7 +94,7 @@ public class TypedParameterImpl extends ParameterImpl implements TypedParameter 
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CoreextensionPackage.Literals.TYPED_PARAMETER;
+		return CoreextensionPackage.Literals.TYPED_CONSTANT;
 	}
 
 	/**
@@ -109,7 +115,7 @@ public class TypedParameterImpl extends ParameterImpl implements TypedParameter 
 		String oldType = type;
 		type = newType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CoreextensionPackage.TYPED_PARAMETER__TYPE, oldType, type));
+			eNotify(new ENotificationImpl(this, Notification.SET, CoreextensionPackage.TYPED_CONSTANT__TYPE, oldType, type));
 	}
 
 	/**
@@ -130,7 +136,7 @@ public class TypedParameterImpl extends ParameterImpl implements TypedParameter 
 		String oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CoreextensionPackage.TYPED_PARAMETER__VALUE, oldValue, value));
+			eNotify(new ENotificationImpl(this, Notification.SET, CoreextensionPackage.TYPED_CONSTANT__VALUE, oldValue, value));
 	}
 
 	/**
@@ -141,9 +147,9 @@ public class TypedParameterImpl extends ParameterImpl implements TypedParameter 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CoreextensionPackage.TYPED_PARAMETER__TYPE:
+			case CoreextensionPackage.TYPED_CONSTANT__TYPE:
 				return getType();
-			case CoreextensionPackage.TYPED_PARAMETER__VALUE:
+			case CoreextensionPackage.TYPED_CONSTANT__VALUE:
 				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -157,10 +163,10 @@ public class TypedParameterImpl extends ParameterImpl implements TypedParameter 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CoreextensionPackage.TYPED_PARAMETER__TYPE:
+			case CoreextensionPackage.TYPED_CONSTANT__TYPE:
 				setType((String)newValue);
 				return;
-			case CoreextensionPackage.TYPED_PARAMETER__VALUE:
+			case CoreextensionPackage.TYPED_CONSTANT__VALUE:
 				setValue((String)newValue);
 				return;
 		}
@@ -175,10 +181,10 @@ public class TypedParameterImpl extends ParameterImpl implements TypedParameter 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CoreextensionPackage.TYPED_PARAMETER__TYPE:
+			case CoreextensionPackage.TYPED_CONSTANT__TYPE:
 				setType(TYPE_EDEFAULT);
 				return;
-			case CoreextensionPackage.TYPED_PARAMETER__VALUE:
+			case CoreextensionPackage.TYPED_CONSTANT__VALUE:
 				setValue(VALUE_EDEFAULT);
 				return;
 		}
@@ -193,9 +199,9 @@ public class TypedParameterImpl extends ParameterImpl implements TypedParameter 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CoreextensionPackage.TYPED_PARAMETER__TYPE:
+			case CoreextensionPackage.TYPED_CONSTANT__TYPE:
 				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
-			case CoreextensionPackage.TYPED_PARAMETER__VALUE:
+			case CoreextensionPackage.TYPED_CONSTANT__VALUE:
 				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);
@@ -210,13 +216,13 @@ public class TypedParameterImpl extends ParameterImpl implements TypedParameter 
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == Type.class) {
 			switch (derivedFeatureID) {
-				case CoreextensionPackage.TYPED_PARAMETER__TYPE: return CoreextensionPackage.TYPE__TYPE;
+				case CoreextensionPackage.TYPED_CONSTANT__TYPE: return CoreextensionPackage.TYPE__TYPE;
 				default: return -1;
 			}
 		}
 		if (baseClass == Value.class) {
 			switch (derivedFeatureID) {
-				case CoreextensionPackage.TYPED_PARAMETER__VALUE: return CoreextensionPackage.VALUE__VALUE;
+				case CoreextensionPackage.TYPED_CONSTANT__VALUE: return CoreextensionPackage.VALUE__VALUE;
 				default: return -1;
 			}
 		}
@@ -232,13 +238,13 @@ public class TypedParameterImpl extends ParameterImpl implements TypedParameter 
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == Type.class) {
 			switch (baseFeatureID) {
-				case CoreextensionPackage.TYPE__TYPE: return CoreextensionPackage.TYPED_PARAMETER__TYPE;
+				case CoreextensionPackage.TYPE__TYPE: return CoreextensionPackage.TYPED_CONSTANT__TYPE;
 				default: return -1;
 			}
 		}
 		if (baseClass == Value.class) {
 			switch (baseFeatureID) {
-				case CoreextensionPackage.VALUE__VALUE: return CoreextensionPackage.TYPED_PARAMETER__VALUE;
+				case CoreextensionPackage.VALUE__VALUE: return CoreextensionPackage.TYPED_CONSTANT__VALUE;
 				default: return -1;
 			}
 		}
@@ -263,4 +269,4 @@ public class TypedParameterImpl extends ParameterImpl implements TypedParameter 
 		return result.toString();
 	}
 
-} //TypedParameterImpl
+} //TypedConstantImpl
