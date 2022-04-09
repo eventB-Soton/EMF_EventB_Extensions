@@ -344,11 +344,11 @@ public class CoreextensionAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * @since 6.0
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see ac.soton.eventb.emf.core.extension.coreextension.TypedVariable
 	 * @generated
-	 * @since 6.0
 	 */
 	public Adapter createTypedVariableAdapter() {
 		return null;
@@ -359,11 +359,11 @@ public class CoreextensionAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * @since 6.0
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see ac.soton.eventb.emf.core.extension.coreextension.TypedConstant
 	 * @generated
-	 * @since 6.0
 	 */
 	public Adapter createTypedConstantAdapter() {
 		return null;
@@ -374,11 +374,11 @@ public class CoreextensionAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * @since 6.0
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see ac.soton.eventb.emf.core.extension.coreextension.Value
 	 * @generated
-	 * @since 6.0
 	 */
 	public Adapter createValueAdapter() {
 		return null;
@@ -487,11 +487,11 @@ public class CoreextensionAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * @since 6.0
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.eventb.emf.core.machine.Variable
 	 * @generated
-	 * @since 6.0
 	 */
 	public Adapter createVariableAdapter() {
 		return null;
@@ -502,11 +502,11 @@ public class CoreextensionAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * @since 6.0
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.eventb.emf.core.context.Constant
 	 * @generated
-	 * @since 6.0
 	 */
 	public Adapter createConstantAdapter() {
 		return null;

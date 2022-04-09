@@ -143,18 +143,18 @@ public class CoreextensionItemProviderAdapterFactory extends CoreextensionAdapte
 	/**
 	 * This keeps track of the one adapter used for all {@link ac.soton.eventb.emf.core.extension.coreextension.TypedVariable} instances.
 	 * <!-- begin-user-doc -->
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated
-	 * @since 3.0
 	 */
 	protected TypedVariableItemProvider typedVariableItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link ac.soton.eventb.emf.core.extension.coreextension.TypedVariable}.
 	 * <!-- begin-user-doc -->
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated
-	 * @since 3.0
 	 */
 	@Override
 	public Adapter createTypedVariableAdapter() {
@@ -168,18 +168,18 @@ public class CoreextensionItemProviderAdapterFactory extends CoreextensionAdapte
 	/**
 	 * This keeps track of the one adapter used for all {@link ac.soton.eventb.emf.core.extension.coreextension.TypedConstant} instances.
 	 * <!-- begin-user-doc -->
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated
-	 * @since 3.0
 	 */
 	protected TypedConstantItemProvider typedConstantItemProvider;
 
 	/**
 	 * This creates an adapter for a {@link ac.soton.eventb.emf.core.extension.coreextension.TypedConstant}.
 	 * <!-- begin-user-doc -->
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated
-	 * @since 3.0
 	 */
 	@Override
 	public Adapter createTypedConstantAdapter() {
@@ -544,9 +544,9 @@ public class CoreextensionItemProviderAdapterFactory extends CoreextensionAdapte
 	/**
 	 * A child creation extender for the {@link ContextPackage}.
 	 * <!-- begin-user-doc -->
+	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated
-	 * @since 3.0
 	 */
 	public static class ContextChildCreationExtender implements IChildCreationExtender {
 		/**

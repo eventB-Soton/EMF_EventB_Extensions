@@ -38,20 +38,20 @@ public interface CoreextensionFactory extends EFactory {
 	/**
 	 * Returns a new object of class '<em>Typed Variable</em>'.
 	 * <!-- begin-user-doc -->
+	 * @since 6.0
 	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Typed Variable</em>'.
 	 * @generated
-	 * @since 6.0
 	 */
 	TypedVariable createTypedVariable();
 
 	/**
 	 * Returns a new object of class '<em>Typed Constant</em>'.
 	 * <!-- begin-user-doc -->
+	 * @since 6.0
 	 * <!-- end-user-doc -->
 	 * @return a new object of class '<em>Typed Constant</em>'.
 	 * @generated
-	 * @since 6.0
 	 */
 	TypedConstant createTypedConstant();
 
