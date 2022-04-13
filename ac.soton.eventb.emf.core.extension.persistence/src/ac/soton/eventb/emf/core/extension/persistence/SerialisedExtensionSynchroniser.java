@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2011-2019 University of Southampton.
+ * Copyright (c) 2011-2022 University of Southampton.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -53,6 +53,7 @@ import org.rodinp.core.RodinDBException;
  * cfs (04/01/12) : when adding unique id's disable notification of changes (eventBElement.eSetDeliver(false)) to
  * 					prevent exceptions due to the change being made without a Transactional Command
  * cfs (07/03/19) : use encoded attribute style for references
+ * cfs (12/04/22) : do not try to load transient, volatile or derived. (loading empty derived containments may delete children)
  * 
  * @author vitaly
  *
@@ -135,7 +136,11 @@ public class SerialisedExtensionSynchroniser extends AbstractSynchroniser {
 					EList<EStructuralFeature> eFeatures = eClass.getEAllStructuralFeatures();
 					for (EStructuralFeature feature : eFeatures) {
 						if (eventBElement.eClass().getEStructuralFeature(feature.getName()) != null){
-							if (feature.isChangeable() && (!feature.isUnsettable() || ext.eIsSet(feature)))
+							if (!feature.isTransient() &&
+								!feature.isVolatile() &&
+								!feature.isDerived() && 
+								feature.isChangeable() &&
+								(!feature.isUnsettable() || ext.eIsSet(feature)))
 								eventBElement.eSet(feature, ext.eGet(feature));
 						}
 					}
