@@ -70,15 +70,15 @@
    <extension
          point="ac.soton.eventb.emf.core.extension.navigator.elementRefinement">
       <refinementDefinition
-            ePackage="http://emf.eventb.org/models/core/2014"
+            ePackage="http://emf.eventb.org/models/core/2022"
             refiner_class="ac.soton.eventb.emf.core.extension.navigator.refiner.CoreElementRefiner">
       </refinementDefinition>
       <refinementDefinition
-            ePackage="http://emf.eventb.org/models/core/context/2014"
+            ePackage="http://emf.eventb.org/models/core/context/2022"
             refiner_class="ac.soton.eventb.emf.core.extension.navigator.refiner.ContextElementRefiner">
       </refinementDefinition>
       <refinementDefinition
-            ePackage="http://emf.eventb.org/models/core/machine/2014"
+            ePackage="http://emf.eventb.org/models/core/machine/2022"
             refiner_class="ac.soton.eventb.emf.core.extension.navigator.refiner.MachineElementRefiner">
       </refinementDefinition>
       <refinementDefinition
