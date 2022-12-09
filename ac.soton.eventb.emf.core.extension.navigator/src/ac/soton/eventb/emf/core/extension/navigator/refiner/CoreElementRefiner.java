@@ -1,9 +1,15 @@
 /*******************************************************************************
- * Copyright (c) 2012 University of Southampton.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
+ * Copyright (c) 2011, 2021 University of Southampton.
+ *
+ * This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License 2.0
  * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
+ * https://www.eclipse.org/legal/epl-2.0/
+ *
+ * SPDX-License-Identifier: EPL-2.0
+ *
+ * Contributors:
+ *    University of Southampton - initial API and implementation
  *******************************************************************************/
 package ac.soton.eventb.emf.core.extension.navigator.refiner;
 
@@ -15,8 +21,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eventb.emf.core.CorePackage;
 import org.eventb.emf.core.EventBObject;
-
-import ac.soton.eventb.emf.core.extension.navigator.refiner.AbstractElementRefiner;
 
 /**
  * Event-B EMF Core Element Refiner 

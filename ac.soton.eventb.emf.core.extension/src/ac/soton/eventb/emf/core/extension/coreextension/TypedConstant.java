@@ -13,18 +13,18 @@
  *******************************************************************************/
 package ac.soton.eventb.emf.core.extension.coreextension;
 
-import org.eventb.emf.core.machine.Parameter;
+import org.eventb.emf.core.context.Constant;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Typed Parameter</b></em>'.
+ * A representation of the model object '<em><b>Typed Constant</b></em>'.
  * <!-- end-user-doc -->
  *
  *
- * @see ac.soton.eventb.emf.core.extension.coreextension.CoreextensionPackage#getTypedParameter()
+ * @see ac.soton.eventb.emf.core.extension.coreextension.CoreextensionPackage#getTypedConstant()
  * @model
  * @generated
+ * @since 6.0
  */
-public interface TypedParameter extends Parameter, Type, Value {
-
-} // TypedParameter
+public interface TypedConstant extends Constant, Type, Value {
+} // TypedConstant

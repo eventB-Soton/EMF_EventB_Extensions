@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2011, 2022 University of Southampton.
+ * Copyright (c) 2011, 2021 University of Southampton.
  *
  * This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
@@ -15,7 +15,7 @@ package ac.soton.eventb.emf.core.extension.coreextension.provider;
 
 
 import ac.soton.eventb.emf.core.extension.coreextension.CoreextensionPackage;
-import ac.soton.eventb.emf.core.extension.coreextension.TypedParameter;
+import ac.soton.eventb.emf.core.extension.coreextension.TypedVariable;
 
 import java.util.Collection;
 import java.util.List;
@@ -34,16 +34,17 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import org.eventb.emf.core.machine.provider.ParameterItemProvider;
+import org.eventb.emf.core.machine.provider.VariableItemProvider;
 
 /**
- * This is the item provider adapter for a {@link ac.soton.eventb.emf.core.extension.coreextension.TypedParameter} object.
+ * This is the item provider adapter for a {@link ac.soton.eventb.emf.core.extension.coreextension.TypedVariable} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
+ * @since 3.0
  */
-public class TypedParameterItemProvider
-	extends ParameterItemProvider
+public class TypedVariableItemProvider
+	extends VariableItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -57,7 +58,7 @@ public class TypedParameterItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TypedParameterItemProvider(AdapterFactory adapterFactory) {
+	public TypedVariableItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -103,7 +104,6 @@ public class TypedParameterItemProvider
 	/**
 	 * This adds a property descriptor for the Value feature.
 	 * <!-- begin-user-doc -->
-	 * @since 3.0
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -124,14 +124,14 @@ public class TypedParameterItemProvider
 	}
 
 	/**
-	 * This returns TypedParameter.gif.
+	 * This returns TypedVariable.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/TypedParameter"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/TypedVariable"));
 	}
 
 	/**
@@ -142,10 +142,10 @@ public class TypedParameterItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((TypedParameter)object).getName();
+		String label = ((TypedVariable)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_TypedParameter_type") :
-			getString("_UI_TypedParameter_type") + " " + label;
+			getString("_UI_TypedVariable_type") :
+			getString("_UI_TypedVariable_type") + " " + label;
 	}
 
 	/**
@@ -159,9 +159,9 @@ public class TypedParameterItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(TypedParameter.class)) {
-			case CoreextensionPackage.TYPED_PARAMETER__TYPE:
-			case CoreextensionPackage.TYPED_PARAMETER__VALUE:
+		switch (notification.getFeatureID(TypedVariable.class)) {
+			case CoreextensionPackage.TYPED_VARIABLE__TYPE:
+			case CoreextensionPackage.TYPED_VARIABLE__VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

@@ -1,9 +1,15 @@
 /*******************************************************************************
- * Copyright (c) 2011-2019 University of Southampton.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
+ * Copyright (c) 2011, 2022 University of Southampton.
+ *
+ * This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License 2.0
  * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
+ * https://www.eclipse.org/legal/epl-2.0/
+ *
+ * SPDX-License-Identifier: EPL-2.0
+ *
+ * Contributors:
+ *    University of Southampton - initial API and implementation
  *******************************************************************************/
 package ac.soton.eventb.emf.core.extension.navigator.refiner;
 
@@ -545,16 +551,24 @@ public abstract class AbstractElementRefiner {
 				// this check used to be done by finding URIs but this doesn't work if the abstract element is not contained in a resource.
 				// checking for a common parent component is safer and easier. 
 				// We also keep the old method in case two different instances of the same model are being used
-				if (commonParentComponent(abstractElement, abstractReferencedElement) ||
+				if (//true || //we try it for iter resource references
+						commonParentComponent(abstractElement, abstractReferencedElement) ||
 						samePaths(abstractElement, abstractReferencedElement) 
 					){						
-					EventBObject abstractComponent = ((EventBObject) abstractReferencedElement).getContaining(CorePackage.Literals.EVENT_BNAMED_COMMENTED_COMPONENT_ELEMENT);
+					EObject abstractComponent = ((EventBObject) abstractReferencedElement).getContaining(CorePackage.Literals.EVENT_BNAMED_COMMENTED_COMPONENT_ELEMENT);
+//					//fallback for elements that are not in an Event-B component.. find the root element
+//					if (abstractComponent==null) {
+//						abstractComponent = abstractReferencedElement;
+//						while (abstractComponent.eContainer() != null) {
+//							abstractComponent = abstractComponent.eContainer();
+//						}
+//					}
 						
 					String abstractComponentName = "null";
 					if (abstractComponent instanceof EventBNamed){
 						abstractComponentName = ((EventBNamed)abstractComponent).getName();
 					}else{
-						//FIXME: not sure if this is necessary.. or works.. better to make sure abstractReferencedElement is contained?
+						//This works for elements that are not in an Event-B component
 						abstractComponentName = abstractElementUri.fragment();
 						abstractComponentName = abstractComponentName.substring(abstractComponentName.lastIndexOf("::")+2);
 						abstractComponentName = abstractComponentName.substring(0,abstractComponentName.indexOf("."));
@@ -562,9 +576,24 @@ public abstract class AbstractElementRefiner {
 					
 					//Find the equivalent concrete referenced element (preferably from the copier)
 					EObject concreteReferencedElement = copier.get(abstractReferencedElement);
-					if (concreteReferencedElement ==null && concreteComponent!=null){
-						concreteReferencedElement = getEquivalentObject(concreteComponent, abstractReferencedElement);
+					
+					if (concreteReferencedElement ==null) {
+						//if concreteComponent is not null we use that as the container for finding the equivalent object,
+						// otherwise try to get it from the copier 
+						// (note that abstractComponent may not be in the copier so use the abstractElement and then find a root container)
+						EObject concreteContainer = concreteComponent;
+//						if (concreteContainer==null) {
+//							concreteContainer = copier.get(abstractElement);
+//							while (concreteContainer.eContainer() != null) {
+//								concreteContainer = concreteContainer.eContainer();
+//							}
+//						}
+						if (concreteContainer!=null){
+							concreteReferencedElement = getEquivalentObject(concreteContainer, abstractReferencedElement);
+						}
 					}
+					
+					
 					if (concreteReferencedElement !=null){
 						//get its id and cClass and set up the uri
 						String id = EcoreUtil.getID(concreteReferencedElement);

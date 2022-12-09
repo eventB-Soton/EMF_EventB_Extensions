@@ -1,10 +1,16 @@
-/**
- * Copyright (c) 2012-2018 - University of Southampton.
- * All rights reserved. This program and the accompanying materials  are made
- * available under the terms of the Eclipse Public License v1.0 which accompanies this 
- * distribution, and is available at http://www.eclipse.org/legal/epl-v10.html
- * 
- */
+/*******************************************************************************
+ * Copyright (c) 2011, 2022 University of Southampton.
+ *
+ * This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License 2.0
+ * which accompanies this distribution, and is available at
+ * https://www.eclipse.org/legal/epl-2.0/
+ *
+ * SPDX-License-Identifier: EPL-2.0
+ *
+ * Contributors:
+ *    University of Southampton - initial API and implementation
+ *******************************************************************************/
 package ac.soton.eventb.emf.core.extension.coreextension;
 
 import org.eclipse.emf.ecore.EFactory;
@@ -34,6 +40,26 @@ public interface CoreextensionFactory extends EFactory {
 	 * @generated
 	 */
 	TypedParameter createTypedParameter();
+
+	/**
+	 * Returns a new object of class '<em>Typed Variable</em>'.
+	 * <!-- begin-user-doc -->
+	 * @since 6.0
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Typed Variable</em>'.
+	 * @generated
+	 */
+	TypedVariable createTypedVariable();
+
+	/**
+	 * Returns a new object of class '<em>Typed Constant</em>'.
+	 * <!-- begin-user-doc -->
+	 * @since 6.0
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Typed Constant</em>'.
+	 * @generated
+	 */
+	TypedConstant createTypedConstant();
 
 	/**
 	 * Returns the package supported by this factory.

@@ -1,10 +1,16 @@
-/**
- * Copyright (c) 2012-2018 - University of Southampton.
- * All rights reserved. This program and the accompanying materials  are made
- * available under the terms of the Eclipse Public License v1.0 which accompanies this 
- * distribution, and is available at http://www.eclipse.org/legal/epl-v10.html
- * 
- */
+/*******************************************************************************
+ * Copyright (c) 2011, 2021 University of Southampton.
+ *
+ * This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License 2.0
+ * which accompanies this distribution, and is available at
+ * https://www.eclipse.org/legal/epl-2.0/
+ *
+ * SPDX-License-Identifier: EPL-2.0
+ *
+ * Contributors:
+ *    University of Southampton - initial API and implementation
+ *******************************************************************************/
 package ac.soton.eventb.emf.core.extension.coreextension.impl;
 
 import org.eclipse.emf.ecore.EClass;
@@ -18,6 +24,8 @@ import ac.soton.eventb.emf.core.extension.coreextension.CoreextensionFactory;
 import ac.soton.eventb.emf.core.extension.coreextension.CoreextensionPackage;
 import ac.soton.eventb.emf.core.extension.coreextension.DataKind;
 import ac.soton.eventb.emf.core.extension.coreextension.TypedParameter;
+import ac.soton.eventb.emf.core.extension.coreextension.TypedConstant;
+import ac.soton.eventb.emf.core.extension.coreextension.TypedVariable;
 
 /**
  * <!-- begin-user-doc -->
@@ -64,6 +72,8 @@ public class CoreextensionFactoryImpl extends EFactoryImpl implements Coreextens
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case CoreextensionPackage.TYPED_PARAMETER: return createTypedParameter();
+			case CoreextensionPackage.TYPED_VARIABLE: return createTypedVariable();
+			case CoreextensionPackage.TYPED_CONSTANT: return createTypedConstant();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -107,6 +117,26 @@ public class CoreextensionFactoryImpl extends EFactoryImpl implements Coreextens
 	public TypedParameter createTypedParameter() {
 		TypedParameterImpl typedParameter = new TypedParameterImpl();
 		return typedParameter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TypedVariable createTypedVariable() {
+		TypedVariableImpl typedVariable = new TypedVariableImpl();
+		return typedVariable;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TypedConstant createTypedConstant() {
+		TypedConstantImpl typedConstant = new TypedConstantImpl();
+		return typedConstant;
 	}
 
 	/**

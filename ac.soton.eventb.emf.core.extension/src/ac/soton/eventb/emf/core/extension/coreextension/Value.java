@@ -17,45 +17,46 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Type</b></em>'.
+ * A representation of the model object '<em><b>Value</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link ac.soton.eventb.emf.core.extension.coreextension.Type#getType <em>Type</em>}</li>
+ *   <li>{@link ac.soton.eventb.emf.core.extension.coreextension.Value#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
- * @see ac.soton.eventb.emf.core.extension.coreextension.CoreextensionPackage#getType()
+ * @see ac.soton.eventb.emf.core.extension.coreextension.CoreextensionPackage#getValue()
  * @model abstract="true"
  * @generated
+ * @since 6.0
  */
-public interface Type extends EObject {
+public interface Value extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Type</b></em>' attribute.
+	 * Returns the value of the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Type</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Value</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Type</em>' attribute.
-	 * @see #setType(String)
-	 * @see ac.soton.eventb.emf.core.extension.coreextension.CoreextensionPackage#getType_Type()
+	 * @return the value of the '<em>Value</em>' attribute.
+	 * @see #setValue(String)
+	 * @see ac.soton.eventb.emf.core.extension.coreextension.CoreextensionPackage#getValue_Value()
 	 * @model
 	 * @generated
 	 */
-	String getType();
+	String getValue();
 
 	/**
-	 * Sets the value of the '{@link ac.soton.eventb.emf.core.extension.coreextension.Type#getType <em>Type</em>}' attribute.
+	 * Sets the value of the '{@link ac.soton.eventb.emf.core.extension.coreextension.Value#getValue <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Type</em>' attribute.
-	 * @see #getType()
+	 * @param value the new value of the '<em>Value</em>' attribute.
+	 * @see #getValue()
 	 * @generated
 	 */
-	void setType(String value);
+	void setValue(String value);
 
-} // Type
+} // Value

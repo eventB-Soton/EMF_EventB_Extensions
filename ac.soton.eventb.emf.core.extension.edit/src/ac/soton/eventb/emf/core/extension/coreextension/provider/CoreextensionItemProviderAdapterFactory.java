@@ -1,12 +1,16 @@
-/**
- * Copyright (c) 2012-2018 - University of Southampton.
- * All rights reserved. This program and the accompanying materials  are made
- * available under the terms of the Eclipse Public License v1.0 which accompanies this 
- * distribution, and is available at http://www.eclipse.org/legal/epl-v10.html
- * 
+/*******************************************************************************
+ * Copyright (c) 2011, 2022 University of Southampton.
  *
- * $Id$
- */
+ * This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License 2.0
+ * which accompanies this distribution, and is available at
+ * https://www.eclipse.org/legal/epl-2.0/
+ *
+ * SPDX-License-Identifier: EPL-2.0
+ *
+ * Contributors:
+ *    University of Southampton - initial API and implementation
+ *******************************************************************************/
 package ac.soton.eventb.emf.core.extension.coreextension.provider;
 
 import ac.soton.eventb.emf.core.extension.coreextension.CoreextensionFactory;
@@ -49,7 +53,11 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eventb.emf.core.Annotation;
 import org.eventb.emf.core.CorePackage;
 
+import org.eventb.emf.core.context.Context;
+import org.eventb.emf.core.context.ContextPackage;
+import org.eventb.emf.core.context.util.ContextSwitch;
 import org.eventb.emf.core.machine.Event;
+import org.eventb.emf.core.machine.Machine;
 import org.eventb.emf.core.machine.MachinePackage;
 
 import org.eventb.emf.core.machine.util.MachineSwitch;
@@ -134,6 +142,56 @@ public class CoreextensionItemProviderAdapterFactory extends CoreextensionAdapte
 		}
 
 		return typedParameterItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link ac.soton.eventb.emf.core.extension.coreextension.TypedVariable} instances.
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected TypedVariableItemProvider typedVariableItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link ac.soton.eventb.emf.core.extension.coreextension.TypedVariable}.
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createTypedVariableAdapter() {
+		if (typedVariableItemProvider == null) {
+			typedVariableItemProvider = new TypedVariableItemProvider(this);
+		}
+
+		return typedVariableItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link ac.soton.eventb.emf.core.extension.coreextension.TypedConstant} instances.
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected TypedConstantItemProvider typedConstantItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link ac.soton.eventb.emf.core.extension.coreextension.TypedConstant}.
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createTypedConstantAdapter() {
+		if (typedConstantItemProvider == null) {
+			typedConstantItemProvider = new TypedConstantItemProvider(this);
+		}
+
+		return typedConstantItemProvider;
 	}
 
 	/**
@@ -263,6 +321,8 @@ public class CoreextensionItemProviderAdapterFactory extends CoreextensionAdapte
 	 */
 	public void dispose() {
 		if (typedParameterItemProvider != null) typedParameterItemProvider.dispose();
+		if (typedVariableItemProvider != null) typedVariableItemProvider.dispose();
+		if (typedConstantItemProvider != null) typedConstantItemProvider.dispose();
 	}
 
 	/**
@@ -321,6 +381,22 @@ public class CoreextensionItemProviderAdapterFactory extends CoreextensionAdapte
 						(createChildParameter
 							(CorePackage.Literals.ANNOTATION__CONTENTS,
 							 CoreextensionFactory.eINSTANCE.createTypedParameter()));
+
+				
+				annotation = CoreextensionPackage.Literals.TYPED_VARIABLE.getEAnnotation("org.eventb.emf.core.extendedMetaClasses");
+				if (annotation == null  || annotation.getReferences().contains(object.eClass()))
+					newChildDescriptors.add
+						(createChildParameter
+							(CorePackage.Literals.ANNOTATION__CONTENTS,
+							 CoreextensionFactory.eINSTANCE.createTypedVariable()));
+
+				
+				annotation = CoreextensionPackage.Literals.TYPED_CONSTANT.getEAnnotation("org.eventb.emf.core.extendedMetaClasses");
+				if (annotation == null  || annotation.getReferences().contains(object.eClass()))
+					newChildDescriptors.add
+						(createChildParameter
+							(CorePackage.Literals.ANNOTATION__CONTENTS,
+							 CoreextensionFactory.eINSTANCE.createTypedConstant()));
 
 				return null;
 			}
@@ -401,6 +477,26 @@ public class CoreextensionItemProviderAdapterFactory extends CoreextensionAdapte
 			 * <!-- begin-user-doc -->
 			 * <!-- end-user-doc -->
 			 * @generated
+			 * @since 3.0
+			 */
+			@Override
+			public Object caseMachine(Machine object) {
+			
+			EAnnotation annotation = null;
+				
+				annotation = CoreextensionPackage.Literals.TYPED_VARIABLE.getEAnnotation("org.eventb.emf.core.extendedMetaClasses");
+				if (annotation == null  || annotation.getReferences().contains(object.eClass()))
+					newChildDescriptors.add
+						(createChildParameter
+							(MachinePackage.Literals.MACHINE__VARIABLES,
+							 CoreextensionFactory.eINSTANCE.createTypedVariable()));
+
+				return null;
+			}
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
 			 */
 			@Override
 			public Object caseEvent(Event object) {
@@ -413,6 +509,99 @@ public class CoreextensionItemProviderAdapterFactory extends CoreextensionAdapte
 						(createChildParameter
 							(MachinePackage.Literals.EVENT__PARAMETERS,
 							 CoreextensionFactory.eINSTANCE.createTypedParameter()));
+
+				return null;
+			}
+ 
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected CommandParameter createChildParameter(Object feature, Object child) {
+				return new CommandParameter(null, feature, child);
+			}
+
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public Collection<Object> getNewChildDescriptors(Object object, EditingDomain editingDomain) {
+			ArrayList<Object> result = new ArrayList<Object>();
+		   new CreationSwitch(result, editingDomain).doSwitch((EObject)object);
+		   return result;
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public ResourceLocator getResourceLocator() {
+			return EventbcoreextensionEditPlugin.INSTANCE;
+		}
+	}
+
+	/**
+	 * A child creation extender for the {@link ContextPackage}.
+	 * <!-- begin-user-doc -->
+	 * @since 3.0
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static class ContextChildCreationExtender implements IChildCreationExtender {
+		/**
+		 * The switch for creating child descriptors specific to each extended class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		protected static class CreationSwitch extends ContextSwitch<Object> {
+			/**
+			 * The child descriptors being populated.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected List<Object> newChildDescriptors;
+
+			/**
+			 * The domain in which to create the children.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected EditingDomain editingDomain;
+
+			/**
+			 * Creates the switch for populating child descriptors in the given domain.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			CreationSwitch(List<Object> newChildDescriptors, EditingDomain editingDomain) {
+				this.newChildDescriptors = newChildDescriptors;
+				this.editingDomain = editingDomain;
+			}
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			@Override
+			public Object caseContext(Context object) {
+			
+			EAnnotation annotation = null;
+				
+				annotation = CoreextensionPackage.Literals.TYPED_CONSTANT.getEAnnotation("org.eventb.emf.core.extendedMetaClasses");
+				if (annotation == null  || annotation.getReferences().contains(object.eClass()))
+					newChildDescriptors.add
+						(createChildParameter
+							(ContextPackage.Literals.CONTEXT__CONSTANTS,
+							 CoreextensionFactory.eINSTANCE.createTypedConstant()));
 
 				return null;
 			}
