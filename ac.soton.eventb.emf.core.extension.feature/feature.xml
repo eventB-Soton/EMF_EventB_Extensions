@@ -12,11 +12,10 @@
     Contributors:
        University of Southampton - initial API and implementation
  -->
-
 <feature
       id="ac.soton.eventb.emf.core.extension.feature"
       label="%featureName"
-      version="7.0.0.qualifier"
+      version="7.0.0.release"
       provider-name="%featureVendor"
       license-feature="org.rodinp.licence"
       license-feature-version="1.0.0.release">
@@ -36,6 +35,7 @@
    <requires>
       <import plugin="org.eclipse.core.runtime" version="3.7.0" match="compatible"/>
       <import plugin="org.eclipse.emf.ecore" version="2.7.0" match="compatible"/>
+      <import plugin="org.eventb.emf.core" version="6.0.0" match="compatible"/>
       <import plugin="org.eclipse.ui" version="3.7.0" match="compatible"/>
       <import plugin="org.eclipse.core.expressions" version="3.4.300" match="compatible"/>
       <import plugin="org.eclipse.ui.navigator" version="3.5.100" match="compatible"/>
@@ -45,15 +45,13 @@
       <import plugin="org.rodinp.core" version="1.7.0" match="compatible"/>
       <import plugin="org.eventb.core" version="3.0.0" match="compatible"/>
       <import plugin="fr.systerel.explorer" version="2.0.0" match="compatible"/>
-      <import plugin="org.eventb.emf.persistence" version="3.4.0" match="compatible"/>
-      <import plugin="ac.soton.eventb.emf.core.extension.persistence" version="2.0.0" match="compatible"/>
-      <import plugin="org.eclipse.emf.ecore.xmi" version="2.7.0" match="compatible"/>
-      <import plugin="org.eventb.emf.persistence" version="3.3.0" match="compatible"/>
-      <import plugin="org.eclipse.emf.edit" version="2.7.0" match="compatible"/>
-      <import plugin="org.eventb.emf.core" version="6.0.0" match="compatible"/>
       <import plugin="org.eventb.emf.core.edit" version="3.0.0" match="compatible"/>
       <import plugin="ac.soton.eventb.emf.core.extension" version="6.0.0" match="compatible"/>
+      <import plugin="ac.soton.eventb.emf.core.extension.persistence" version="2.0.0" match="compatible"/>
+      <import plugin="org.eclipse.emf.ecore.xmi" version="2.7.0" match="compatible"/>
       <import plugin="org.eclipse.core.resources" version="3.12.0" match="compatible"/>
+      <import plugin="org.eclipse.emf.edit" version="2.7.0" match="compatible"/>
+      <import plugin="org.eventb.emf.persistence" version="4.0.0" match="compatible"/>
    </requires>
 
    <plugin
